@@ -1,0 +1,15 @@
+<div class="mainTitle">{{title}}</div>
+
+<div class="mainButton">
+    <div class="divOrganizer">
+        <input type="button" class="orgainzerButton" (click)="showOrganizer()" 
+        (mouseover)="showOrganizer()"  value="Orgainzer">
+    </div>
+    <div  class="divGraduate">
+        <input type="button" class="graduateButton" value="Gradute">
+    </div>
+</div>
+
+<div *ngIf="show == true" class="other">
+    <app-organizer></app-organizer>
+</div>
