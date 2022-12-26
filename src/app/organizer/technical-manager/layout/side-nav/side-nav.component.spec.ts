@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GraduateMangerComponent } from './graduate-manger.component';
+import { SideNavComponent } from './side-nav.component';
 
-describe('GraduateMangerComponent', () => {
-  let component: GraduateMangerComponent;
-  let fixture: ComponentFixture<GraduateMangerComponent>;
+describe('SideNavComponent', () => {
+  let component: SideNavComponent;
+  let fixture: ComponentFixture<SideNavComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GraduateMangerComponent ]
+      declarations: [ SideNavComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(GraduateMangerComponent);
+    fixture = TestBed.createComponent(SideNavComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

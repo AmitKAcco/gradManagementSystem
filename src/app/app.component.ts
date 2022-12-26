@@ -6,9 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Accolite Graduate Management System';
-  show = false;
-  showOrganizer() : void {
-    this.show = !this.show;
-  }
+   title : string = 'auad';
 }
+
+

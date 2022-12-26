@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ApprovalLeadComponent } from './approval-lead.component';
+import { LayoutComponent } from './layout.component';
 
-describe('ApprovalLeadComponent', () => {
-  let component: ApprovalLeadComponent;
-  let fixture: ComponentFixture<ApprovalLeadComponent>;
+describe('LayoutComponent', () => {
+  let component: LayoutComponent;
+  let fixture: ComponentFixture<LayoutComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ApprovalLeadComponent ]
+      declarations: [ LayoutComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ApprovalLeadComponent);
+    fixture = TestBed.createComponent(LayoutComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
