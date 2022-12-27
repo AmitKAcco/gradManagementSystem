@@ -1,19 +1,6 @@
 @import '/src/scss/variables.scss';
 
-div{
-    background-color: red;
-}
-.mat-nav-list {
-  width: 100%;
-  a {
-      .mat-icon {
-          margin-right: 15px;
-          color: $primary-color;
-      }
-      display: block;
-  }
-}
-
+;
 
 .mat-nav-list {
   width: 100%;
@@ -48,3 +35,4 @@ div{
       }
   }
 }
+

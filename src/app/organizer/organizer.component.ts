@@ -11,7 +11,7 @@ export class OrganizerComponent {
   }
   loadTechincalManager(){
     console.log("i have been clicked inside technical Manager");
-    this.router.navigate(['/techinialManager']);
+    this.router.navigate(['/technicalManager']);
   }
   loadTechincalDelivery(){
     console.log("i am Technical Delivery");

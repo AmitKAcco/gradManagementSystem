@@ -7,6 +7,6 @@ import { childRoutes } from '../../childroute.module';
   styleUrls: ['./side-nav.component.scss']
 })
 export class SideNavComponent {
-  showMenu = false;
   routes = childRoutes;
+  sideNavMode = false;
 }

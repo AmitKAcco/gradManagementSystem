@@ -1,14 +1,13 @@
-<p>side-nav works!</p>
 <mat-nav-list>
     <a
       *ngFor="let item of routes"
       mat-list-item
       [routerLinkActive]="'active'"
-      [routerLink]="['/', item.path]"
+      [routerLink]="['/technicalManager', item.path]"
     >
+    {{item.path}}
       <mat-icon class="sidenav-icon">{{ item.data.icon }}</mat-icon>
       {{ item.data.text }}
     </a>
-   <div>hello world</div>
   </mat-nav-list>
   

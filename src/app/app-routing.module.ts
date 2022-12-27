@@ -15,7 +15,7 @@ const routes: Routes = [
       import('./graduate/graduate.module').then((m) => m.GraduateModule),
   },
   {
-    path: 'techinialManager',
+    path: 'technicalManager',
     loadChildren: () =>
       import('./organizer/technical-manager/technical-manager.module').then((m) => m.TechnicalManagerModule),
   },

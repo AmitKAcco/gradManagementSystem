@@ -6,19 +6,29 @@ import { OrganizerComponent } from './organizer/organizer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { NgChartsModule, NgChartsConfiguration } from 'ng2-charts';
-import { flex}
+import { FlexLayoutModule } from '@angular/flex-layout';  
+import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
+import { MentorModule } from './organizer/technical-manager/mentor/mentor.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     OrganizerComponent,
-    HomeComponent
+    HomeComponent,
+ 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    NgChartsModule
+    NgChartsModule,
+    FlexLayoutModule,
+    MatSidenavModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    MentorModule,
+    MatSidenavModule
   ],
   providers: [
     {
