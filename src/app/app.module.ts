@@ -8,7 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { NgChartsModule, NgChartsConfiguration } from 'ng2-charts';
 import { FlexLayoutModule } from '@angular/flex-layout';  
 import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
-import { MentorModule } from './organizer/technical-manager/mentor/mentor.module';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +27,6 @@ import { MentorModule } from './organizer/technical-manager/mentor/mentor.module
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    MentorModule,
     MatSidenavModule
   ],
   providers: [
