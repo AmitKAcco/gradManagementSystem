@@ -34,7 +34,7 @@ export const childRoutes = [
   {
     path: 'mentors',
     loadChildren: () =>
-      import('./mentor/mentor.module').then(m => m.MentorModule),
+      import('./mentors/mentors.module').then(m => m.MentorsModule),
     data: { icon: 'supervised_user_circle', text: 'Mentors' }
   },
   {

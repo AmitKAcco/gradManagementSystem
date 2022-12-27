@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MediaObserver, MediaChange } from '@angular/flex-layout';
 import { Subscription } from 'rxjs';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { MentorModule } from '../mentor/mentor.module';
+
 @Component({
   selector: 'app-layout',
   templateUrl: './layout.component.html',
