@@ -1,8 +1,15 @@
-.mainTitle {
-	font-size: 4rem;
-	padding: 2rem;
-    text-align: center;
+.mainDiv{
+	background-image: url('/src/assets/img/validation.png')
 }
+.mainTitle {
+	 
+	margin: 10% 0 5% 0;
+	color: red;
+    font-size: 4vmax;
+    font-weight: bold;
+	text-align: center;
+}
+
 .mainButton {
 	display: flex;
 	height: 100px;
