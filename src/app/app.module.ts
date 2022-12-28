@@ -27,7 +27,8 @@ import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    MatSidenavModule
+    MatSidenavModule,
+   
   ],
   providers: [
     {

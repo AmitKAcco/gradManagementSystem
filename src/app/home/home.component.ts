@@ -16,6 +16,7 @@ export class HomeComponent {
     console.log("i have been clicked i will show organizer");
   }
   loadGraduate(){
-    this.route.navigate(['\graduate'])
+    console.log("i have been clicked")
+    this.route.navigate(['/graduate'])
   }
 }

@@ -1,0 +1,33 @@
+@import '/src/scss/variables.scss';
+
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  .sidenav-container {
+    flex: 1;
+    background: $main-background-color;
+    .sidenav {
+      padding: 12px;
+      width: 250px;
+      background: $white;
+    }
+    .main-container {
+      padding: 16px;
+    }
+  }
+}
+.content {
+  height: calc(100vh - 98px);
+  border-radius: 10px;
+  margin: 1%;
+  margin-left: 2%;
+}
+
+mat-sidenav-container {
+  height: calc(100vh - 65px);
+}
