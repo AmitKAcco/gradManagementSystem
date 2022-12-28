@@ -8,7 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { NgChartsModule, NgChartsConfiguration } from 'ng2-charts';
 import { FlexLayoutModule } from '@angular/flex-layout';  
 import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
-
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,7 @@ import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
     BrowserAnimationsModule,
     AppRoutingModule,
     MatSidenavModule,
-   
+    MatTableModule
   ],
   providers: [
     {

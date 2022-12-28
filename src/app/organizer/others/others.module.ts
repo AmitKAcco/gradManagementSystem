@@ -12,7 +12,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { LayoutComponent } from './layout/layout.component';
 import { SideNavComponent } from './layout/side-nav/side-nav.component';
 import { TopNavComponent } from './layout/top-nav/top-nav.component';
-
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,8 @@ import { TopNavComponent } from './layout/top-nav/top-nav.component';
     MatInputModule,
     MatMenuModule,
     MatListModule,
-    OthersRoutingModule
+    OthersRoutingModule,
+    MatTableModule
   ]
 })
 export class OthersModule { }

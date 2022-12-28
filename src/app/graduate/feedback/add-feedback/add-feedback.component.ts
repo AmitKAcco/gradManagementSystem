@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {FormControl} from '@angular/forms';
 import { FormGroup } from '@angular/forms';
-import { FeedbackService } from './feedback.service';
+import { FeedbackService } from '../feedback.service';
 
 @Component({
   selector: 'app-add-feedback',
@@ -24,22 +24,13 @@ export class AddFeedbackComponent {
   name : string = "other";
   note : string = "the other this"; 
   id : number = 1;
-  public updateUserProfile(): void {
-    // Logic to update the user will go here, but for now, we'll just log the values
-    
+  public createFeedback(): void {
       if( this.graduateFeedBack.controls.sessionName.value !== null
-        &&  this.graduateFeedBack.controls.note.value !== null &&
-        this.graduateFeedBack.controls.idfrom.value !== null){
+        &&  this.graduateFeedBack.controls.note.value !== null ){
         this.name = this.graduateFeedBack.controls.sessionName.value;
         this.note = this.graduateFeedBack.controls.note.value;
-        this.id = 1;
-        this.feedback.sendTask(this.name, this.note, this.id);
+        this.feedback.sendTask(this.name, this.note);
       }
-     
-  
-    
-
-
   }
   
 }

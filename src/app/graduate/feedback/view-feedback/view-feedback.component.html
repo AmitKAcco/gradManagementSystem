@@ -1,29 +1,28 @@
-<p>view-feedback works!</p>
-
-<div *ngIf="tasks && tasks.length > 0; else noTasks">
+<div class="addFeedback">
+  <div *ngIf="tasks && tasks.length > 0; else noTasks">
     <table class="table table-striped">
       <thead>
-      <tr>
-        <th>#</th>
-        <th>Task</th>
-        <th>Note</th>
-        <th></th>
-      </tr>
+        <tr>
+          <th>#</th>
+          <th>Task</th>
+          <th>Note</th>
+          <th></th>
+        </tr>
       </thead>
       <tbody *ngFor="let task of tasks">
-      <tr>
-        <td>{{ task.id }}</td>
-        <td>{{ task.title }}</td>
-        <td>{{ task.note }}</td>
-        <td>
-        
-        </td>
-      </tr>
+        <tr>
+          <td>{{ task.id }}</td>
+          <td>{{ task.title }}</td>
+          <td>{{ task.note }}</td>
+          <td>
+
+          </td>
+        </tr>
       </tbody>
     </table>
   </div>
-  
+
   <ng-template #noTasks>
-    <h2>Congratulations, you finished your list ! </h2>
+    <h2 class="feedbackStatus">No feedback given </h2>
   </ng-template>
-  
+</div>

@@ -1,10 +1,10 @@
 
 export const childRoutes = [
   {
-    path: 'calenderView',
+    path: 'calendarView',
     loadChildren: () =>
-      import('./calender-view/calender-view.module')
-      .then(m => m.CalenderViewModule),
+      import('./calendar-view/calendar-view.module')
+      .then(m => m.CalendarViewModule),
     data: { icon: 'dashboard', text: 'Calender View'}
   },
   {

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Task } from '../shared/models/task.model';
-import { FeedbackService } from '../add-feedback/feedback.service';
+import { FeedbackService } from '../feedback.service';
 
 @Component({
   selector: 'app-view-feedback',
@@ -9,14 +9,12 @@ import { FeedbackService } from '../add-feedback/feedback.service';
 })
 export class ViewFeedbackComponent implements OnInit {
 
-  tasks: Task[] = [
-  ];
-  constructor(private feedback : FeedbackService){
-    
+  tasks: Task[] = [];
+  constructor(private feedback: FeedbackService) {
+
   }
-  ngOnInit() : void {
-    this.tasks.push(new Task('one', 'hiii amit', 1));
-    this.feedback.positonBehaviourA.subscribe(d =>this.tasks.push(d))  ;
+  ngOnInit(): void {
+    this.feedback.positonBehaviourA.subscribe(d => this.tasks.push(d));
   }
-  
+
 }
