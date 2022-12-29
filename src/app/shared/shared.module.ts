@@ -5,7 +5,8 @@ import { SharedRoutingModule } from './shared-routing.module';
 import { CalendarViewComponent } from './calendar-view/calendar-view.component';
 import { CurriculumViewComponent } from './curriculum-view/curriculum-view.component';
 import { GraduateDetailsComponent } from './graduate-details/graduate-details.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { SharedDashBoardComponent } from './shared-dash-board/shared-dash-board.component';
+
 
 
 @NgModule({
@@ -13,11 +14,18 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     CalendarViewComponent,
     CurriculumViewComponent,
     GraduateDetailsComponent,
-    DashboardComponent
+    SharedDashBoardComponent,
+
   ],
   imports: [
     CommonModule,
     SharedRoutingModule
+  ],
+  exports: [
+    CalendarViewComponent,
+    CurriculumViewComponent,
+    GraduateDetailsComponent,
+    SharedDashBoardComponent,
   ]
 })
 export class SharedModule { }

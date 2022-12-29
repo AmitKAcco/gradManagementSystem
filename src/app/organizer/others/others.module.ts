@@ -12,15 +12,14 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { LayoutComponent } from './layout/layout.component';
 import { SideNavComponent } from './layout/side-nav/side-nav.component';
 import { TopNavComponent } from './layout/top-nav/top-nav.component';
-import {MatTableModule} from '@angular/material/table';
+import { MatTableModule} from '@angular/material/table';
 import { SharedModule } from 'src/app/shared/shared.module';
-import { CalendarViewComponent } from 'src/app/shared/calendar-view/calendar-view.component';
 @NgModule({
   declarations: [
     LayoutComponent,
     SideNavComponent,
     TopNavComponent,
-    CalendarViewComponent
+
   ],
   imports: [
     CommonModule,
@@ -33,6 +32,7 @@ import { CalendarViewComponent } from 'src/app/shared/calendar-view/calendar-vie
     MatListModule,
     OthersRoutingModule,
     MatTableModule,
+    SharedModule
   ]
 })
 export class OthersModule { }

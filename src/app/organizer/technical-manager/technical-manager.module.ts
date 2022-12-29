@@ -12,7 +12,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { LayoutComponent } from './layout/layout.component';
 import { SideNavComponent } from './layout/side-nav/side-nav.component';
 import { TopNavComponent } from './layout/top-nav/top-nav.component';
-
+import { SharedDashBoardComponent } from 'src/app/shared/shared-dash-board/shared-dash-board.component';
 
 
 @NgModule({
@@ -20,6 +20,7 @@ import { TopNavComponent } from './layout/top-nav/top-nav.component';
     LayoutComponent,
     SideNavComponent,
     TopNavComponent,
+    // SharedDashBoardComponent
   ],
   imports: [
  
