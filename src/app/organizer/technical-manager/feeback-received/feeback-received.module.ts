@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { FeebackReceivedRoutingModule } from './feeback-received-routing.module';
 import { HomeComponent } from './home/home.component';
-
+import { GraduateModule } from 'src/app/graduate/graduate.module';
 
 @NgModule({
   declarations: [
@@ -11,7 +11,8 @@ import { HomeComponent } from './home/home.component';
   ],
   imports: [
     CommonModule,
-    FeebackReceivedRoutingModule
+    FeebackReceivedRoutingModule,
+    GraduateModule
   ]
 })
 export class FeebackReceivedModule { }
