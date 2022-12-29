@@ -2,11 +2,27 @@
 //   width: 100%;
 //   text-align: right;
 // }
-.card{
+.card {
 
-  background: linear-gradient(60deg, #26c6da, #00acc1);
+
   margin: 2%;
   // background-color: red;
+}
+
+.totalStudent {
+  background: linear-gradient(60deg, #26c6da, #00acc1);
+}
+
+.studentPlaced {
+  background: linear-gradient(60deg, #66bb6a, #43a047);
+}
+
+.yetPlaced {
+  background: linear-gradient(60deg, #ffa726, #fb8c00);
+}
+
+.Requirements {
+  background: linear-gradient(60deg, #ec407a, #d81b60);
 }
 
 // .icon-lg {
