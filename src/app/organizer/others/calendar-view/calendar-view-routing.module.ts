@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-
-const routes: Routes = [ 
+import { CalendarViewComponent } from 'src/app/shared/calendar-view/calendar-view.component';
+const routes: Routes = [
   {
-    path : '',
-    component : HomeComponent
+    path: '',
+    component: HomeComponent
   }
 ];
 
@@ -13,4 +13,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class CalenderViewRoutingModule { }
+export class CalendarViewRoutingModule { }

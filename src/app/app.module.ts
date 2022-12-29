@@ -13,7 +13,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table'
 import { DataSource } from '@angular/cdk/collections';
 import { MaterialModule } from './material/material.module';
-import { CalenderViewModule } from './organizer/others/calender-view/calender-view.module';
+import { CalenderViewModule } from './organizer/others/calender-view/calender-view.module';import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -34,12 +34,7 @@ import { CalenderViewModule } from './organizer/others/calender-view/calender-vi
     BrowserAnimationsModule,
     AppRoutingModule,
     MatSidenavModule,
-    MatPaginatorModule,
-    MatTableModule,
-    MatSlideToggleModule,
-    MaterialModule,
-    CalenderViewModule
- 
+   
   ],
   providers: [
     {
