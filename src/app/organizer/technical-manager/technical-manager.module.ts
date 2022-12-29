@@ -33,7 +33,8 @@ import { SharedDashBoardComponent } from 'src/app/shared/shared-dash-board/share
     MatInputModule,
     MatMenuModule,
     MatListModule,
-    TechnicalManagerRoutingModule,
+    TechnicalManagerRoutingModule
+
 
   ],
   
