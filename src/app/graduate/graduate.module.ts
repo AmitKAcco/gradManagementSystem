@@ -17,6 +17,7 @@ import { ViewFeedbackComponent } from './feedback/view-feedback/view-feedback.co
 import { HomeComponent } from './feedback/homefeedback/home.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
+
 @NgModule({
   declarations: [
     LayoutComponent,
@@ -38,7 +39,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     MatMenuModule,
     MatListModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
   ]
 })
 export class GraduateModule { }
