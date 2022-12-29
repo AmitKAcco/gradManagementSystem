@@ -12,7 +12,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { LayoutComponent } from './layout/layout.component';
 import { SideNavComponent } from './layout/side-nav/side-nav.component';
 import { TopNavComponent } from './layout/top-nav/top-nav.component';
-import { MatTableModule} from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
+
 import { SharedModule } from 'src/app/shared/shared.module';
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
     MatMenuModule,
     MatListModule,
     OthersRoutingModule,
+    MatTableModule,
     MatTableModule,
     SharedModule
   ]

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,13 +8,19 @@ import { HomeComponent } from './home/home.component';
 import { NgChartsModule, NgChartsConfiguration } from 'ng2-charts';
 import { FlexLayoutModule } from '@angular/flex-layout';  
 import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
-import {MatTableModule} from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import {MatTableDataSource, MatTableModule} from '@angular/material/table'
+import { DataSource } from '@angular/cdk/collections';
+import { MaterialModule } from './material/material.module';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     OrganizerComponent,
     HomeComponent,
+    
  
   ],
   imports: [
@@ -28,7 +34,7 @@ import {MatTableModule} from '@angular/material/table';
     BrowserAnimationsModule,
     AppRoutingModule,
     MatSidenavModule,
-    MatTableModule
+   
   ],
   providers: [
     {
@@ -36,7 +42,22 @@ import {MatTableModule} from '@angular/material/table';
     }
   ],
   bootstrap: [AppComponent],
-
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ,NO_ERRORS_SCHEMA ],
+  exports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    NgChartsModule,
+    FlexLayoutModule,
+    MatSidenavModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    MatSidenavModule,
+    MatPaginatorModule,
+    MaterialModule
+    // MatTableModule
+  ]
 
 })
 export class AppModule { }
