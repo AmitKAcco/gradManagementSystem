@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 
 import { CalendarViewRoutingModule } from './calendar-view-routing.module';
 import { HomeComponent } from './home/home.component';
-
+import { CalendarViewComponent } from 'src/app/shared/calendar-view/calendar-view.component';
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
+    CalendarViewComponent
   ],
   imports: [
     CommonModule,

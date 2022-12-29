@@ -5,13 +5,15 @@ import { SharedRoutingModule } from './shared-routing.module';
 import { CalendarViewComponent } from './calendar-view/calendar-view.component';
 import { CurriculumViewComponent } from './curriculum-view/curriculum-view.component';
 import { GraduateDetailsComponent } from './graduate-details/graduate-details.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
   declarations: [
     CalendarViewComponent,
     CurriculumViewComponent,
-    GraduateDetailsComponent
+    GraduateDetailsComponent,
+    DashboardComponent
   ],
   imports: [
     CommonModule,
