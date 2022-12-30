@@ -1,17 +1,18 @@
 
 export const childRoutes = [
-  {
-    path: 'dashboard',
-    loadChildren: () =>
-      import('./dashboard/dashboard.module')
-      .then(m => m.DashboardModule),
-    data: { icon: 'dashboard', text: 'Dashboard' }
-  },
+  
   {
     path: 'buddy',
     loadChildren: () =>
       import('./buddy/buddy.module').then(m => m.BuddyModule),
     data: { icon: 'people_outline', text: 'Buddy' }
+  },
+  {
+    path: 'dashboard',
+    loadChildren: () =>
+      import('./dashboard/dashboard.module')
+        .then(m => m.DashboardModule),
+    data: { icon: 'dashboard', text: 'Dashboard' }
   },
   {
     path: 'feedback-received',
@@ -42,7 +43,7 @@ export const childRoutes = [
     loadChildren: () =>
       import('./technical-clalender/technical-clalender.module')
       .then(m => m.TechnicalClalenderModule),
-    data: { icon: 'calendar_today<', text: 'technicalCalender' }
+    data: { icon: 'calendar_today', text: 'technicalCalender' }
   },
   {
     path : 'projectDetails',

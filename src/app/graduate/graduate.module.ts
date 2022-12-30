@@ -40,6 +40,9 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     MatListModule,
     ReactiveFormsModule,
     FormsModule,
+  ],
+  exports: [
+    ViewFeedbackComponent
   ]
 })
 export class GraduateModule { }

@@ -10,8 +10,8 @@ export const childRoutes = [
   {
     path: 'curriculumView',
     loadChildren: () =>
-      import('./curriculum-view/curriculum-view-routing.module')
-      .then(m => m.CurriculumViewRoutingModule),
+      import('./curriculum-view/curriculum-view.module')
+      .then(m => m.CurriculumViewModule),
     data: { icon: 'dashboard', text: 'Calender View'}
   },
   {

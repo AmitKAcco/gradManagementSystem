@@ -3,10 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { CalendarViewComponent } from './calendar-view/calendar-view.component';
 import { CurriculumViewComponent } from './curriculum-view/curriculum-view.component';
 import { GraduateDetailsComponent } from './graduate-details/graduate-details.component';
+import { SharedDashBoardComponent } from './shared-dash-board/shared-dash-board.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'path',
     component : CalendarViewComponent
   },
   {
@@ -17,6 +18,11 @@ const routes: Routes = [
     path: 'graduateDetails',
     component : GraduateDetailsComponent
   },
+  {
+    path : '',
+    component : SharedDashBoardComponent
+  }
+ 
 ];
 
 @NgModule({

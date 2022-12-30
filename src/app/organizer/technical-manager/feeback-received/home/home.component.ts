@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FeedbackService } from 'src/app/graduate/feedback/feedback.service';
 
 @Component({
   selector: 'app-home',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-
+   
 }
