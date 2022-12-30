@@ -28,7 +28,9 @@ export class ReuseableTableComponent implements OnInit {
   ngOnInit() {
     // console.log( this.rowData);
     this.dataSource = this.rowData;
-    console.log( this.dataSource );
+    console.log("Got it");
+
+    console.log( this.rowData );
     
 
     this.columns = this.colData;
