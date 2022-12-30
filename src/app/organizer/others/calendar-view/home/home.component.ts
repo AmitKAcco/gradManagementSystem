@@ -15,6 +15,8 @@ import {Observable, of} from 'rxjs';
   styleUrls: ['./home.component.scss']
 })
 
+
+
 export class HomeComponent implements AfterViewInit{
   ngAfterViewInit(): void {
     throw new Error('Method not implemented.');
@@ -44,20 +46,28 @@ export class HomeComponent implements AfterViewInit{
   ];
 
   displayedColumns = this.columns.map(c => c.columnDef);
+  
+//  ELEMENT_DATA: any[] = [
+//   {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
+//   {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
+//   {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'}]
   dataSource = new ExampleDataSource();
  
-
 }
 
 // const ELEMENT_DATA: PeriodicElement[] = [
 //   {date: 1, day: 'Hydrogen', session: 'H', topic: 'Java',objectives:'fvf',trainer1:'prina',trainer2:'gudhka',training_material:'hu',exercise_material:'dddv'},
 //     {date: 2, day: 'Helium', session: 'He', topic: 'angular',objectives:'fv',trainer1:'prina',trainer2:'gudhka',training_material:'hb',exercise_material:'gv'}
 //   ];
-
+// const aa = new HomeComponent();
+// console.log("llllll",aa.columns);
+declare var age: number
 const ELEMENT_DATA: any[] = [
   {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
   {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
   {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'}]
+  
+const arr : any[] = [];
 
   export class ExampleDataSource extends DataSource<any> {
 
