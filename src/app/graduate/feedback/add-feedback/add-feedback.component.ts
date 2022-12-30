@@ -21,8 +21,8 @@ export class AddFeedbackComponent {
   createTask(){
     console.log('i have been clicked');
   }
-  name : string = "other";
-  note : string = "the other this"; 
+  name : string ;
+  note : string ;
   id : number = 1;
   public createFeedback(): void {
       if( this.graduateFeedBack.controls.sessionName.value !== null
