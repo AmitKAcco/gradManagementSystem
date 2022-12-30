@@ -76,17 +76,17 @@ export class HomeComponent implements OnInit{
 //   ];
 // const aa = new HomeComponent();
 // console.log("llllll",aa.columns);
-declare var age: number
-const ELEMENT_DATA: any[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'}]
+// declare var age: number
+// const ELEMENT_DATA: any[] = [
+//   {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
+//   {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
+//   {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'}]
   
-  export class ExampleDataSource extends DataSource<any> {
+  // export class ExampleDataSource extends DataSource<any> {
 
-    connect(): Observable<Element[]> {
-      return of(ELEMENT_DATA);  
-    }
+  //   connect(): Observable<Element[]> {
+  //     return of(ELEMENT_DATA);  
+  //   }
   
-    disconnect() {}
-  }
+  //   disconnect() {}
+  // }

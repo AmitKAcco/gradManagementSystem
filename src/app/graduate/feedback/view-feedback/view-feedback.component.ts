@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Task } from '../shared/models/task.model';
+
+
 import { FeedbackService } from '../feedback.service';
 
 @Component({
@@ -7,8 +9,7 @@ import { FeedbackService } from '../feedback.service';
   templateUrl: './view-feedback.component.html',
   styleUrls: ['./view-feedback.component.scss']
 })
-export class ViewFeedbackComponent implements OnInit {
-
+export class ViewFeedbackComponent {
   tasks: Task[] = [];
   constructor(private feedback: FeedbackService) {
 
@@ -16,5 +17,4 @@ export class ViewFeedbackComponent implements OnInit {
   ngOnInit(): void {
     this.feedback.positonBehaviourA.subscribe(d => this.tasks.push(d));
   }
-
 }

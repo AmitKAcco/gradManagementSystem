@@ -12,9 +12,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { LayoutComponent } from './layout/layout.component';
 import { SideNavComponent } from './layout/side-nav/side-nav.component';
 import { TopNavComponent } from './layout/top-nav/top-nav.component';
-import { AddFeedbackComponent } from './feedback/add-feedback/add-feedback.component';
-import { ViewFeedbackComponent } from './feedback/view-feedback/view-feedback.component';
-import { HomeComponent } from './feedback/homefeedback/home.component';
+
+
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 
@@ -23,9 +22,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     LayoutComponent,
     SideNavComponent,
     TopNavComponent,
-    AddFeedbackComponent,
-    ViewFeedbackComponent,
-    HomeComponent
+   
 
   ],
   imports: [
@@ -42,7 +39,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     FormsModule,
   ],
   exports: [
-    ViewFeedbackComponent
+    
   ]
 })
 export class GraduateModule { }
