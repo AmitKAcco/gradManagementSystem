@@ -18,6 +18,10 @@ import { ViewBuddyComponent } from './view-buddy/view-buddy.component';
     CommonModule,
     BuddyRoutingModule,
     ReactiveFormsModule
+  ],
+  exports : [
+    AddBuddyComponent,
+    ViewBuddyComponent
   ]
 })
 export class BuddyModule { }

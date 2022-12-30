@@ -6,7 +6,7 @@ import { AddBuddyComponent } from './add-buddy/add-buddy.component';
 const routes: Routes = [
   {
     path : '',
-    component : AddBuddyComponent
+    component : HomeComponent
   }
 ];
 
