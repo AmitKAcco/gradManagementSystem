@@ -13,7 +13,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table'
 import { DataSource } from '@angular/cdk/collections';
 import { MaterialModule } from './material/material.module';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -34,7 +34,7 @@ import { MaterialModule } from './material/material.module';
     BrowserAnimationsModule,
     AppRoutingModule,
     MatSidenavModule,
-   
+    HttpClientModule
   ],
   providers: [
     {
