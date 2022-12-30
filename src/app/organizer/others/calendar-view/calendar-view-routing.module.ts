@@ -5,13 +5,13 @@ import { TestComponent } from './test/test.component';
 import { CalendarViewComponent } from 'src/app/shared/calendar-view/calendar-view.component';
 const routes: Routes = [
   {
-    path: '',
-    component: HomeComponent,
+    path:'',
+    component : TestComponent
   },
-  {
-    path: 'test',
-    component: TestComponent,
-  }
+  // {
+  //   path: 'test',
+  //   component: TestComponent,
+  // }
 ];
 
 @NgModule({

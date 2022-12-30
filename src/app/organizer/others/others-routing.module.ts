@@ -6,7 +6,10 @@ import { childRoutes } from './childroute.module';
 const routes: Routes = [
   {
     path : '',
-    component : LayoutComponent
+    component : LayoutComponent,
+    children : [
+      ...childRoutes
+    ]
   }
 ];
 
