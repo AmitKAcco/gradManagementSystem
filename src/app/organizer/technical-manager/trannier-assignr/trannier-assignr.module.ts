@@ -5,7 +5,8 @@ import { TrannierAssignrRoutingModule } from './trannier-assignr-routing.module'
 import { HomeComponent } from './home/home.component';
 import { AddComponent } from './add/add.component';
 import { ViewComponent } from './view/view.component';
-
+import { NgbModule} from "@ng-bootstrap/ng-bootstrap";
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,9 @@ import { ViewComponent } from './view/view.component';
   ],
   imports: [
     CommonModule,
-    TrannierAssignrRoutingModule
+    TrannierAssignrRoutingModule,
+    ReactiveFormsModule,
+    NgbModule
   ]
 })
 export class TrannierAssignrModule { }
