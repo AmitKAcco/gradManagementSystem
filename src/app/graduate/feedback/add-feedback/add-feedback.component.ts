@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import {FormControl} from '@angular/forms';
 import { FormGroup } from '@angular/forms';
 import { FeedbackService } from '../feedback.service';
+import { GlobalService } from 'src/app/global.service';
+import { Task } from '../shared/models/task.model';
 
 @Component({
   selector: 'app-add-feedback',
@@ -30,6 +32,7 @@ export class AddFeedbackComponent {
         this.name = this.graduateFeedBack.controls.sessionName.value;
         this.note = this.graduateFeedBack.controls.note.value;
         this.feedback.sendTask(this.name, this.note);
+     
       }
   }
   

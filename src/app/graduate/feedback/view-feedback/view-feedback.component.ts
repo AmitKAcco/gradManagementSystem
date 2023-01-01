@@ -3,6 +3,7 @@ import { Task } from '../shared/models/task.model';
 
 
 import { FeedbackService } from '../feedback.service';
+import { GlobalService } from 'src/app/global.service';
 
 @Component({
   selector: 'app-view-feedback',
@@ -11,7 +12,7 @@ import { FeedbackService } from '../feedback.service';
 })
 export class ViewFeedbackComponent {
   tasks: Task[] = [];
-  constructor(private feedback: FeedbackService) {}
+  constructor(private feedback: FeedbackService, private f : GlobalService) {}
 
   dataSource:any;
 
@@ -19,8 +20,12 @@ export class ViewFeedbackComponent {
     this.feedback.positonBehaviourA.subscribe(data => {
       this.tasks.push(data);
       this.dataSource = [data];
+      // console.log(this.tasks);
+      this.f.sendTask(data.title, data.note);
     });
   }
+
+
 
   columns = [
    
