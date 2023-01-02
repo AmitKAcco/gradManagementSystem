@@ -18,12 +18,12 @@ export class HomeComponent {
     this.navLinks = [
       {
         label: 'Add Evalution',
-        link: './add',
+        link: './addEvalution',
         index: 0
       }, 
       {
         label: 'View Evalution',
-        link: './view',
+        link: './viewEvalution',
         index: 1
       }
     ];

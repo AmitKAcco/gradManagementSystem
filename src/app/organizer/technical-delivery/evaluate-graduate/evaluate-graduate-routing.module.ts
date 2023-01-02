@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AddEvaluationComponent } from './add-evaluation/add-evaluation.component';
+import { ViewEvaluationComponent } from './view-evaluation/view-evaluation.component';
 
 const routes: Routes = [
   {
@@ -9,13 +10,13 @@ const routes: Routes = [
     component : HomeComponent,
     children: [
       {
-        path: 'add',
+        path: 'addEvalution',
         component: AddEvaluationComponent
       },
-      // {
-      //   path: 'view',
-      //   component: 
-      // }
+      {
+        path: 'viewEvalution',
+        component: ViewEvaluationComponent
+      }
     ]
   }
 ];
