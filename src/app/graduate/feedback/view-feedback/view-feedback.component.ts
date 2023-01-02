@@ -17,17 +17,6 @@ export class ViewFeedbackComponent {
   dataSource:any;
 
   ngOnInit(): void {
-    this.feedback.Trigger.subscribe(data =>{
-      this.feedback.getFeedback()
-      .subscribe(data => {
-        this.dataSource = data;
-        this.global.trigger();
-        setTimeout(() => {
-          this.global.trigger();
-        }, 100);
-      });
-        
-    })
     this.feedback.getFeedback()
     .subscribe(data => {
       this.dataSource = data;

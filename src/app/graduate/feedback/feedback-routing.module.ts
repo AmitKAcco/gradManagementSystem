@@ -1,12 +1,24 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { AddFeedbackComponent } from './add-feedback/add-feedback.component';
+import { ViewFeedbackComponent } from './view-feedback/view-feedback.component';
 
 const routes: Routes = [
-   {
-    path : '',
-    component: HomeComponent
-   }
+  {
+    path: '',
+    component: HomeComponent,
+    children: [
+      {
+        path : 'addFeedback',
+        component : AddFeedbackComponent
+      },
+      {
+        path : 'viewFeedback',
+        component : ViewFeedbackComponent
+      }
+    ]
+  }
 ];
 
 @NgModule({

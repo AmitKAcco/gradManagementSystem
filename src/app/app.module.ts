@@ -15,11 +15,13 @@ import { DataSource } from '@angular/cdk/collections';
 import { MaterialModule } from './material/material.module';
 import { HttpClientModule } from '@angular/common/http';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     OrganizerComponent,
     HomeComponent,
+  
     
  
   ],
