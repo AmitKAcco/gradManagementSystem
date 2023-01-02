@@ -5,7 +5,7 @@ import { GraduateDetailsRoutingModule } from './graduate-details-routing.module'
 import { HomeComponent } from './home/home.component';
 import { AddGrauateComponent } from './add-grauate/add-grauate.component';
 import { ViewGraduateComponent } from './view-graduate/view-graduate.component';
-
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,8 @@ import { ViewGraduateComponent } from './view-graduate/view-graduate.component';
   ],
   imports: [
     CommonModule,
-    GraduateDetailsRoutingModule
+    GraduateDetailsRoutingModule,
+    MatTabsModule
   ]
 })
 export class GraduateDetailsModule { }

@@ -10,6 +10,11 @@ const routes: Routes = [
     component: HomeComponent,
     children: [
       {
+        path: '',
+        redirectTo: 'addFeedback',
+        pathMatch : 'full'
+      },
+      {
         path : 'addFeedback',
         component : AddFeedbackComponent
       },
