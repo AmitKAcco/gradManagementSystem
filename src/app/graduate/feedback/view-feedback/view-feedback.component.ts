@@ -12,27 +12,31 @@ import { GlobalService } from 'src/app/global.service';
 })
 export class ViewFeedbackComponent {
   tasks: Task[] = [];
-  constructor(private feedback: FeedbackService, private f : GlobalService) {}
+  constructor(private feedback: FeedbackService, private global : GlobalService) {}
 
   dataSource:any;
 
   ngOnInit(): void {
-    this.feedback.positonBehaviourA.subscribe(data => {
-      this.tasks.push(data);
-      this.dataSource = [data];
-      // console.log(this.tasks);
-      this.f.sendTask(data.title, data.note);
+    this.feedback.Trigger.subscribe(data =>{
+      this.feedback.getFeedback()
+      .subscribe(data => {
+        this.dataSource = data;
+        this.global.trigger();
+        setTimeout(() => {
+          this.global.trigger();
+        }, 100);
+      });
+        
+    })
+    this.feedback.getFeedback()
+    .subscribe(data => {
+      this.dataSource = data;
     });
   }
-
-
-
   columns = [
-   
-    { columnDef: 'id', header: 'Id',    cell: (element: any) => `${element.id}` },
-    { columnDef: 'title',     header: 'Title',   cell: (element: any) => `${element.title}`     },
+    { columnDef: 'id', header: 'Id',    cell: (element: any) => `${element.feedbackId}` },
+    { columnDef: 'title',     header: 'Title',   cell: (element: any) => `${element.feedbackNote}`},
     { columnDef: 'note',   header: 'Note', cell: (element: any) => `${element.note}`   },
- 
   ];
 
 }

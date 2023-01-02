@@ -36,53 +36,11 @@ export class AddMockInterviewComponent {
       }),
       alternateEmails: this.fb.array([])
     });
-
-  //   this.registrationForm.get('subscribe')!.valueChanges
-  //     .subscribe(checkedValue => {
-  //       const email = this.registrationForm.get('email');
-  //       if (checkedValue) {
-  //         email!.setValidators(Validators.required);
-  //       } else {
-  //         email!.clearValidators();
-  //       }
-  //       email!.updateValueAndValidity();
-  //     });
   }
 
-  get userName() {
-    return this.registrationForm.get('userName');
-  }
 
-  get email() {
-    return this.registrationForm.get('email');
-  }
-
-  get alternateEmails() {
-    return this.registrationForm.get('alternateEmails') as FormArray;
-  }
-
-  addAlternateEmail() {
-    this.alternateEmails.push(this.fb.control(''));
-  }
-
-  loadAPIData() {
-    // this.registrationForm.setValue({
-    //   userName: 'Bruce',
-    //   password: 'test',
-    //   confirmPassword: 'test',
-    //   address: {
-    //     city: 'City',
-    //     state: 'State',
-    //     postalCode: '123456'
-    //   }
-    // });
-
-    this.registrationForm.patchValue({
-      userName: 'Bruce',
-      password: 'test',
-      confirmPassword: 'test'
-    });
-  }
+ 
+ 
   onSubmit(){
     console.log(this.registrationForm.value);
   }

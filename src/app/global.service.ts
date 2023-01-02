@@ -7,11 +7,10 @@ import { Task } from './graduate/feedback/shared/models/task.model';
 export class GlobalService {
 
 
-  public positonBehaviourA = new Subject<Task>();
+  public Trigger = new Subject<number>();
   constructor() { }
   private taskId: number = 0;
-  sendTask(sessionName: string, note: string) {
-    this.taskId = this.taskId + 1;
-    this.positonBehaviourA.next(new Task(sessionName, note, this.taskId));
+  trigger() {
+    this.Trigger.next(1);
   }
 }

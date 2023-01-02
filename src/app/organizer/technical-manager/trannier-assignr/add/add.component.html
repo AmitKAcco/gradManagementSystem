@@ -14,7 +14,7 @@
         <label>Trannier Name </label>
         <select  formControlName="trannierName" class="form-control">
           <option value="">Select Topic </option>
-          <option *ngFor="let topic of topicNameList" [ngValue]="topic">{{topic}}</option>
+          <option *ngFor="let trannier of trannierNameList" [ngValue]="trannier">{{trannier}}</option>
         </select>
       </div>
       <div class="form-group"> <!-- Date input -->
@@ -23,12 +23,7 @@
         <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button">Set Date</button>
     </div>
       
-
-
-        
-  
-    
-      <div class="form-group">
+    <div class="form-group">
         <label for="sessionName" class="formbold-form-label">Session Name</label>
         <input type="text" formControlName="tranninngSession" id="tranninngSession" class="formbold-form-input" required>
     </div>

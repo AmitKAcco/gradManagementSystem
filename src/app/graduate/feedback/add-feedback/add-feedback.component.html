@@ -1,5 +1,5 @@
 <div class="addFeedback">
-    <form [formGroup]="graduateFeedBack" (submit)="createFeedback()">
+    <form [formGroup]="graduateFeedBack" (ngSubmit)="createFeedback()">
         <div class="form-group">
             <label for="sessionName" class="formbold-form-label">Session Name</label>
             <input type="text" formControlName="sessionName" id="sessionName" class="formbold-form-input" required>
@@ -8,7 +8,7 @@
         <div>
             <label for="FeedBack" class="formbold-form-label"> Message </label>
             <textarea rows="6" name="message" id="FeedBack" placeholder="Type your message" class="formbold-form-input"
-                formControlName="note"></textarea>
+                formControlName="feedbackNote"></textarea>
         </div>
 
         <button type="submit" class="formbold-btn">Submit</button>

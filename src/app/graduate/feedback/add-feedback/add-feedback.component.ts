@@ -14,10 +14,10 @@ export class AddFeedbackComponent {
   
   public graduateFeedBack = new FormGroup({
     sessionName : new FormControl(''),
-    note : new FormControl(''),
+    feedbackNote : new FormControl(''),
     idfrom : new FormControl('')
   });
-  constructor(private feedback : FeedbackService){
+  constructor(private feedback : FeedbackService, private global : GlobalService){
 
   }
   createTask(){
@@ -27,13 +27,18 @@ export class AddFeedbackComponent {
   note : string ;
   id : number = 1;
   public createFeedback(): void {
-      if( this.graduateFeedBack.controls.sessionName.value !== null
-        &&  this.graduateFeedBack.controls.note.value !== null ){
-        this.name = this.graduateFeedBack.controls.sessionName.value;
-        this.note = this.graduateFeedBack.controls.note.value;
-        this.feedback.sendTask(this.name, this.note);
-     
-      }
+
+    // this.global.trigger();
+    console.log(this.graduateFeedBack.value);
+    this.feedback.register(this.graduateFeedBack.value)
+    .subscribe(
+      response => console.log('Success!', response),
+      error => console.error('Error!', error)
+    );
+    setTimeout(() => {
+      this.feedback.trigger();
+    }, 100);
+    
   }
   
 }

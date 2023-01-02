@@ -10,7 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { AddFeedbackComponent } from './add-feedback/add-feedback.component';
 import { ViewFeedbackComponent } from './view-feedback/view-feedback.component';
 import { WidgetsModule } from 'src/app/shared/widgets/widgets.module';
-
+import { MatTableModule } from '@angular/material/table';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -22,7 +22,8 @@ import { WidgetsModule } from 'src/app/shared/widgets/widgets.module';
     FeedbackRoutingModule,
     WidgetsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTableModule
   ],
   exports : [
     ViewFeedbackComponent
