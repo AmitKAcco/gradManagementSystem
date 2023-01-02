@@ -7,28 +7,21 @@ import { FormBuilder , FormGroup} from '@angular/forms';
 })
 export class AddComponent {
   addProject : FormGroup;
+  batches = [1,2,3];
+  selectedBatch = 1;
   constructor(private fb: FormBuilder) { }
-  // batches = [{name: 1}, {name: 2}, {name: 3}];
-  // selectedBatches = this.batches[1];
-  selectedBatch:any;
+
   ngOnInit() {
     this.addProject = this.fb.group({
           projectName:[''],
           batch:['']
       })
-      console.log("here")
   }
-  // onChangeObj(newObj:any) {
-  //   console.log(newObj);
-  //   this.selectedBatch = newObj;
-  // }
-  batches = 'one two three'.split(' ');
-  selectedDevice = 'two';
-  onChangeObj(newValue: any) {
+
+  onChangeValue(newValue: any) {
     console.log(newValue);
-    this.selectedDevice = newValue;
-  
-}
+    this.selectedBatch = newValue;
+  }
   
   onSubmit(){
     console.log(this.addProject.value);

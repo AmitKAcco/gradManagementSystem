@@ -10,6 +10,11 @@ const routes: Routes = [
     component : HomeComponent,
     children: [
       {
+        path: '',
+        redirectTo: 'addEvalution',
+        pathMatch : 'full'
+      },
+      {
         path: 'addEvalution',
         component: AddEvaluationComponent
       },
