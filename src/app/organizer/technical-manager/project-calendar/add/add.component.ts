@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
-
+import { CalendarService } from '../calendar.service';
 @Component({
   selector: 'app-add',
   templateUrl: './add.component.html',
@@ -10,13 +10,13 @@ import { FormBuilder } from '@angular/forms';
 export class AddComponent {
 
   projectCalendar : FormGroup;
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder , private calenderService : CalendarService) { }
   batchIdList = [];
   ngOnInit() {
     this.projectCalendar = this.fb.group({
        teamNumber : [''],
        projectName : [''],
-       evaluationDate : Date,
+       date : Date,
        projectProgress : [''],
        description : [''],
        selectBatchId : ['']
@@ -25,6 +25,12 @@ export class AddComponent {
  
   onSubmit(){
     console.log(this.projectCalendar.value);
+   
+    this.calenderService.postCalender(this.projectCalendar.value)
+    .subscribe(
+      response => console.log('Success!', response),
+      error => console.error('Error!', error)
+    );
   }
 
 }
