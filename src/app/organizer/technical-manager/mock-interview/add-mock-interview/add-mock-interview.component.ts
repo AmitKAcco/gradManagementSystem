@@ -23,19 +23,20 @@ export class AddMockInterviewComponent {
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
-    this.registrationForm = this.fb.group({
-      userName: ['', [Validators.required, Validators.minLength(3)]],
-      password: [''],
-      confirmPassword: [''],
-      email: [''],
-      subscribe: [false],
-      address: this.fb.group({
-        city: [''],
-        state: [''],
-        postalCode: ['']
-      }),
-      alternateEmails: this.fb.array([])
-    });
+    // this.mockInterviewAssign = this.fb.group({
+    //  //userName: ['', [Validators.required, Validators.minLength(3)]],
+    //  employeeId:[''], 
+    //  password: [''],
+    //   confirmPassword: [''],
+    //   email: [''],
+    //   subscribe: [false],
+    //   address: this.fb.group({
+    //     city: [''],
+    //     state: [''],
+    //     postalCode: ['']
+    //   }),
+    //   alternateEmails: this.fb.array([])
+    // });
   }
 
 

@@ -72,3 +72,54 @@
   <!-- {{registrationForm.status | json}}
   {{registrationForm.value | json}}
 </div> --> -->
+
+<!-- <div class="container-fluid addMockInterview">
+  <h2>Registration Form</h2>
+
+   <form [formGroup]="mockInterviewAssign" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label>Employee ID </label>
+      <select  formControlName="employeeId" class="form-control">
+        <option value="">Employee ID</option>
+        <option *ngFor="let emp of emp" [ngValue]="topic">{{topic}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="interviewerName" class="formbold-form-label">Interviewer Name</label>
+      <input type="text" formControlName="interviewerName" id="interviewerName"class="formbold-form-input" required>
+  </div>
+  <div class="form-group"> 
+    <label class="control-label" for="date">Date</label>
+    <input formControlName="interviewDate" class="form-control" id="date" name="date" placeholder="YYY/MM/DD" ngbDatepicker #d="ngbDatepicker"/>
+    <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button">Set Date</button>
+</div>
+    <div class="form-group">
+      <label>Trannier Name </label>
+      <select  formControlName="trannierName" class="form-control">
+        <option value="">Select Topic </option>
+        <option *ngFor="let trannier of trannierNameList" [ngValue]="trannier">{{trannier}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label class="control-label" for="date">Date</label>
+      <input formControlName="trannningDate" class="form-control" id="date" name="date" placeholder="YYY/MM/DD" ngbDatepicker #d="ngbDatepicker"/>
+      <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button">Set Date</button>
+  </div>
+    
+  <div class="form-group">
+      <label for="sessionName" class="formbold-form-label">Session Name</label>
+      <input type="text" formControlName="tranninngSession" id="tranninngSession" class="formbold-form-input" required>
+  </div>
+
+  <div>
+      <label for="tranninngSession" class="formbold-form-label"> Tranning Objective </label>
+      <textarea rows="4" name="message" id="tranninngSession" placeholder="Type Objective" class="formbold-form-input"
+          formControlName="tranningObjective"></textarea>
+  </div>
+
+
+    <button class="btn btn-primary" type="submit">Register</button> 
+
+  </form>
+ -->
