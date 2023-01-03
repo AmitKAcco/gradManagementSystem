@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-
+  batchId = [0, 1, 2];
+  currVal = 0;
+  changed(){
+    this.currVal 
+  }
 }
