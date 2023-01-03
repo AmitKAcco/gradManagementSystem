@@ -20,7 +20,9 @@ export class AddComponent {
           trannningDate: Date,
           tranninngSession:[''],
           tranningObjective:['']
+          
       })
+      console.log("hello")
   }
   onSubmit(){
     console.log(this.trannierAssignment.value);
