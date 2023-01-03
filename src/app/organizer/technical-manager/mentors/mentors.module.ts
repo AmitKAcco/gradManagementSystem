@@ -6,6 +6,7 @@ import { AddMentorsComponent } from './add-mentors/add-mentors.component';
 import { ViewMentorsComponent } from './view-mentors/view-mentors.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
+import { MatTabsModule } from '@angular/material/tabs';
 
 
 @NgModule({
@@ -18,11 +19,14 @@ import { HomeComponent } from './home/home.component';
     CommonModule,
     MentorsRoutingModule,
     ReactiveFormsModule,
-    FormsModule
-  ],
-  exports: [
-    AddMentorsComponent,
-    ViewMentorsComponent
+    FormsModule,
+    MatTabsModule
   ]
+
+  // ,
+  // exports: [
+  //   AddMentorsComponent,
+  //   ViewMentorsComponent
+  // ]
 })
 export class MentorsModule { }
