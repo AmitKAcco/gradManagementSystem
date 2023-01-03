@@ -1,1 +1,17 @@
-<p>add-curriculum works!</p>
+<div class="container-fluid ">
+    <form [formGroup]="curriculumDesign" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label>Batch Name </label>
+            <select formControlName="batchId" class="form-control">
+                <option value="">Batch Id</option>
+                <option *ngFor="let batch of batchIdList" [ngValue]="batch">{{batch}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="topicName" class="formbold-form-label">Session Name</label>
+            <input type="text" formControlName="topicName"
+                id="topicName" class="formbold-form-input" required>
+        </div>
+        <button class="btn btn-primary" type="submit">Register</button>
+    </form>
+</div>

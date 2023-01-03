@@ -1,1 +1,7 @@
-<p>home works grad from Approval lead calender approval</p>
+<div class="form-group">
+    <label>Batch Name </label>
+    <select #batchId class="form-control">
+        <option value="">Trannier Name</option>
+        <option *ngFor="let batch of batchId">{{batch}}</option>
+    </select>
+</div>
