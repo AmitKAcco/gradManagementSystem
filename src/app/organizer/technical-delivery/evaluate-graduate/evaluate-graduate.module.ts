@@ -8,7 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { ViewEvaluationComponent } from './view-evaluation/view-evaluation.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { WidgetsModule } from 'src/app/shared/widgets/widgets.module';
 @NgModule({
   declarations: [
     AddEvaluationComponent,
@@ -21,7 +21,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatTabsModule,
     RouterModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    WidgetsModule
 
   ]
 })
