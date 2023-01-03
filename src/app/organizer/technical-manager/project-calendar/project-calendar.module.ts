@@ -7,6 +7,7 @@ import { AddComponent } from './add/add.component';
 import { ViewComponent } from './view/view.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
+import { WidgetsModule } from 'src/app/shared/widgets/widgets.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ReactiveFormsModule,FormsModule } from '@angular/forms';
     ProjectCalendarRoutingModule,
     MatTabsModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    WidgetsModule
   ]
 })
 export class ProjectCalendarModule { }
