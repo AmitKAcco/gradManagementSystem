@@ -2,13 +2,17 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { CurriculumViewRoutingModule } from './curriculum-view-routing.module';
-
+import { CurriculumDesignModule } from '../../technical-delivery/curriculum-design/curriculum-design.module';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    HomeComponent
+  ],
   imports: [
     CommonModule,
-    CurriculumViewRoutingModule
+    CurriculumViewRoutingModule,
+    CurriculumDesignModule
   ]
 })
 export class CurriculumViewModule { }

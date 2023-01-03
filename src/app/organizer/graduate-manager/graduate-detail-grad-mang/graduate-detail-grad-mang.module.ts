@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { GraduateDetailsRoutingModule } from './graduate-details-routing.module';
+import { GraduateDetailGradMangRoutingModule } from './graduate-detail-grad-mang-routing.module';
 import { HomeComponent } from './home/home.component';
 
 
@@ -11,7 +11,7 @@ import { HomeComponent } from './home/home.component';
   ],
   imports: [
     CommonModule,
-    GraduateDetailsRoutingModule
+    GraduateDetailGradMangRoutingModule
   ]
 })
-export class GraduateDetailsModule { }
+export class GraduateDetailGradMangModule { }
