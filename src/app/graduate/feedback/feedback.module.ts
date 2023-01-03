@@ -1,15 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormGroup } from '@angular/forms';
-
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-
-
 import { FeedbackRoutingModule } from './feedback-routing.module';
 import { HomeComponent } from './home/home.component';
 import { AddFeedbackComponent } from './add-feedback/add-feedback.component';
 import { ViewFeedbackComponent } from './view-feedback/view-feedback.component';
 import { WidgetsModule } from 'src/app/shared/widgets/widgets.module';
+import { MatTabsModule } from '@angular/material/tabs';
+import {  RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -22,7 +20,9 @@ import { WidgetsModule } from 'src/app/shared/widgets/widgets.module';
     FeedbackRoutingModule,
     WidgetsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTabsModule,
+    RouterModule
   ],
   exports : [
     ViewFeedbackComponent

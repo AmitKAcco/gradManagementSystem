@@ -50,8 +50,8 @@ export class TestComponent {
     { columnDef: 'email',     header: 'email',   cell: (element: any) => `${element.email}`     },
     { columnDef: 'first_name',   header: 'first_name', cell: (element: any) => `${element.first_name}`   },
    
-    { columnDef: 'last_name',   header: 'last_name', cell: (element: any) => `${element.last_name}`   },
-    { columnDef: 'avatar',   header: 'avatar', cell: (element: any) => `${element.avatar}`   },
+    { columnDef: 'last_nam',   header: 'last_name', cell: (element: any) => `${element.last_nam}`   },
+    // { columnDef: 'avatar',   header: 'avatar', cell: (element: any) => `${element.avatar}`   },
  
   ];
 

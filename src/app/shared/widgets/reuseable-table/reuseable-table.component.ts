@@ -1,6 +1,8 @@
 import { DataSource } from '@angular/cdk/collections';
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { GlobalService } from 'src/app/global.service';
+import { Task } from 'src/app/graduate/feedback/shared/models/task.model';
 // import {MatPaginator, MatTableDataSource} from '@angular/material';
 
 @Component({
@@ -19,42 +21,15 @@ export class ReuseableTableComponent implements OnInit {
   displayedColumns: any;
   dataSource: any;
 
-  constructor(){
-    // this.rows = this.rowData;
-    // this.columns = this.colData;
-    
+  constructor(private global : GlobalService){
+  
   }
-
+  tasks : Task[] = [];
   ngOnInit() {
-    // console.log( this.rowData);
     this.dataSource = this.rowData;
-    console.log("Got it");
-
-    console.log( this.rowData );
-    
-
     this.columns = this.colData;
+    console.log(this.dataSource);
     this.displayedColumns = this.columns.map((c: { columnDef: any; }) => c.columnDef);
   }
 
-  
-
- 
-  
-  
-
 }
-
-// export class ExampleDataSource extends DataSource<any> {
-
-//   connect(): Observable<Element[]> {
-//     const aa = new ReuseableTableComponent();
-//     console.log("ggggggggg");
-   
-//       console.log(aa.rows);
-   
-//     return of(aa.rows);  
-//   }
-
-//   disconnect() {}
-// }

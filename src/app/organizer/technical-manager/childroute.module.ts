@@ -43,14 +43,35 @@ export const childRoutes = [
     loadChildren: () =>
       import('./technical-clalender/technical-clalender.module')
       .then(m => m.TechnicalClalenderModule),
-    data: { icon: 'calendar_today', text: 'technicalCalender' }
+    data: { icon: 'calendar_today', text: 'Technical Calender' }
   },
   {
-    path : 'projectDetails',
+    path : 'projectCalendar',
     loadChildren: () =>
-    import('./project-details/project-details.module')
-    .then(m => m.ProjectDetailsModule),
-     data: { icon: 'details', text: 'Project Details' }
+    import('./project-calendar/project-calendar.module')
+    .then(m => m.ProjectCalendarModule),
+     data: { icon: 'details', text: 'Project Calender' }
+  },
+  {
+    path : 'trannierAssign',
+    loadChildren: () =>
+    import('./trannier-assignr/trannier-assignr.module')
+    .then(m => m.TrannierAssignrModule),
+     data: { icon: 'details', text: 'Trannier Assign' }
+  },
+  {
+    path : 'projectAssignment',
+    loadChildren: () =>
+    import('./project-assignment/project-assignment.module')
+    .then(m => m.ProjectAssignmentModule),
+     data: { icon: 'details', text: 'Project Assignment' }
+  },
+  {
+    path : 'Add project',
+    loadChildren: () =>
+    import('./add-project/add-project.module')
+    .then(m => m.AddProjectModule),
+     data: { icon: 'details', text: 'Add Project' }
   }
 
 ]

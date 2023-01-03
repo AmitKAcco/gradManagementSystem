@@ -1,73 +1,47 @@
-<h1>hello world</h1>
+
 <div class="container-fluid addFeedback">
-  <h2>Registration Form</h2>
+  <h2>Mentors Form</h2>
 
-  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="MentorForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label>Username</label>
-      <input type="text" [class.is-invalid]="userName!.invalid && userName!.touched" formControlName="userName" class="form-control">
-      <!-- <small class="text-danger" [class.d-none]="userName.valid || userName.untouched">Username is required</small> -->
-      <div *ngIf="userName!.invalid && userName!.touched">
-        <small class="text-danger" *ngIf="userName!.errors?.['required']">Username is required</small>
-        <small class="text-danger" *ngIf="userName!.errors?.['minlength']">Username must be at least 3 characters</small>
-      
+      <label>Batch Id</label>
+      <select  formControlName="selectBatchId" class = "form-control">
+        <option value="">Batch Id</option>
+        <option *ngFor="let batchId of batchIdList" [ngValue]="batchId">{{batchId}}</option>
+      </select>
       </div>
-    </div>
-
-    <!-- <div class="form-group"> -->
-      <!-- <label>Password</label>
-      <input type="password" formControlName="password" class="form-control">
+      <div class="form-group">
+        <label>Emp Id Grad</label>
+        <select  formControlName="selectEmpIdGrad" class = "form-control">
+          <option value="">Emp Id Grad</option>
+          <option *ngFor="let empIdGrad of empIdGradList" [ngValue]="empIdGrad">{{empIdGrad}}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Emp Id Mentor</label>
+        <select  formControlName="selectEmpIdMentor" class = "form-control">
+          <option value="">Emp Id Mentor</option>
+          <option *ngFor="let empIdMentor of empIdMentorList" [ngValue]="empIdMentor">{{empIdMentor}}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Client Project Name</label>
+        <input type="text" formControlName="clientProjectName" id="clientProjectName" class="formbold-form-input" required>
     </div>
 
     <div class="form-group">
-      <label>Confirm Password</label>
-      <input type="password" [class.is-invalid]="registrationForm.errors?.misMatch" formControlName="confirmPassword" class="form-control">
-      <small class="text-danger" *ngIf="registrationForm.errors?.misMatch">Passwords do not match</small>
-    </div> -->
-<!-- 
-    <div class="form-group">
-      <label>Email</label>
-      <button type="button" class="btn btn-secondary btn-sm m-2" (click)="addAlternateEmail()">Add e-mail</button>
-      <input type="text" [class.is-invalid]="email.invalid && email.touched" formControlName="email" class="form-control">
-      <small class="text-danger" [class.d-none]="email.valid || email.untouched">Email is required</small>
-      <div formArrayName="alternateEmails" *ngFor="let email of alternateEmails.controls; let i=index">
-        <input type="text" class="form-control my-1" [formControlName]="i">
-      </div>
-    </div>
+      <label>Stakeholder Name</label>
+      <input type="text" formControlName="stakeholderName" id="stakeholderName" class="formbold-form-input" required>
+  </div>
+  <div class="form-group">
+    <label>Client</label>
+    <input type="text" formControlName="client" id="client" class="formbold-form-input" required>
+</div>
 
-    <div class="form-check mb-3">
-      <input class="form-check-input" formControlName="subscribe" type="checkbox">
-      <label class="form-check-label">
-        Send me promotional offers
-      </label>
-    </div>
-
-    <div formGroupName="address">
-
-      <div class="form-group">
-        <label>City</label>
-        <input type="text" formControlName="city" class="form-control">
-      </div>
-
-      <div class="form-group">
-        <label>State</label>
-        <input type="text" formControlName="state" class="form-control">
-      </div>
-
-      <div class="form-group">
-        <label>Postal Code</label>
-        <input type="text" formControlName="postalCode" class="form-control">
-      </div>
-
-    </div>
-
-     
-    <button (click)="loadAPIData()" class="btn btn-secondary ml-2" type="button">Load API Data</button> -->
-
-
-    <button class="btn btn-primary" [disabled]="!registrationForm.valid" type="submit">Register</button> 
+    <button class="btn btn-primary" type="submit">Register</button> 
+  
   </form>
-
+</div>
   <!-- {{registrationForm.status | json}}
   {{registrationForm.value | json}}
 </div> -->

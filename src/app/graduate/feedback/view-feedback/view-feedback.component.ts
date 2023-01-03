@@ -3,6 +3,7 @@ import { Task } from '../shared/models/task.model';
 
 
 import { FeedbackService } from '../feedback.service';
+import { GlobalService } from 'src/app/global.service';
 
 @Component({
   selector: 'app-view-feedback',
@@ -11,23 +12,20 @@ import { FeedbackService } from '../feedback.service';
 })
 export class ViewFeedbackComponent {
   tasks: Task[] = [];
-  constructor(private feedback: FeedbackService) {}
+  constructor(private feedback: FeedbackService, private global : GlobalService) {}
 
   dataSource:any;
 
   ngOnInit(): void {
-    this.feedback.positonBehaviourA.subscribe(data => {
-      this.tasks.push(data);
-      this.dataSource = [data];
+    this.feedback.getFeedback()
+    .subscribe(data => {
+      this.dataSource = data;
     });
   }
-
   columns = [
-   
-    { columnDef: 'id', header: 'Id',    cell: (element: any) => `${element.id}` },
-    { columnDef: 'title',     header: 'Title',   cell: (element: any) => `${element.title}`     },
+    { columnDef: 'id', header: 'Id',    cell: (element: any) => `${element.feedbackId}` },
+    { columnDef: 'title',     header: 'Title',   cell: (element: any) => `${element.feedbackNote}`},
     { columnDef: 'note',   header: 'Note', cell: (element: any) => `${element.note}`   },
- 
   ];
 
 }
