@@ -4,11 +4,27 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddBuddyComponent } from '../buddy/add-buddy/add-buddy.component';
 import { AddMentorsComponent } from './add-mentors/add-mentors.component';
 import { HomeComponent } from './home/home.component';
+import { ViewMentorsComponent } from './view-mentors/view-mentors.component';
 
 const routes: Routes = [ 
   {
     path : '',
-    component : HomeComponent
+    component : HomeComponent,
+    children :[
+      {
+        path: '',
+        redirectTo:'add',
+        pathMatch: 'full'
+      },
+      {
+        path : 'add',
+        component : AddMentorsComponent
+      },
+      {
+        path : 'view',
+        component : ViewMentorsComponent
+      }
+    ]
   }
 ];
 
