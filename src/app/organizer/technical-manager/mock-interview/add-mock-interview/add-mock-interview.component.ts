@@ -2,6 +2,7 @@ import { Component, ChangeDetectorRef, ElementRef, ViewChild, OnInit } from '@an
 import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 // import { Timestamp } from 'rxjs-compat';
+import { InterviewService } from '../interview.service';
 
 @Component({
   selector: 'app-add-mock-interview',
@@ -11,7 +12,7 @@ import { FormBuilder } from '@angular/forms';
 export class AddMockInterviewComponent {
 
   mockInterview : FormGroup;
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder ,private interviewService : InterviewService) { }
   empIdList = [];
   batchIdList = [];
 
@@ -20,12 +21,18 @@ export class AddMockInterviewComponent {
        selectEmpId : [''],
        interviewerName : [''],
        interviewDate : Date,
-       interviewTime : [''],
+       time : [''],
        selectBatchId : ['']
     })
   }
  
   onSubmit(){
     console.log(this.mockInterview.value);
+    this.interviewService.postMockInterview(this.mockInterview.value)
+    .subscribe(
+      // response => console.log('Success!', response),
+      // error => console.error('Error!', error)
+    );
   }
-}
+  }
+
