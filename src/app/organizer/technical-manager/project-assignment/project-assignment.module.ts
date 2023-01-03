@@ -5,8 +5,9 @@ import { ProjectAssignmentRoutingModule } from './project-assignment-routing.mod
 import { HomeComponent } from './home/home.component';
 import { AddComponent } from './add/add.component';
 import { ViewComponent } from './view/view.component';
-
-
+import { RouterModule } from '@angular/router';
+import { MatTabsModule } from '@angular/material/tabs';
+import  { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -15,7 +16,10 @@ import { ViewComponent } from './view/view.component';
   ],
   imports: [
     CommonModule,
-    ProjectAssignmentRoutingModule
+    ProjectAssignmentRoutingModule,
+    RouterModule,
+    MatTabsModule,
+    ReactiveFormsModule
   ]
 })
 export class ProjectAssignmentModule { }
