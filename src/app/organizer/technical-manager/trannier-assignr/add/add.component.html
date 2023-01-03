@@ -6,14 +6,14 @@
       <div class="form-group">
         <label>Topic Name </label>
         <select  formControlName="topicName" class="form-control">
-          <option value="">Trannier Name</option>
+          <option value="">Select Topic</option>
           <option *ngFor="let topic of topicNameList" [ngValue]="topic">{{topic}}</option>
         </select>
       </div>
       <div class="form-group">
-        <label>Trannier Name </label>
+        <label>Trainer Name </label>
         <select  formControlName="trannierName" class="form-control">
-          <option value="">Select Topic </option>
+          <option value="">Trainer Name</option>
           <option *ngFor="let trannier of trannierNameList" [ngValue]="trannier">{{trannier}}</option>
         </select>
       </div>

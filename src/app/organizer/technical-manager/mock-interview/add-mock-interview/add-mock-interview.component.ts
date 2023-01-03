@@ -1,6 +1,7 @@
 import { Component, ChangeDetectorRef, ElementRef, ViewChild, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
+// import { Timestamp } from 'rxjs-compat';
 
 @Component({
   selector: 'app-add-mock-interview',
@@ -9,39 +10,22 @@ import { FormBuilder } from '@angular/forms';
 })
 export class AddMockInterviewComponent {
 
-  registrationForm: FormGroup;
-  // registrationForm = new FormGroup({
-  //   userName: new FormControl('Vishwas'),
-  //   password: new FormControl(''),
-  //   confirmPassword: new FormControl(''),
-  //   address: new FormGroup({
-  //     city: new FormControl(''),
-  //     state: new FormControl(''),
-  //     postalCode: new FormControl('')
-  //   })
-  // });
+  mockInterview : FormGroup;
   constructor(private fb: FormBuilder) { }
+  empIdList = [];
+  batchIdList = [];
 
   ngOnInit() {
-    this.registrationForm = this.fb.group({
-      userName: ['', [Validators.required, Validators.minLength(3)]],
-      password: [''],
-      confirmPassword: [''],
-      email: [''],
-      subscribe: [false],
-      address: this.fb.group({
-        city: [''],
-        state: [''],
-        postalCode: ['']
-      }),
-      alternateEmails: this.fb.array([])
-    });
+    this.mockInterview = this.fb.group({
+       selectEmpId : [''],
+       interviewerName : [''],
+       interviewDate : Date,
+       interviewTime : [''],
+       selectBatchId : ['']
+    })
   }
-
-
- 
  
   onSubmit(){
-    console.log(this.registrationForm.value);
+    console.log(this.mockInterview.value);
   }
 }

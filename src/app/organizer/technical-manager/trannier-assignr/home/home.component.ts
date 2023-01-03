@@ -9,7 +9,7 @@ class NavLink {
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  title = 'app';
+
   navLinks: any[];
   activeLinkIndex = -1;
 

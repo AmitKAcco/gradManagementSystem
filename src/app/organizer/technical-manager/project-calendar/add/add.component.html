@@ -1,1 +1,46 @@
 <p>add works!</p>
+<div class="container-fluid addProjectCalendarInterview">
+    <h2>Registration Form</h2>
+    <!-- teamNumber : [''],
+    projectName : [''],
+    evaluationDate : Date,
+    projectProgress : [''],
+    description : [''],
+    selectBatchId : ['']
+ }) -->
+    <form [formGroup]="projectCalendar" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label>Batch ID </label>
+            <select formControlName="selectBatchId" class="form-control">
+              <option value="">Batch ID</option>
+              <option *ngFor="let batchId of batchIdList" [ngValue]="batchId">{{batchId}}</option>
+            </select>
+          </div>
+        <div class="form-group">
+            <label for="teamNumber" class="formbold-form-label">Team Number</label>
+            <input type="number" formControlName="teamNumber" id="teamNumber" class="formbold-form-input" required>
+          </div>
+     
+      <div class="form-group">
+        <label for="projectName" class="formbold-form-label">Project Name</label>
+        <input type="text" formControlName="projectName" id="projectName" class="formbold-form-input" required>
+      </div>
+      <div class="form-group">
+        <label for="description" class="formbold-form-label">Type of Evaluation</label>
+        <input type="text" formControlName="description" id="description" class="formbold-form-input" required>
+      </div>
+      <div class="form-group">
+        <label class="control-label" for="date">Evaluation Date</label>
+        <input type="date" formControlName="evaluationDate" class="form-control" id="date" name="date" placeholder="MM/DD/YYYY"/>
+      </div>
+
+      <div class="form-group">
+        <label for="projectProgress" class="formbold-form-label">Project Progress</label>
+        <input type="text" formControlName="projectProgress" id="projectProgress" class="formbold-form-input" required>
+      </div>
+  
+      <button class="btn btn-primary" type="submit">Register</button>
+      
+    
+  
+    </form>
