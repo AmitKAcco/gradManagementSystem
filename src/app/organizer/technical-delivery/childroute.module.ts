@@ -13,6 +13,7 @@ export const childRoutes = [
       import('./curriculum-design/curriculum-design.module')
         .then(m => m.CurriculumDesignModule),
     data: { icon: 'dashboard', text: 'Curriculum Design' }
+  
   },
   {
     path: 'evaluateGrauate',

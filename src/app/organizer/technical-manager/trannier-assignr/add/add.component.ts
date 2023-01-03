@@ -17,7 +17,7 @@ export class AddComponent {
     this.trannierAssignment = this.fb.group({
           topicName:[''],
           trannierName:[''],
-          trannningDate:[''],
+          trannningDate: Date,
           tranninngSession:[''],
           tranningObjective:['']
       })

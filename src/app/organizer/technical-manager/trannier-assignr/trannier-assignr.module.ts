@@ -7,6 +7,8 @@ import { AddComponent } from './add/add.component';
 import { ViewComponent } from './view/view.component';
 import { NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatTabsModule } from '@angular/material/tabs';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     TrannierAssignrRoutingModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    MatTabsModule,
+    
   ]
 })
 export class TrannierAssignrModule { }

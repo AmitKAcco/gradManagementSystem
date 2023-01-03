@@ -7,13 +7,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class FeedbackService {
-  public Trigger = new Subject<number>();
+
   constructor(private _http: HttpClient) { }
-  private taskId: number = 0;
-  trigger() {
-    console.log("hello world");
-    this.Trigger.next(1);
-  }
+ 
   _url = 'http://localhost:8900/addFeedback';
   _urlOne = 'http://localhost:8900/allFeedback';
   getFeedback(): Observable<any>{

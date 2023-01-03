@@ -26,12 +26,6 @@ export class ReuseableTableComponent implements OnInit {
   }
   tasks : Task[] = [];
   ngOnInit() {
-
-
-    this.global.Trigger.subscribe(data => {
-        this.dataSource = this.rowData;
-        console.log("i am triggered");
-    });
     this.dataSource = this.rowData;
     this.columns = this.colData;
     console.log(this.dataSource);

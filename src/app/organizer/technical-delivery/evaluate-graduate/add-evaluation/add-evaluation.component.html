@@ -1,0 +1,56 @@
+<div class="container-fluid addFeedback">
+<!--   
+  selectedBatch : [''],
+  graduateSelected : [''],
+  topicSelected: [''],
+  evaluationDate: Date,
+  scoreGiven:[''],
+  feedback:[''] -->
+  <!-- batches:[]
+  graduates:[] -->
+  
+     <form [formGroup]="evaluationDesgin" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label>Batch Name </label>
+        <select  formControlName="selectedBatch" class="form-control">
+          <option value="">Select Batch Name </option>
+          <option *ngFor="let batch of batches" [ngValue]="batch">{{batch}}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Graduate Id </label>
+        <select  formControlName="graduateSelected" class="form-control">
+          <option value="">Select Graduate Id </option>
+          <option *ngFor="let graduate of graduates" [ngValue]="graduate">{{graduate}}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Topic Name </label>
+        <select  formControlName="topicSelected" class="form-control">
+          <option value="">Select Topic Name </option>
+          <option *ngFor="let topic of topics" [ngValue]="topic">{{topic}}</option>
+        </select>
+      </div>
+      
+    <div class="form-group">
+        <label for="evaluationDate" class="formbold-form-label">Session Name</label>
+        <input type="date" formControlName="evaluationDate" id="evaluationDate" class="formbold-form-input" required>
+    </div>
+    <div class="form-group">
+      <label for="scoreGiven" class="formbold-form-label">Score </label>
+      <input type="number" formControlName="scoreGiven" id="scoreGiven" class="formbold-form-input" required>
+  </div>
+
+    <div class ="form-group">
+        <label for="feedback" class="formbold-form-label"> Feedback </label>
+        <textarea rows="4" name="feedback" id="feedback" placeholder="Type Feedback" class="formbold-form-input"
+            formControlName="feedback"></textarea>
+    </div>
+
+ 
+      <button class="btn btn-primary" type="submit">Register</button> 
+  
+    </form>
+  
+  
+  

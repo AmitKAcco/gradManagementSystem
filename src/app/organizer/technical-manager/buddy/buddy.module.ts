@@ -7,6 +7,7 @@ import { AddBuddyComponent } from './add-buddy/add-buddy.component';
 import { ViewBuddyComponent } from './view-buddy/view-buddy.component';
 // import { RegistrationComponent } from './registration/registration.component';
 
+import { MatTabsModule } from '@angular/material/tabs';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -17,7 +18,8 @@ import { ViewBuddyComponent } from './view-buddy/view-buddy.component';
   imports: [
     CommonModule,
     BuddyRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTabsModule
   ],
   exports : [
     AddBuddyComponent,

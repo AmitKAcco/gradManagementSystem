@@ -27,18 +27,11 @@ export class AddFeedbackComponent {
   note : string ;
   id : number = 1;
   public createFeedback(): void {
-
-    // this.global.trigger();
-    console.log(this.graduateFeedBack.value);
     this.feedback.register(this.graduateFeedBack.value)
     .subscribe(
       response => console.log('Success!', response),
       error => console.error('Error!', error)
     );
-    setTimeout(() => {
-      this.feedback.trigger();
-    }, 100);
-    
   }
   
 }
