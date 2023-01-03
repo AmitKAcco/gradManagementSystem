@@ -21,8 +21,18 @@ export class ViewComponent {
     // })
   }
   columns = [
-    { columnDef: 'id', header: 'Project Calender Id',    cell: (element: any) => `${element.projectCalendarId}` },
-    { columnDef: 'title',     header: 'date',   cell: (element: any) => `${element.date}`},
-    { columnDef: 'note',   header: 'Note', cell: (element: any) => `${element.note}`   },
+    //{ columnDef: 'id', header: 'Project Calender Id',    cell: (element: any) => `${element.projectCalendarId}` },
+    { columnDef: 'batchId',   header: 'Batch Id', cell: (element: any) => `${element.batchId}`  },
+    { columnDef: 'teamNumber',   header: 'Team Number', cell: (element: any) => `${element.teamNumber}`  },
+    { columnDef: 'projectName',   header: 'Project Name', cell: (element: any) => `${element.projectName}`  },
+    { columnDef: 'date',     header: 'Scheduled Date',   cell: (element: any) => `${element.date}`},
+    { columnDef: 'description',   header: 'Evaluation description', cell: (element: any) => `${element.description}` }, 
+    
+    { columnDef: 'projectProgress',   header: 'Project Progress', cell: (element: any) => `${element.projectProgress}`  },
+   
+    
+   
+   
+ 
   ];
 }
