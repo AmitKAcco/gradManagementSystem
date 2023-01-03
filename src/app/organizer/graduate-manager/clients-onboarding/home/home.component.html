@@ -1,1 +1,29 @@
 <p>home works grad from client Onboarding</p>
+
+<button (click)="check()" class="btn btn-primary">
+    Check block status of grad
+</button> 
+
+
+<form *ngIf="tt" [formGroup]="graduateBlockStatus" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+
+    <div class="form-group">
+      <label for="empId" class="formbold-form-label">Employee Id</label>
+      <input type="text" formControlName="empId" id="empId" class="formbold-form-input" required>
+  </div>
+
+  <div>
+      <label for="jobId" class="formbold-form-label"> Job Id </label>
+      <input type="text" formControlName="jobId" id="jobId" class="formbold-form-input" required>
+
+  </div>
+
+  <button type="submit" class="formbold-btn">Check</button>
+
+  </div>
+
+
+
+  <!-- <button class="btn btn-primary" [disabled]="!graduateBlockStatus.valid" type="submit">Check</button>  -->
+</form>

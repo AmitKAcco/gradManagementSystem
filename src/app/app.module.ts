@@ -14,6 +14,7 @@ import {MatTableDataSource, MatTableModule} from '@angular/material/table'
 import { DataSource } from '@angular/cdk/collections';
 import { MaterialModule } from './material/material.module';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -36,7 +37,9 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     AppRoutingModule,
     MatSidenavModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     {
@@ -57,7 +60,9 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     MatSidenavModule,
     MatPaginatorModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule
     // MatTableModule
   ]
 

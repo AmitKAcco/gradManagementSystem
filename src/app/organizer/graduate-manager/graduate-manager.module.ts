@@ -11,14 +11,14 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { LayoutComponent } from './layout/layout.component';
 import { SideNavComponent } from './layout/side-nav/side-nav.component';
 import { TopNavComponent } from './layout/top-nav/top-nav.component';
-
+import { MatDialogModule } from '@angular/material/dialog';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     LayoutComponent,
     SideNavComponent,
     TopNavComponent,
-
   ],
   imports: [
     CommonModule,
@@ -29,7 +29,10 @@ import { TopNavComponent } from './layout/top-nav/top-nav.component';
     MatInputModule,
     MatMenuModule,
     MatListModule,
-    GraduateManagerRoutingModule
+    GraduateManagerRoutingModule,
+    MatDialogModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class GraduateManagerModule { }
