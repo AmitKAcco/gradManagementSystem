@@ -6,6 +6,9 @@ import { HomeComponent } from './home/home.component';
 import { AddGrauateComponent } from './add-grauate/add-grauate.component';
 import { ViewGraduateComponent } from './view-graduate/view-graduate.component';
 import { MatTabsModule } from '@angular/material/tabs';
+import { ReactiveFormsModule } from '@angular/forms';
+
+import { WidgetsModule } from 'src/app/shared/widgets/widgets.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,12 @@ import { MatTabsModule } from '@angular/material/tabs';
   imports: [
     CommonModule,
     GraduateDetailsRoutingModule,
-    MatTabsModule
+    MatTabsModule,
+    ReactiveFormsModule,
+    WidgetsModule
+  ],
+  exports : [
+    ViewGraduateComponent
   ]
 })
 export class GraduateDetailsModule { }
