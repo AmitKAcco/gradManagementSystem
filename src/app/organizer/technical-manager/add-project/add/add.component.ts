@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder , FormGroup} from '@angular/forms';
 import { AddprojectServiceService } from '../addproject-service.service';
-import { batchesGet } from './batchData';
+import { batchesGet } from '../batchData'; 
 @Component({
   selector: 'app-add',
   templateUrl: './add.component.html',
@@ -11,7 +11,6 @@ import { batchesGet } from './batchData';
 export class AddComponent {
   addProject : FormGroup;
   batches : batchesGet[];
-  ok : batchesGet;
   selectedBatch = 1;
   constructor(private fb: FormBuilder, private addser : AddprojectServiceService) { }
 
@@ -21,10 +20,11 @@ export class AddComponent {
           batch:['']
       })
     this.addser.getMockInterview().subscribe(data=>{
-      setTimeout(() => {
-        this.batches = data;
-        console.log(data);
-      }, 500);
+      this.batches = data;
+      // setTimeout(() => {
+      //   this.batches = data;
+      //   console.log(data);
+      // }, 500);
     })
    
   }

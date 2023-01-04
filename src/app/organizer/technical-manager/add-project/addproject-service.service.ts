@@ -12,8 +12,5 @@ export class AddprojectServiceService {
   getMockInterview(): Observable<any>{
     return this._http.get<any>(this._url);
   }
-  // postMockInterview(userData: any) {
-  //   console.log(userData);
-  //   return this._http.post<any>(this._url, userData);
-  // }
+ 
 }
