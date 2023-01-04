@@ -1,0 +1,29 @@
+<!-- selectBatchId:[''],
+      client:[''],
+      vertical:[''],
+      openings:[''] -->
+<div class="container-fluid addFeedback">
+    <h2>Job Form</h2>
+  
+    <form [formGroup]="JobForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label>Batch Id</label>
+        <select  formControlName="selectBatchId" class = "form-control">
+          <option value="">Batch Id</option>
+          <option *ngFor="let batchId of batchIdList" [ngValue]="batchId">{{batchId}}</option>
+        </select>
+        </div>
+        <div class="form-group">
+            <label>Client</label>
+            <input type="text" formControlName="client" id="client" class="formbold-form-input" required>
+        </div>
+        <div class="form-group">
+            <label>Vertical</label>
+            <input type="text" formControlName="vertical" id="vertical" class="formbold-form-input" required>
+        </div>
+        <div class="form-group">
+            <label>Openings</label>
+            <input type="number" formControlName="openings" id="openings" class="formbold-form-input" required>
+        </div>
+</form>
+</div>  
