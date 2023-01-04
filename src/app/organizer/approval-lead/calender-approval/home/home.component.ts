@@ -1,14 +1,12 @@
 import { Component } from '@angular/core';
-
+import { FormControl } from '@angular/forms';
+import { FormGroup, FormBuilder } from '@angular/forms';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  batchId = [0, 1, 2];
-  currVal = 0;
-  changed(){
-    this.currVal 
-  }
+
+
 }
