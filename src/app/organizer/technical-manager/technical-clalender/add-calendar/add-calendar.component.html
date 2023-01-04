@@ -1,0 +1,45 @@
+<!-- selectBatchId:[''],
+      selectTopicId:[''],
+      trainingTopicName:[''],
+      trainingCalendarDate:Date,
+      trainingSession:[''],
+      trainingCalendarApprove:['']
+       -->
+<div class="container-fluid addFeedback">
+    <h2>Technical Calendar Form</h2>
+  
+    <form [formGroup]="TechnicalCalendarForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label>Batch Id</label>
+        <select  formControlName="selectBatchId" class = "form-control">
+          <option value="">Batch Id</option>
+          <option *ngFor="let batchId of batchIdList" [ngValue]="batchId">{{batchId}}</option>
+        </select>
+        </div>
+        <div class="form-group">
+            <label>Topic Id</label>
+            <select  formControlName="selectTopicId" class = "form-control">
+              <option value="">Topic Id</option>
+              <option *ngFor="let topicId of topicIdList" [ngValue]="topicId">{{topicId}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Training Topic Name</label>
+            <input type="text" formControlName="trainingTopicName" id="trainingTopicName" class="formbold-form-input" required>
+        </div>
+        <div class="form-group">
+            <label>Training Calendar Date</label>
+            <input type="date" formControlName="trainingCalendarDate" id="trainingCalendarDate" class="formbold-form-input" required>
+        </div>
+        <div class="form-group">
+          <label>Training Session</label>
+          <input type="text" formControlName="trainingSession" id="trainingSession" class="formbold-form-input" required>
+      </div>
+
+      <button class="btn btn-primary" type="submit">Register</button> 
+  
+    
+    
+    </form>
+    </div>
+  
