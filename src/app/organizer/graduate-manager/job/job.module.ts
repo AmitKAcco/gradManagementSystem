@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { TechnicalClalenderRoutingModule } from './technical-clalender-routing.module';
+import { JobRoutingModule } from './job-routing.module';
+import { AddJobComponent } from './add-job/add-job.component';
 import { HomeComponent } from './home/home.component';
-import { AddCalendarComponent } from './add-calendar/add-calendar.component';
-import { ViewCalendarComponent } from './view-calendar/view-calendar.component';
-
+import { ViewJobComponent } from './view-job/view-job.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatTabsModule } from '@angular/material/tabs';
 import { WidgetsModule } from 'src/app/shared/widgets/widgets.module';
@@ -13,17 +12,17 @@ import { WidgetsModule } from 'src/app/shared/widgets/widgets.module';
 
 @NgModule({
   declarations: [
+    AddJobComponent,
     HomeComponent,
-    AddCalendarComponent,
-    ViewCalendarComponent
+    ViewJobComponent
   ],
   imports: [
     CommonModule,
-    TechnicalClalenderRoutingModule,
+    JobRoutingModule,
     ReactiveFormsModule,
     FormsModule,
     MatTabsModule,
     WidgetsModule
   ]
 })
-export class TechnicalClalenderModule { }
+export class JobModule { }
