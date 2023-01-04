@@ -10,7 +10,7 @@ export const childRoutes = [
   {
     path: 'graddetails',
     loadChildren: () =>
-      import('./graduate-details/graduate-details.module').then(m => m.GraduateDetailsModule),
+      import('./graduate-detail-app-lead/graduate-detail-app-lead.module').then(m => m.GraduateDetailAppLeadModule),
     data: { icon: 'details', text: 'Graduate Details' }
   },
   {

@@ -4,7 +4,8 @@ import { BehaviorSubject } from 'rxjs';
 import {MatTableModule} from '@angular/material/table';
 import {CdkTableModule} from '@angular/cdk/table';
 import { ReuseableTableComponent } from './reuseable-table/reuseable-table.component';
-
+import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 @NgModule({
   declarations: [
     ReuseableTableComponent
@@ -12,7 +13,9 @@ import { ReuseableTableComponent } from './reuseable-table/reuseable-table.compo
   imports: [
     CommonModule,
     MatTableModule,
-    CdkTableModule
+    CdkTableModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   exports: [
    ReuseableTableComponent

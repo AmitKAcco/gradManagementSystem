@@ -8,7 +8,7 @@ import { ViewMockInterviewComponent } from './view-mock-interview/view-mock-inte
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MatTabsModule } from '@angular/material/tabs';
 import { RouterModule } from '@angular/router';
-
+import { WidgetsModule } from 'src/app/shared/widgets/widgets.module';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -20,7 +20,8 @@ import { RouterModule } from '@angular/router';
     MockInterviewRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    MatTabsModule
+    MatTabsModule,
+    WidgetsModule
   ]
   // ,
   // exports:[

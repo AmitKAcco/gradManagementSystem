@@ -30,6 +30,7 @@ import { TopNavComponent } from './layout/top-nav/top-nav.component';
     MatMenuModule,
     MatListModule,
     TechnicalDeliveryRoutingModule
-  ]
+  ],
+  
 })
 export class TechnicalDeliveryModule { }

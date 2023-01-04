@@ -6,17 +6,25 @@ import { AddCurriculumComponent } from './add-curriculum/add-curriculum.componen
 import { MatTabsModule } from '@angular/material/tabs';
 import { HomeComponent } from './home/home.component';
 import { ReactiveFormsModule } from '@angular/forms';
+
+import { WidgetsModule } from 'src/app/shared/widgets/widgets.module';
+import { ViewCurriculumComponent } from './view-curriculum/view-curriculum.component';
 @NgModule({
   declarations: [
     AddCurriculumComponent,
-    HomeComponent
+    HomeComponent,
+    ViewCurriculumComponent
   ],
   imports: [
     CommonModule,
     CurriculumDesignRoutingModule,
     MatTabsModule,
     RouterModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    WidgetsModule
+  ],
+  exports : [
+    ViewCurriculumComponent
   ]
 })
 export class CurriculumDesignModule { }

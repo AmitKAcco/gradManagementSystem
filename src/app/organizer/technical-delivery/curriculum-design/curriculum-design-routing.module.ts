@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AddCurriculumComponent } from './add-curriculum/add-curriculum.component';
 import { CurriculumViewComponent } from 'src/app/shared/curriculum-view/curriculum-view.component';
+import { ViewCurriculumComponent } from './view-curriculum/view-curriculum.component';
 
 const routes: Routes = [
   {
@@ -20,7 +21,7 @@ const routes: Routes = [
       },
       {
         path: 'view',
-        component: CurriculumViewComponent
+        component: ViewCurriculumComponent
       }
     ]
   }

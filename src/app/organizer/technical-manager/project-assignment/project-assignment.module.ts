@@ -8,6 +8,9 @@ import { ViewComponent } from './view/view.component';
 import { RouterModule } from '@angular/router';
 import { MatTabsModule } from '@angular/material/tabs';
 import  { ReactiveFormsModule } from '@angular/forms';
+
+import { WidgetsModule } from 'src/app/shared/widgets/widgets.module';
+
 @NgModule({
   declarations: [
     HomeComponent,
@@ -19,7 +22,8 @@ import  { ReactiveFormsModule } from '@angular/forms';
     ProjectAssignmentRoutingModule,
     RouterModule,
     MatTabsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    WidgetsModule
   ]
 })
 export class ProjectAssignmentModule { }

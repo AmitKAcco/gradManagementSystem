@@ -1,7 +1,7 @@
 import { Component, ChangeDetectorRef, ElementRef, ViewChild, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
-
+import { MentorServiceService } from '../mentor-service.service';
 @Component({
   selector: 'app-add-mentors',
   templateUrl: './add-mentors.component.html',
@@ -10,7 +10,7 @@ import { FormBuilder } from '@angular/forms';
 export class AddMentorsComponent {
   MentorForm: FormGroup;
   
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private mentorService:MentorServiceService) { }
 
   batchIdList = [];
   empIdGradList = [];
@@ -31,5 +31,10 @@ export class AddMentorsComponent {
 
   onSubmit(){
     console.log(this.MentorForm.value);
+    this.mentorService.postMentor(this.MentorForm.value)
+    .subscribe(
+      // response => console.log('Success!', response),
+      // error => console.error('Error!', error)
+    );
   }
 }
