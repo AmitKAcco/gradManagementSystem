@@ -6,10 +6,13 @@ import { ClientsOnboardingRoutingModule } from './clients-onboarding-routing.mod
 import {MatDialogModule} from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { HomeComponent } from './home/home.component';
-// app\organizer\graduate-manager\clients-onboarding\home\dialog-overview-example-dialog.html
+import { ScheduleInterviewComponent } from './schedule-interview/schedule-interview.component';
+import {MatCardModule} from '@angular/material/card';
+
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
+    ScheduleInterviewComponent
   ],
   imports: [
     CommonModule,
@@ -17,7 +20,8 @@ import { HomeComponent } from './home/home.component';
     MatDialogModule,
     MatButtonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatCardModule
   ],
   exports: [
     HomeComponent
