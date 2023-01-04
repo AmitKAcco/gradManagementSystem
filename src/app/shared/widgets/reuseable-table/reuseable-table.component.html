@@ -1,4 +1,7 @@
 <!-- <p>reuseable-table works!</p> -->
+<mat-form-field appearance="fill">
+  <input matInput placeholder="search" autocomplete="off" (keyup)="filterData($event)">
+</mat-form-field>
 
 
 <mat-table *ngIf="dataSource" [dataSource]="dataSource">
