@@ -22,6 +22,9 @@ import { ViewCurriculumComponent } from './view-curriculum/view-curriculum.compo
     RouterModule,
     ReactiveFormsModule,
     WidgetsModule
+  ],
+  exports : [
+    ViewCurriculumComponent
   ]
 })
 export class CurriculumDesignModule { }

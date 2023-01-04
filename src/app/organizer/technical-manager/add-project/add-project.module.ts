@@ -8,6 +8,7 @@ import { ViewComponent } from './view/view.component';
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTabsModule } from '@angular/material/tabs';
+
 @NgModule({
   declarations: [
     HomeComponent,
@@ -15,6 +16,7 @@ import { MatTabsModule } from '@angular/material/tabs';
     ViewComponent
   ],
   imports: [
+ 
     CommonModule,
     AddProjectRoutingModule,
     ReactiveFormsModule,

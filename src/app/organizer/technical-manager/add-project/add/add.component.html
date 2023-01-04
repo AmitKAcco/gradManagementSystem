@@ -10,7 +10,7 @@
       <label>Select Batch</label>
       <select formControlName="batch"  (ngModelChange)="onChangeValue($event)"
         name="sel3">
-        <option [value]="i" *ngFor="let i of batches">{{i}}</option>
+        <option [value]="i.batchId" *ngFor="let i of batches">{{i.batchId}}</option>
       </select>
     </div>
     <button class="btn btn-primary" type="submit">Register</button>

@@ -17,8 +17,8 @@ export const childRoutes = [
   {
     path: 'grad-details',
     loadChildren: () =>
-      import('./graduate-details/graduate-details.module')
-      .then(m => m.GraduateDetailsModule),
+      import('./graduate-details-others/graduate-details-others.module')
+      .then(m => m.GraduateDetailsOthersModule),
     data: { icon: 'details', text: 'Graduate Details' }
   },
 ]
