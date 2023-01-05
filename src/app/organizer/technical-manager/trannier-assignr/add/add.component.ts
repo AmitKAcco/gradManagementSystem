@@ -6,6 +6,10 @@ import { TrainerAssignService } from '../trainer-assign.service';
 import { batchesGet } from '../../add-project/batchData';
 
 
+import { topicNameGet } from '../../trannier-assignr/topicName';
+import { GlobalService } from 'src/app/global.service';
+
+
 @Component({
   selector: 'app-add',
   templateUrl: './add.component.html',
@@ -14,14 +18,17 @@ import { batchesGet } from '../../add-project/batchData';
 export class AddComponent {
   trannierAssignment: FormGroup;
 
-  constructor(private fb: FormBuilder,private trainerAssignService: TrainerAssignService) { }
-  batchIdList = [];
+  constructor(private fb: FormBuilder,private trainerAssignService: TrainerAssignService, private globalService : GlobalService) { }
+  // batchIdList = [];
+  batchNameList = [];
   topicNameList:[];
-  getBatcheId : batchesGet[];
+  // getBatcheId : batchesGet[];
+  getBatchName : batchesGet[];
+  getTopicName : topicNameGet[];
   //trainerNameList:[]
   ngOnInit() {
     this.trannierAssignment = this.fb.group({
-          selectBatchId:[''],
+          selectBatchName:[''],
           selectTopicName:[''],
           trainerName1:[''],
           trainerName2:[''],
@@ -31,8 +38,13 @@ export class AddComponent {
           
       })
       console.log("hello")
-      this.trainerAssignService.getTrainerAssign().subscribe(data =>{
-        this.getBatcheId = data;
+      this.globalService.getAllBatches().subscribe(data => {
+        this.getBatchName = data;
+        console.log(this.getBatchName);
+      })
+      this.globalService.getTopic().subscribe(data => {
+        this.getTopicName = data;
+        
       })
   }
   onSubmit(){

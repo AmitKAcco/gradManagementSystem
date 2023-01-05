@@ -1,6 +1,6 @@
 export class batchesGet {
      batchId: number;
-     batchName: null; 
+     batchName: string; 
      employeeList: [];
     //   trainingCurriculumList: [];
     //   trainingCalendarList: [];

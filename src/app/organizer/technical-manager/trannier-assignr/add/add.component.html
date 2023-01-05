@@ -12,18 +12,18 @@
      <form [formGroup]="trannierAssignment" (ngSubmit)="onSubmit()">
 
       <div class="form-group">
-        <label>Batch Id</label>
+        <label>Batch Name</label>
         <select  formControlName="selectBatchId" class = "form-control">
-          <option value="">Batch Id</option>
-          <option [value]="i.batchId" *ngFor="let i of getBatcheId">{{i.batchId}}</option>
+          <option value="">Batch Name</option>
+          <option [value]="i.batchName" *ngFor="let i of getBatchName">{{i.batchName}}</option>
         </select>
         </div>
         <div class="form-group">
           <label>Topic Name</label>
           <select  formControlName="selectTopicName" class = "form-control">
             <option value="">Topic Name</option>
-            <option *ngFor="let topicId of topicNameList" [ngValue]="topicId">{{topicId}}</option>
-          </select>
+            <option [value]="i.topicName" *ngFor="let i of getTopicName">{{i.topicName}}</option>
+        </select>
           </div>
           <div class="form-group">
             <label>Trainer Name 1</label>
