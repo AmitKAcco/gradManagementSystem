@@ -24,10 +24,16 @@ export class ViewblockedComponent {
   columns = [
     //{ columnDef: 'id', header: 'Project Calender Id',    cell: (element: any) => `${element.projectCalendarId}` },
     { columnDef: 'batchId',   header: 'Batch Id', cell: (element: any) => `${element.batchId}`  },
+    { columnDef: 'batchName',   header: 'Batch Name', cell: (element: any) => `${element.batchName}`  },
     { columnDef: 'empId',   header: 'Employee ID', cell: (element: any) => `${element.empId}`  },
     { columnDef: 'empName',   header: 'Employee Name', cell: (element: any) => `${element.empName}`  },
-    { columnDef: 'jobId',   header: 'Employee ID', cell: (element: any) => `${element.jobId}`  },
+    { columnDef: 'jobId',   header: 'Job ID', cell: (element: any) => `${element.jobId}`  },
     { columnDef: 'client',     header: 'Client',   cell: (element: any) => `${element.client}`},
+    { columnDef: 'interviewScheduled',     header: 'Tnterview Scheduled status',   cell: (element: any) => `${element.interviewScheduled}`},
+    { columnDef: 'selected',     header: 'Selected Status',   cell: (element: any) => `${element.selected}`},
+    
+    
+
     
     
    

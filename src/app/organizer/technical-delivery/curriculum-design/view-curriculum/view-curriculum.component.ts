@@ -23,7 +23,9 @@ export class ViewCurriculumComponent {
   }
   columns = [
     { columnDef: 'id', header: 'Batch Id',    cell: (element: any) => `${element.batchId}` },
+    { columnDef: 'batchName',  header: 'Batch Name',   cell: (element: any) => `${element.batchName}`},
     { columnDef: 'topicName',  header: 'Topic Name',   cell: (element: any) => `${element.topicName}`}
+    
   ];
 
 
