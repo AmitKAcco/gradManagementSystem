@@ -43,14 +43,14 @@ export const childRoutes = [
     loadChildren: () =>
       import('./technical-clalender/technical-clalender.module')
       .then(m => m.TechnicalClalenderModule),
-    data: { icon: 'calendar_today', text: 'Technical Calender' }
+    data: { icon: 'calendar_today', text: 'Technical Calendar' }
   },
   {
     path : 'projectCalendar',
     loadChildren: () =>
     import('./project-calendar/project-calendar.module')
     .then(m => m.ProjectCalendarModule),
-     data: { icon: 'details', text: 'Project Calender' }
+     data: { icon: 'details', text: 'Project Calendar' }
   },
   {
     path : 'trannierAssign',
