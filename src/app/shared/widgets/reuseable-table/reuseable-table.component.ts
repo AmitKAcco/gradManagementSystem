@@ -5,7 +5,7 @@ import { Observable, of } from 'rxjs';
 import { GlobalService } from 'src/app/global.service';
 import { Task } from 'src/app/graduate/feedback/shared/models/task.model';
 // import {MatPaginator, MatTableDataSource} from '@angular/material';
-
+import { batchesGet } from '../reuse';
 @Component({
   selector: 'app-reuseable-table',
   templateUrl: './reuseable-table.component.html',
@@ -22,6 +22,7 @@ export class ReuseableTableComponent implements OnInit {
   displayedColumns: any;
   dataSource:any;
   apiResponse : any;
+  batches :any;
   constructor(private global : GlobalService){
   }
   tasks : Task[] = [];
@@ -31,15 +32,17 @@ export class ReuseableTableComponent implements OnInit {
     console.log(this.dataSource);
     this.displayedColumns = this.columns.map((c: { columnDef: any; }) => c.columnDef);
     console.log(this.dataSource);
-   
+    this.batches = this.rowData;
       this.dataSource.filterPredicate = (data: any, filter: string) => {
         return data.batchId == filter;
     }
   }
  
 
-  filterData($event : any){
-    this.dataSource.filter = $event.target.value;
+  filterData(num: any){
+    this.dataSource.filter = num;
+    this.global.emitBatchId(num);
+    console.log(num);
   }
 
 

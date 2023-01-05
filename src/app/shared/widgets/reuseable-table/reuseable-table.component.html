@@ -1,9 +1,25 @@
 <!-- <p>reuseable-table works!</p> -->
-<mat-form-field appearance="fill">
+ <!-- <mat-form-field appearance="fill">
   <input matInput placeholder="search" autocomplete="off" (keyup)="filterData($event)">
+</mat-form-field>  -->
+<!-- <mat-form-field appearance="fill">
+  <mat-label>Favorite food</mat-label>
+  <mat-select (select)="filterData($event)"> -->
+    <!-- <mat-option *ngFor="let bat of bartcj.batchID" [value]="food.value"> -->
+      <!-- <mat-option [value]="i.batchId" *ngFor="let i of batches" >{{i.batchId}}</mat-option>
+  </mat-select>
+</mat-form-field> -->
+<!-- <select   (select)="filterData($event)"
+name="sel3">
+<option [value]="i.batchId" *ngFor="let i of batches">{{i.batchId}}</option>
+</select> -->
+<mat-form-field>
+  <mat-select placeholder="Batch">
+   <mat-option *ngFor="let i of batches"[value]="i.batchId" (click)="filterData(i.batchId)">
+           {{i.batchId}}
+    </mat-option>
+  </mat-select>
 </mat-form-field>
-
-
 <mat-table *ngIf="dataSource" [dataSource]="dataSource">
 
     <ng-container *ngFor="let column of columns" [cdkColumnDef]="column.columnDef">
