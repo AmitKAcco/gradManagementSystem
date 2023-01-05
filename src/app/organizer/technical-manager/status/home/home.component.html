@@ -7,5 +7,5 @@
     </select>
   </div>
   <button type="button" class="btn btn-primary" (click)="getStatus()">Primary</button>
-  <div>Technical Calendar {{approvalCalendar}}</div>
-  <div>Curriculum Approved {{approvalCurriculum}}</div>
+  <div *ngIf="approvalCalendar">Technical Calendar {{approvalCalendar}}</div>
+  <div *ngIf="approvalCurriculum">Curriculum Approved {{approvalCurriculum}}</div>
