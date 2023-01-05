@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder , FormGroup} from '@angular/forms';
 import { AddprojectServiceService } from '../addproject-service.service';
 import { batchesGet } from '../batchData'; 
+import { GlobalService } from 'src/app/global.service';
 @Component({
   selector: 'app-add',
   templateUrl: './add.component.html',
@@ -12,20 +13,16 @@ export class AddComponent {
   addProject : FormGroup;
   batches : batchesGet[];
   selectedBatch = 1;
-  constructor(private fb: FormBuilder, private addser : AddprojectServiceService) { }
+  constructor(private fb: FormBuilder, private addser : AddprojectServiceService,private globalService:GlobalService) { }
 
   ngOnInit() {
     this.addProject = this.fb.group({
           projectName:[''],
-          batch:['']
+          batchName:['']
       })
-    this.addser.getAddProject().subscribe(data=>{
+   this.globalService.getAllBatches().subscribe(data =>{
       this.batches = data;
-      // setTimeout(() => {
-      //   this.batches = data;
-      //   console.log(data);
-      // }, 500);
-    })
+   })
    
   }
 

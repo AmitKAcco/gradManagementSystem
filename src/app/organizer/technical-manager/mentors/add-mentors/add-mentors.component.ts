@@ -2,6 +2,10 @@ import { Component, ChangeDetectorRef, ElementRef, ViewChild, OnInit } from '@an
 import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { MentorServiceService } from '../mentor-service.service';
+import { batchesGet } from 'src/backend.Data';
+import { GlobalService } from 'src/app/global.service';
+import { employeeData } from 'src/app/employeeData';
+
 @Component({
   selector: 'app-add-mentors',
   templateUrl: './add-mentors.component.html',
@@ -10,21 +14,33 @@ import { MentorServiceService } from '../mentor-service.service';
 export class AddMentorsComponent {
   MentorForm: FormGroup;
   
-  constructor(private fb: FormBuilder, private mentorService:MentorServiceService) { }
+  constructor(private fb: FormBuilder, private mentorService:MentorServiceService,private globalService : GlobalService) { }
 
-  batchIdList = [];
-  empIdGradList = [];
-  empIdMentorList = [];
+  //batchIdList = [];
+ // empIdGradList = [];
+  //empIdMentorList = [];
+
+  getEmpId : employeeData[];
+  getMentorEmpId : employeeData[];
+
+ // getBatchName = batchesGet[];
 
   ngOnInit() {
     this.MentorForm = this.fb.group({
-      batchName:[''],
-      selectEmpIdGrad:[''],
-      selectEmpIdMentor:[''],
+      empIdGrad:[''],
+      empIdMentor:[''],
       clientProjectName:[''],
       stakeholderName:[''],
       client:['']
-    });
+    })
+    this.globalService.getAllEmployees().subscribe(data => {
+      this.getEmpId = data;
+    })
+    this.globalService.getAllEmployees().subscribe(data => {
+      this.getMentorEmpId = data;
+    })
+    
+
 
   }
 

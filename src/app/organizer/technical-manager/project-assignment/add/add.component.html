@@ -3,10 +3,11 @@
   
     <form [formGroup]="projectAssignmentForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
-        <label>Batch Id</label>
-        <select  formControlName="selectBatchId" class = "form-control">
-          <option value="">Batch Id</option>
-          <option *ngFor="let batchId of batchIdList" [ngValue]="batchId">{{batchId}}</option>
+        <label>Batch Name</label>
+        <select  formControlName="batchName" class = "form-control">
+          <option value="">Batch Name</option>
+          <!-- <option *ngFor="let batchId of batchIdList" [ngValue]="batchId">{{batchId}}</option> -->
+          <option [value]="i.batchName" *ngFor="let i of getBatchName">{{i.batchName}}</option>
         </select>
         </div>
         <div class="form-group">
