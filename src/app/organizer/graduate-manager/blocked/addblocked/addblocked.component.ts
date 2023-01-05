@@ -21,7 +21,7 @@ export class AddblockedComponent {
        selectBatchId : [''],
        selectEmpId : [''],
        selectJobId : [''],
-       client : ['']
+       
        
        
     })

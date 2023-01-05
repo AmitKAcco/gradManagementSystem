@@ -19,7 +19,7 @@ export class AddComponent {
           projectName:[''],
           batch:['']
       })
-    this.addser.getMockInterview().subscribe(data=>{
+    this.addser.getAddProject().subscribe(data=>{
       this.batches = data;
       // setTimeout(() => {
       //   this.batches = data;

@@ -12,17 +12,17 @@ export class AddEvaluationComponent {
 
   evaluationDesgin : FormGroup;
   constructor(private fb: FormBuilder,private evaluationService : EvaluateGradService ) { }
-  batches:[]
-  graduates:[]
+  batchIdList:[]
+  empIdlist:[]
   topics:[]
   ngOnInit() {
     
     this.evaluationDesgin = this.fb.group({
-          selectedBatch : [''],
-          graduateSelected : [''],
+          selectBatchId : [''],
+          selectEmpId : [''],
           topicSelected: [''],
-          evaluationDate: Date,
-          scoreGiven:[''],
+          date: Date,
+          score:[''],
           feedback:['']
       })
   }

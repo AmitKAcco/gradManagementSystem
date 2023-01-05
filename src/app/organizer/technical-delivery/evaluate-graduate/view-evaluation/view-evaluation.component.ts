@@ -7,8 +7,9 @@ import { EvaluateGradService } from '../evaluate-grad.service';
 })
 export class ViewEvaluationComponent {
 
+  
   constructor(private evaluateGradService : EvaluateGradService) {}
-
+  
   dataSource:any;
 
   ngOnInit(): void {
@@ -21,15 +22,21 @@ export class ViewEvaluationComponent {
     //   this.dataSource = data;
     // })
   }
+  // selectedBatch : [''],
+  // graduateSelected : [''],
+  // topicSelected: [''],
+  // evaluationDate: Date,
+  // scoreGiven:[''],
+  // feedback:['']
   columns = [
     //{ columnDef: 'id', header: 'Project Calender Id',    cell: (element: any) => `${element.projectCalendarId}` },
     { columnDef: 'batchId',   header: 'Batch Id', cell: (element: any) => `${element.batchId}`  },
-    { columnDef: 'teamNumber',   header: 'Team Number', cell: (element: any) => `${element.teamNumber}`  },
-    { columnDef: 'projectName',   header: 'Project Name', cell: (element: any) => `${element.projectName}`  },
+    { columnDef: 'empId',   header: 'Employee ID', cell: (element: any) => `${element.empId}`  },
+    { columnDef: 'topicName',   header: 'Topic Name', cell: (element: any) => `${element.topicName}`  },
+    { columnDef: 'empName',   header: 'Employee Name', cell: (element: any) => `${element.empName}`  },
     { columnDef: 'date',     header: 'Scheduled Date',   cell: (element: any) => `${element.date}`},
-    { columnDef: 'description',   header: 'Evaluation description', cell: (element: any) => `${element.description}` }, 
-    
-    { columnDef: 'projectProgress',   header: 'Project Progress', cell: (element: any) => `${element.projectProgress}`  },
+    { columnDef: 'score',   header: 'Score', cell: (element: any) => `${element.score}` },     
+    { columnDef: 'feedback',   header: 'Feedback', cell: (element: any) => `${element.feedback}`  },
    
     
    
