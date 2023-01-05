@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { TechnicalcalendarService } from '../technicalcalendar.service';
-
+import { GlobalService } from 'src/app/global.service';
+import { batchesGet } from '../../add-project/batchData';
 @Component({
   selector: 'app-view-calendar',
   templateUrl: './view-calendar.component.html',
@@ -8,18 +9,41 @@ import { TechnicalcalendarService } from '../technicalcalendar.service';
 })
 export class ViewCalendarComponent {
 
-  constructor(private technicalCalendarService:TechnicalcalendarService){}
+  constructor(private technicalCalendarService:TechnicalcalendarService, private globalservice : GlobalService){}
 
   dataSource:any;
-
+  approvalData:any;
+  batchvalue : any;
+  batches : batchesGet[];
   ngOnInit(): void {
 
     this.technicalCalendarService.getCalendar()
     .subscribe(data=> {
       this.dataSource = data;
+      this.batches = data;
     });
+    this.globalservice.batchEmitter.subscribe(data=>{
+      this.batchvalue = data;
+    }) 
+    
+    console.log(this.batchvalue)
+    this.globalservice.getApproval(1).subscribe(data=>{
+      this.approvalData = data;
+    })
+    setTimeout(() => {
+      console.log(this.approvalData);
+    }, 1000);
+    
   }
-
+  onSelectionChange(newVal: any){
+    console.log(newVal);
+    // this.technicalCalendarService.getDatabyId(newVal.batchId).subscribe((data)=>
+    // {
+    //   console.log(data);
+    // });
+  }
+  
+  
   // trainingCalendarId":1,"batchId":6302,"topicId":0,"trainingTopicName":"Java",
   // "trainingCalendarDate":"2022-07-18T00:00:00.000+00:00","trainingSession"
   // :"morning","trainingCalendarApprove":true

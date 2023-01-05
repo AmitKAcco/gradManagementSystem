@@ -8,6 +8,7 @@ import { EventEmitter, Output } from '@angular/core';
 })
 
 export class HomeComponent {
+  dataSource : any;
   batches = [1, 2, 3];
   selectedBatch = 2;
   data: any;
@@ -23,10 +24,25 @@ export class HomeComponent {
       batchId: this.selectedBatch,
       techCurriculum: true
     }
-    this.approvalService.postApproval(this.data)
-      .subscribe(
+    // this.approvalService.postApproval(this.data)
+    //   .subscribe(
 
-    );
+    // // );
+    this.approvalService.getUser(0).subscribe( data=>
+      this.dataSource = data);
+    // setTimeout(() => {
+    //   console.log(this.dataSource);
+    // }, 100);
+    
+    this.approvalService.batchEmitter.subscribe(data =>{
+      this.selectedBatch = data;
+      console.log("i am here" + data);
+    })
+    setTimeout(() => {
+      console.log( this.selectedBatch);
+    }, 100);
+    
+    
   }
   sendDisApproval() {
     this.data = {
