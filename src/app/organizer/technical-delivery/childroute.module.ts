@@ -28,6 +28,12 @@ export const childRoutes = [
       import('./gaduate-details-tech-del/gaduate-details-tech-del.module').then(m => m.GaduateDetailsTechDelModule),
     data: { icon: 'details', text: 'Graduate Details' }
   },
+  {
+    path: 'Status',
+    loadChildren: () =>
+      import('../technical-manager/status/status.module').then(m => m.StatusModule),
+      data: { icon: 'details', text: 'Status' }
+  }
  
 
 ]
