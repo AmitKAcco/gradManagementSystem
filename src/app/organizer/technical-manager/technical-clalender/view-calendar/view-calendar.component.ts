@@ -37,17 +37,8 @@ export class ViewCalendarComponent {
   }
   onSelectionChange(newVal: any){
     console.log(newVal);
-    // this.technicalCalendarService.getDatabyId(newVal.batchId).subscribe((data)=>
-    // {
-    //   console.log(data);
-    // });
   }
   
-  
-  // trainingCalendarId":1,"batchId":6302,"topicId":0,"trainingTopicName":"Java",
-  // "trainingCalendarDate":"2022-07-18T00:00:00.000+00:00","trainingSession"
-  // :"morning","trainingCalendarApprove":true
-
   columns = [
     { columnDef: 'id', header: 'Training Calendar Id',    cell: (element: any) => `${element.trainingCalendarId}` },
     { columnDef: 'topicId',  header: 'Topic Id',   cell: (element: any) => `${element.topicId}`},

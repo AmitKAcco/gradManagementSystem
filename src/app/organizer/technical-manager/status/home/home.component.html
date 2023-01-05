@@ -1,1 +1,11 @@
-<p>this works</p>
+<div class="form-group">
+    <label>Select Batch</label>
+    <select #val (click)="onChangeValue(val.value)"
+      name="sel3">
+      <option val=""> select Batches</option>
+      <option  [value]="i.batchId" *ngFor="let i of batches">{{i.batchId}}</option>
+    </select>
+  </div>
+  <button type="button" class="btn btn-primary" (click)="getStatus()">Primary</button>
+  <div>Technical Calendar {{approvalCalendar}}</div>
+  <div>Curriculum Approved {{approvalCurriculum}}</div>
