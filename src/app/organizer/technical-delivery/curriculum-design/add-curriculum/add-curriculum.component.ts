@@ -1,19 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { CurriculumDesignService } from '../curriculum-design.service';
+import { batchesGet } from 'src/backend.Data';
+import { GlobalService } from 'src/app/global.service';
 @Component({
   selector: 'app-add-curriculum',
   templateUrl: './add-curriculum.component.html',
   styleUrls: ['./add-curriculum.component.scss']
 })
 export class AddCurriculumComponent {
-  batchIdList : [];
+  batchNameList : [];
+  getBatchName : batchesGet[];
   curriculumDesign : FormGroup;
-  constructor(private fb: FormBuilder, private curriculumService:CurriculumDesignService) { }
+  constructor(private fb: FormBuilder, private curriculumService:CurriculumDesignService , private globalService: GlobalService) { }
   ngOnInit() {
     this.curriculumDesign = this.fb.group({
-         batchId : [''],
+         batchName : [''],
          topicName : ['']
+      });
+      this.globalService.getAllBatches().subscribe(data=> {
+        this.getBatchName = data;
       })
   }
   onSubmit(){

@@ -6,6 +6,8 @@ import {CdkTableModule} from '@angular/cdk/table';
 import { ReuseableTableComponent } from './reuseable-table/reuseable-table.component';
 import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatOptionModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
 @NgModule({
   declarations: [
     ReuseableTableComponent
@@ -15,7 +17,9 @@ import { MatInputModule } from '@angular/material/input';
     MatTableModule,
     CdkTableModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatOptionModule,
+    MatSelectModule
   ],
   exports: [
    ReuseableTableComponent

@@ -9,7 +9,8 @@ import { ViewCalendarComponent } from './view-calendar/view-calendar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatTabsModule } from '@angular/material/tabs';
 import { WidgetsModule } from 'src/app/shared/widgets/widgets.module';
-
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,13 @@ import { WidgetsModule } from 'src/app/shared/widgets/widgets.module';
     ReactiveFormsModule,
     FormsModule,
     MatTabsModule,
-    WidgetsModule
+    WidgetsModule,
+    MatFormFieldModule,
+    MatSelectModule
+
+  ],
+  exports : [
+    ViewCalendarComponent
   ]
 })
 export class TechnicalClalenderModule { }

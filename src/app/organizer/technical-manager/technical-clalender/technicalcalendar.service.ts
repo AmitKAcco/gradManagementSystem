@@ -10,6 +10,12 @@ export class TechnicalcalendarService {
  
   _url = 'http://localhost:8900/addTrainingCalendar';
   _urlOne = 'http://localhost:8900/allTrainingCalendar';
+  _urlTwo = 'http://localhost:8900/trainingCalendarByBatchId/{batchId}';
+
+  getDatabyId(username: any): Observable<any> {
+    let urlx = `http://localhost:8900/trainingCalendarByBatchId/${username}`;
+    return this._http.get< any >(urlx);  
+  }
   getCalendar(): Observable<any>{
     return this._http.get<any>(this._urlOne);
   }

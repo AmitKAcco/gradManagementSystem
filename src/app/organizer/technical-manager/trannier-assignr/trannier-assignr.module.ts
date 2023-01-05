@@ -8,6 +8,7 @@ import { ViewComponent } from './view/view.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatTabsModule } from '@angular/material/tabs';
+import { WidgetsModule } from 'src/app/shared/widgets/widgets.module';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { MatTabsModule } from '@angular/material/tabs';
     ReactiveFormsModule,
 
     MatTabsModule,
+    WidgetsModule
     
   ]
 })

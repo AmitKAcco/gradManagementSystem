@@ -1,1 +1,30 @@
-<p>addblocked works!</p>
+<div class="container-fluid addMockInterview">
+    <h2>Registration Form</h2>
+  
+    <form [formGroup]="blocked" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label>Batch Name </label>
+            <select formControlName="batchName" class="form-control">
+              <option value="">Batch Name</option>
+              <option [value]="i.batchName" *ngFor="let i of getBatchName">{{i.batchName}}</option>
+            </select>
+          </div>
+      <div class="form-group">
+        <label>Employee ID </label>
+        <select formControlName="empId" class="form-control">
+          <option value="">Employee ID</option>
+          <option [value]="i.empId" *ngFor="let i of getEmployeeId">{{i.empId}}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Job ID </label>
+        <select formControlName="jobId" class="form-control">
+          <option value="">Job ID</option>
+          <option [value]="i.jobId" *ngFor="let i of getJobId">{{i.jobId}}</option>
+        </select>
+      </div>
+  
+     <button class="btn btn-primary" type="submit">Register</button>
+  
+    </form>

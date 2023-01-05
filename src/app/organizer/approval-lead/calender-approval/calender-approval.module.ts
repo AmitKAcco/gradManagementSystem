@@ -5,7 +5,7 @@ import { CalenderApprovalRoutingModule } from './calender-approval-routing.modul
 import { FormControl } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
-
+import { TechnicalClalenderModule } from '../../technical-manager/technical-clalender/technical-clalender.module';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -14,7 +14,8 @@ import { HomeComponent } from './home/home.component';
     CommonModule,
     CalenderApprovalRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TechnicalClalenderModule
   ]
 })
 export class CalenderApprovalModule { }

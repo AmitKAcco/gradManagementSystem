@@ -9,6 +9,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
   styleUrls: ['./layout.component.scss']
 })
 export class LayoutComponent  {
+
   sideNavOpened = true;
   toolBarHeight = 64;
   sideNavMode: 'over' | 'side' = 'side';
