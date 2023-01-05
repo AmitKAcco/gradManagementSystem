@@ -15,12 +15,12 @@ export const childRoutes = [
     path: 'clientsRequirements',
     loadChildren: () =>
       import('./clients-requirements/clients-requirements.module').then(m => m.ClientsRequirementsModule),
-    data: { icon: 'details', text: 'Clients Rquirements' }
+    data: { icon: 'details', text: 'Clients Requirements' }
   },
   {
-    path: 'Graduate Onboarding',
+    path: 'scheduleInterview',
     loadChildren: () =>
-      import('./clients-onboarding/clients-onboarding.module').then(m => m.ClientsOnboardingModule),
-    data: { icon: 'details', text: 'Graduate Onboarding' }
+      import('./schedule-interview/schedule-interview.module').then(m => m.ScheduleInterviewModule),
+    data: { icon: 'details', text: 'Schedule Interview' }
   },
 ]
