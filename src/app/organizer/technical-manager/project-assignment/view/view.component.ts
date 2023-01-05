@@ -25,6 +25,7 @@ export class ViewComponent {
   //     projectLead2:[''],
   //     projectName:['']
   columns = [
+    { columnDef: 'batchName', header: 'Batch Name',    cell: (element: any) => `${element.batchName}` },
     { columnDef: 'id', header: 'Team Number',    cell: (element: any) => `${element.teamNumber}` },
     { columnDef: 'empId',  header: 'EmpId',   cell: (element: any) => `${element.empId}`},
     { columnDef: 'projectLead1',   header: 'Project Lead 1', cell: (element: any) => `${element.projectLead1}`   },

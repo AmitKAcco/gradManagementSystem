@@ -10,23 +10,21 @@
   
     <form [formGroup]="TechnicalCalendarForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
-        <label>Batch Id</label>
-        <select  formControlName="selectBatchId" class = "form-control">
-          <option value="">Batch Id</option>
-          <option *ngFor="let batchId of batchIdList" [ngValue]="batchId">{{batchId}}</option>
+        <label>Batch Name</label>
+        <select  formControlName="batchName" class = "form-control">
+          <option value="">Batch Name</option>
+          <!-- <option *ngFor="let batchId of batchIdList" [ngValue]="batchId">{{batchId}}</option> -->
+          <option [value]="i.batchName" *ngFor="let i of getBatchName">{{i.batchName}}</option>
         </select>
         </div>
-        <div class="form-group">
-            <label>Topic Id</label>
-            <select  formControlName="selectTopicId" class = "form-control">
-              <option value="">Topic Id</option>
-              <option *ngFor="let topicId of topicIdList" [ngValue]="topicId">{{topicId}}</option>
-            </select>
-        </div>
-        <div class="form-group">
+                <div class="form-group">
             <label>Training Topic Name</label>
-            <input type="text" formControlName="trainingTopicName" id="trainingTopicName" class="formbold-form-input" required>
-        </div>
+            <select  formControlName="trainingTopicName" class = "form-control">
+              <option value="">Training Topic Name</option>
+              <!-- <option *ngFor="let batchId of batchIdList" [ngValue]="batchId">{{batchId}}</option> -->
+              <option [value]="i.topicName" *ngFor="let i of getTopicName">{{i.topicName}}</option>
+            </select>
+            </div>
         <div class="form-group">
             <label>Training Calendar Date</label>
             <input type="date" formControlName="trainingCalendarDate" id="trainingCalendarDate" class="formbold-form-input" required>

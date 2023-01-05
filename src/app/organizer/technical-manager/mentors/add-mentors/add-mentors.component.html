@@ -3,25 +3,27 @@
   <h2>Mentors Form</h2>
 
   <form [formGroup]="MentorForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
+    <!-- <div class="form-group">
       <label>Batch Id</label>
       <select  formControlName="selectBatchId" class = "form-control">
         <option value="">Batch Id</option>
         <option *ngFor="let batchId of batchIdList" [ngValue]="batchId">{{batchId}}</option>
       </select>
-      </div>
+      </div> -->
       <div class="form-group">
         <label>Emp Id Grad</label>
-        <select  formControlName="selectEmpIdGrad" class = "form-control">
+        <select  formControlName="empIdGrad" class = "form-control">
           <option value="">Emp Id Grad</option>
-          <option *ngFor="let empIdGrad of empIdGradList" [ngValue]="empIdGrad">{{empIdGrad}}</option>
+          <!-- <option *ngFor="let empIdGrad of empIdGradList" [ngValue]="empIdGrad">{{empIdGrad}}</option> -->
+          <option [value]="i.empId" *ngFor="let i of getEmpId">{{i.empId}}</option>
         </select>
       </div>
       <div class="form-group">
         <label>Emp Id Mentor</label>
-        <select  formControlName="selectEmpIdMentor" class = "form-control">
+        <select  formControlName="empIdMentor" class = "form-control">
           <option value="">Emp Id Mentor</option>
-          <option *ngFor="let empIdMentor of empIdMentorList" [ngValue]="empIdMentor">{{empIdMentor}}</option>
+          <!-- <option *ngFor="let empIdMentor of empIdMentorList" [ngValue]="empIdMentor">{{empIdMentor}}</option> -->
+          <option [value]="i.empId" *ngFor="let i of getMentorEmpId">{{i.empId}}</option>
         </select>
       </div>
       <div class="form-group">

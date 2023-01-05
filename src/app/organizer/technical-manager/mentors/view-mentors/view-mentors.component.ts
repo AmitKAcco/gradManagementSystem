@@ -28,6 +28,7 @@ export class ViewMentorsComponent {
   // clientProjectName:[''],
   // stakeholderName:[''],
   // client:['']
+  //{"mentorId":8,"batchId":0,"batchName":null,"empIdGrad":0,"empIdMentor":0,"gradName":null,"mentorName":null,"clientProjectName":"Stock Market","stakeholderName":"Rambabu","client":"MS","batchesList":[],"employeeIdGrad":[],"employeeIdMentor":[]}]
 
   columns = [
     { columnDef: 'batchName', header: 'Batch Name',    cell: (element: any) => `${element.batchName}` },

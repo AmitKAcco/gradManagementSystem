@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { TechnicalcalendarService } from '../technicalcalendar.service';
+import { GlobalService } from 'src/app/global.service';
+import { batchesGet } from 'src/backend.Data';
+import { topicNameGet } from '../../trannier-assignr/topicName';
 @Component({
   selector: 'app-add-calendar',
   templateUrl: './add-calendar.component.html',
@@ -11,21 +14,30 @@ export class AddCalendarComponent {
 
   TechnicalCalendarForm: FormGroup;
 
-  constructor(private fb :FormBuilder,private technicalCalendarService:TechnicalcalendarService) {}
+  constructor(private fb :FormBuilder,private technicalCalendarService:TechnicalcalendarService,private globalService:GlobalService) {}
 
-  batchIdList = [];
-  topicIdList = [];
+ // batchIdList = [];
+  //topicIdList = [];
+
+  getBatchName : batchesGet[];
+  getTopicName : topicNameGet[];
+  
  
 
   ngOnInit(){
     this.TechnicalCalendarForm = this.fb.group({
-      selectBatchId:[''],
-      selectTopicId:[''],
+      batchName:[''],
       trainingTopicName:[''],
       trainingCalendarDate:Date,
       trainingSession:['']
 
-    });
+    })
+    this.globalService.getAllBatches().subscribe(data => {
+      this.getBatchName = data;
+    })
+    this.globalService.getTopic().subscribe(data => {
+      this.getTopicName = data;
+    })
   }
   onSubmit(){
     console.log(this.TechnicalCalendarForm.value);
