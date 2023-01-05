@@ -22,18 +22,12 @@ export class ViewMockInterviewComponent {
   }
   columns = [
     //{ columnDef: 'id', header: 'Project Calender Id',    cell: (element: any) => `${element.projectCalendarId}` },
-    { columnDef: 'batchId',   header: 'Batch Id', cell: (element: any) => `${element.batchId}`  },
     { columnDef: 'empId',   header: 'Employee ID', cell: (element: any) => `${element.empId}`  },
+    { columnDef: 'batchName',   header: 'Batch Name', cell: (element: any) => `${element.batchName}`  },
+    { columnDef: 'empName',   header: 'Employee Name', cell: (element: any) => `${element.empName}`  },
     { columnDef: 'interviewerName',   header: 'Interviewer Name', cell: (element: any) => `${element.interviewerName}`  },
     { columnDef: 'interviewDate',     header: 'Interview Date',   cell: (element: any) => `${element.interviewDate}`},
-    { columnDef: 'time',   header: 'Interview Time', cell: (element: any) => `${element.time}` }, 
-    
-   
-   
-    
-   
-   
- 
+    { columnDef: 'time',   header: 'Interview Time', cell: (element: any) => `${element.time}` }
   ];
 
 

@@ -11,9 +11,11 @@ import { Task } from './graduate/feedback/shared/models/task.model';
   newVal = new Subject<any>();
   constructor(private _http: HttpClient) { }
   _url = 'http://localhost:8900/addApproval';
-  _urlOne = 'http://localhost:8900/allTopics';
+  _urlGetAllTopics = 'http://localhost:8900/allTopics';
+  _urlGetAllBatchTable = 'http://localhost:8900/allBatches'
   _urlTwo = 'http://localhost:8900/allApproval';
   _urlThree = 'localhost:8900/trainingCurriculumByBatchId/1';
+  _urlGetEmployees = 'http://localhost:8900/allEmployees'
 
   getApproval(batch: any): Observable<any> {
     let urlx = `http://localhost:8900/approval/${batch}`;
@@ -25,8 +27,15 @@ import { Task } from './graduate/feedback/shared/models/task.model';
     return this._http.get< any >(urlx);  
   }
 
+  getAllEmployees():Observable<any> {
+    return this._http.get<any>(this._urlGetEmployees);
+  }
+
+  getAllBatches():Observable<any>{
+    return this._http.get<any>(this._urlGetAllBatchTable);
+  }
   getTopic(): Observable<any>{
-    return this._http.get<any>(this._urlOne);
+    return this._http.get<any>(this._urlGetAllTopics);
   }
 
   getTopicid(): Observable<any>{

@@ -30,6 +30,7 @@ export class ViewMentorsComponent {
   // client:['']
 
   columns = [
+    { columnDef: 'batchName', header: 'Batch Name',    cell: (element: any) => `${element.batchName}` },
     { columnDef: 'id', header: 'GradEmpId',    cell: (element: any) => `${element.empIdGrad}` },
     { columnDef: 'title',  header: 'MentorEmpId',   cell: (element: any) => `${element.empIdMentor}`},
     { columnDef: 'gradName',   header: 'Grad Name', cell: (element: any) => `${element.gradName}`   },

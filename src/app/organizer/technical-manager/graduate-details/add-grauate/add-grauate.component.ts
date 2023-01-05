@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { GraduateDetailsService } from '../graduate-details.service';
+import { batchesGet } from 'src/backend.Data';
+import { GlobalService } from 'src/app/global.service';
+
 @Component({
   selector: 'app-add-grauate',
   templateUrl: './add-grauate.component.html',
@@ -11,14 +14,15 @@ export class AddGrauateComponent {
 
   graduateForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private graduateDetailsService: GraduateDetailsService){ }
+  constructor(private fb: FormBuilder, private graduateDetailsService: GraduateDetailsService,private globalService:GlobalService){ }
 
-  batchIdList = [];
+  batchNameList = [];
+  getBatchName : batchesGet[];
 
   ngOnInit(){
     this.graduateForm = this.fb.group({
-      selectBatchId:[''],
-      empName:[''],
+      batchName:[''],
+      employeeName:[''],
       designation:[''],
       dateOfJoining:Date,
       mobileNumber:[''],
@@ -27,6 +31,9 @@ export class AddGrauateComponent {
       gender:[''],
       deliveryDirector:['']
     });
+    this.globalService.getAllBatches().subscribe(data=> {
+      this.getBatchName = data;
+    })
   }
 
   onSubmit(){
