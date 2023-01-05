@@ -72,6 +72,13 @@ export const childRoutes = [
     import('./add-project/add-project.module')
     .then(m => m.AddProjectModule),
      data: { icon: 'details', text: 'Add Project' }
+  },
+  {
+    path : 'Status',
+    loadChildren: () =>
+    import('./status/status.module')
+    .then(m => m.StatusModule),
+     data: { icon: 'details', text: 'Status' }
   }
 
 ]
