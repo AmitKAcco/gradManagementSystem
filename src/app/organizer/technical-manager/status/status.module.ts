@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { StatusRoutingModule } from './status-routing.module';
 import { HomeComponent } from './home/home.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -11,7 +11,11 @@ import { HomeComponent } from './home/home.component';
   ],
   imports: [
     CommonModule,
-    StatusRoutingModule
+    StatusRoutingModule,
+    HttpClientModule
+  ],
+  exports : [
+    HomeComponent
   ]
 })
 export class StatusModule { }
