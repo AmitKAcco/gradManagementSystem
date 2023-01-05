@@ -18,7 +18,7 @@ export class AddMentorsComponent {
 
   ngOnInit() {
     this.MentorForm = this.fb.group({
-      selectBatchId:[''],
+      batchName:[''],
       selectEmpIdGrad:[''],
       selectEmpIdMentor:[''],
       clientProjectName:[''],
