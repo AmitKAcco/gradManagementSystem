@@ -7,10 +7,15 @@ import { HttpClient } from '@angular/common/http';
 export class AddprojectServiceService {
 
   constructor(private _http: HttpClient) { }
-  _url = 'http://localhost:8900/allBatches';
-  _urlOne = 'http://localhost:8900/allMockInterview';
-  getMockInterview(): Observable<any>{
-    return this._http.get<any>(this._url);
+ 
+  _url = 'http://localhost:8900/addProjectTopics';
+  _urlOne = 'http://localhost:8900/allProjectTopics';
+  getAddProject(): Observable<any>{
+    return this._http.get<any>(this._urlOne);
+  }
+  postAddProject(userData: any) {
+    console.log(userData);
+    return this._http.post<any>(this._url, userData);
   }
  
 }
