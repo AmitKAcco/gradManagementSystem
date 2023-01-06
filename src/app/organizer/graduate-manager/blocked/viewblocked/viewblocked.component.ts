@@ -1,4 +1,6 @@
+import { SelectionModel } from '@angular/cdk/collections';
 import { Component } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
 import { BlockedService } from '../blocked.service';
 
 @Component({
@@ -14,15 +16,42 @@ export class ViewblockedComponent {
   ngOnInit(): void {
     this.blockedService.getBlocked()
     .subscribe(data => {
-      this.dataSource = data;
+      // this.dataSource = data;
+      this.dataSource = new MatTableDataSource<any>(data);
+
     });
     // this.feedback.getFeedback()
     // .subscribe(data => {
     //   this.dataSource = data;
     // })
   }
+
+
+  // displayedColumns: string[] = ['batchId','batchName','empId','empName','jobId','client','interviewScheduled','selected'];
+  displayedColumns: string[] = ['batchId','interviewScheduled'];
+
+  selection = new SelectionModel<any>(true, []);
+
+  /** Whether the number of selected elements matches the total number of rows. */
+  isAllSelected() {
+    const numSelected = this.selection.selected.length;
+    const numRows = this.dataSource.data.length;
+    return numSelected === numRows;
+  }
+
+  /** Selects all rows if they are not all selected; otherwise clear selection. */
+  masterToggle() {
+    this.isAllSelected() ?
+        this.selection.clear() :
+        this.dataSource.data.forEach((row: any) => this.selection.select(row));
+  }
+
+
+
+
+
+  
   columns = [
-    //{ columnDef: 'id', header: 'Project Calender Id',    cell: (element: any) => `${element.projectCalendarId}` },
     { columnDef: 'batchId',   header: 'Batch Id', cell: (element: any) => `${element.batchId}`  },
     { columnDef: 'batchName',   header: 'Batch Name', cell: (element: any) => `${element.batchName}`  },
     { columnDef: 'empId',   header: 'Employee ID', cell: (element: any) => `${element.empId}`  },
@@ -31,17 +60,8 @@ export class ViewblockedComponent {
     { columnDef: 'client',     header: 'Client',   cell: (element: any) => `${element.client}`},
     { columnDef: 'interviewScheduled',     header: 'Tnterview Scheduled status',   cell: (element: any) => `${element.interviewScheduled}`},
     { columnDef: 'selected',     header: 'Selected Status',   cell: (element: any) => `${element.selected}`},
-    
-    
-
-    
-    
-   
-   
-    
-   
-   
- 
   ];
+
+  
 
 }
