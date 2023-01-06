@@ -6,37 +6,25 @@
     <div class="form-group">
       <label>Gradudate ID </label>
       <select  formControlName="gradId" class="form-control">
-        <option value="">Select gradId Name</option>
-        <option *ngFor="let obj of here" [ngValue]="obj">{{obj}}</option>
+        <option value="">Grad Id</option>
+        <!-- <option *ngFor="let obj of here" [ngValue]="obj">{{obj}}</option> -->
+        <option [value]="i.empId" *ngFor="let i of getEmpId">{{i.empId}}</option>
+      
       </select>
     </div>
 
-    <div class="form-group">
-      <label>Batch Year</label>
-      <select  formControlName="batchId" class="form-control">
-        <option value="">Select Batch Id </option>
-        <option *ngFor="let obj of here" [ngValue]="obj">{{obj}}</option>
-      </select>
-    </div>
     
     <div class="form-group">
       <label>Buddy Id</label>
       <select  formControlName="buddyId" class="form-control">
-        <option value="">Select Buddy Id</option>
-        <option *ngFor="let obj of here" [ngValue]="obj">{{obj}}</option>
+        <option value="">Buddy Id</option>
+        <!-- <option *ngFor="let obj of here" [ngValue]="obj">{{obj}}</option> -->
+        <option [value]="i.empId" *ngFor="let i of getEmpId">{{i.empId}}</option>
+
       </select>
     </div>
 
-    <div class="form-group">
-      <label>Gradudate Name</label>
-      <input type="text"  formControlName="gradName" class="form-control">
-    </div>
-
-    <div class="form-group">
-      <label>Buddy Name</label>
-      <input type="text"  formControlName="buddyName" class="form-control">
-    </div>
-
+   
     <button class="btn btn-primary" type="submit">Register</button> 
 
   </form>
