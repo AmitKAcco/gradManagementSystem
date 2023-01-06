@@ -3,7 +3,7 @@
     <select #val (click)="onChangeValue(val.value)"
       name="sel3">
       <option val=""> select Batches</option>
-      <option  [value]="i.batchId" *ngFor="let i of batches">{{i.batchId}}</option>
+      <option  [value]="i.batchName" *ngFor="let i of batches">{{i.batchName}}</option>
     </select>
   </div>
   <button type="button" class="btn btn-primary" (click)="getStatus()">Primary</button>

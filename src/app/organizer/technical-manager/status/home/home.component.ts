@@ -12,8 +12,8 @@ export class HomeComponent {
   batches: batchesGet[];
   status: StatusData;
   value : any;
-  approvalCalendar :boolean = false;
-  approvalCurriculum :boolean = false;
+  approvalCalendar :number = 0;
+  approvalCurriculum :number = 0;
   constructor(private statusService: StatusServiceService) {
 
   }
