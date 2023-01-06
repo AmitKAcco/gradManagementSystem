@@ -22,17 +22,11 @@ export class ViewBuddyComponent {
   columns = [
     //{ columnDef: 'id', header: 'Project Calender Id',    cell: (element: any) => `${element.projectCalendarId}` },
     { columnDef: 'batchId',   header: 'Batch Id', cell: (element: any) => `${element.batchId}`  },
-    { columnDef: 'gradId',   header: 'Graduate ID', cell: (element: any) => `${element.graId}`  },
+    { columnDef: 'batchName',   header: 'Batch Name', cell: (element: any) => `${element.batchName}`  },
+    { columnDef: 'gradId',   header: 'Graduate ID', cell: (element: any) => `${element.gradId}`  },
     { columnDef: 'buddyId',   header: 'Buddy ID', cell: (element: any) => `${element.buddyId}`  },
     { columnDef: 'gradName',     header: 'Graduate Name',   cell: (element: any) => `${element.gradName}`},
     { columnDef: 'buddyName',     header: 'Buddy Name',   cell: (element: any) => `${element.buddyName}`},
-    
-   
-   
-    
-   
-   
- 
   ];
 
 }
