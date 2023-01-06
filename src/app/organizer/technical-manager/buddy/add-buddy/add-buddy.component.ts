@@ -6,6 +6,8 @@ import { ForbiddenNameValidator } from '../shared/user-name.validator';
 import { PasswordValidator } from '../shared/password.validator';
 import { AbstractControlOptions } from '@angular/forms';
 import { UserService } from './user.service';
+import { GlobalService } from 'src/app/global.service';
+import { employeeData } from 'src/app/employeeData';
 @Component({
   selector: 'app-add-buddy',
   templateUrl: './add-buddy.component.html',
@@ -15,18 +17,18 @@ export class AddBuddyComponent implements OnInit{
  
   buddyForm: FormGroup;
 
-  constructor(private fb: FormBuilder,private _registrationService: RegistrationService, private ser : UserService) { }
-  here = ['one' , 'two', 'three'];
+  constructor(private fb: FormBuilder,private _registrationService: RegistrationService,private globalService:GlobalService) { }
+  
+  getEmpId : employeeData[];
   ngOnInit() {
     this.buddyForm = this.fb.group({
           gradId : [''],
-          batchId : [''],
-          buddyId : [''],
-          gradName : [''],
-          buddyName : ['']
+          buddyId : ['']         
       })
-      this.ser.getHeroes()
-        .subscribe(arg => console.log(arg));
+      this.globalService.getAllEmployees().subscribe(data => {
+        this.getEmpId = data;
+      })
+     
   }
 
   onSubmit(){
@@ -41,3 +43,21 @@ export class AddBuddyComponent implements OnInit{
   //     );
   // }
 }
+
+
+// @Column(name = "batchName")
+// private String batchName;
+
+// //FK
+// @Column(name="grad_id")
+// private int gradId;
+
+// @Column(name="buddy_id")
+// private int buddyId;
+
+// @Column(name="grad_name")
+// private String gradName;
+
+// @Column(name="buddy_name")
+// private String buddyName;
+
