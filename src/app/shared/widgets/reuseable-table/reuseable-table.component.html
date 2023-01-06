@@ -15,12 +15,12 @@ name="sel3">
 </select> -->
 <mat-form-field>
   <mat-select placeholder="Batch">
-   <mat-option *ngFor="let i of batches"[value]="i.batchId" (click)="filterData(i.batchId)">
-           {{i.batchId}}
+   <mat-option *ngFor="let i of storeBatchName"[value]="i.batchName" (click)="filterData(i.batchName)">
+           {{i.batchName}}
     </mat-option>
   </mat-select>
 </mat-form-field>
-<mat-table *ngIf="dataSource" [dataSource]="dataSource">
+<mat-table *ngIf="dataSource && show" [dataSource]="dataSource">
 
     <ng-container *ngFor="let column of columns" [cdkColumnDef]="column.columnDef">
       <mat-header-cell *cdkHeaderCellDef>{{ column.header }}</mat-header-cell>

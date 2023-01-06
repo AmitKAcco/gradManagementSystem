@@ -13,7 +13,7 @@ export class HomeComponent {
   selectedBatch = 2;
   data: any;
   storeCurrent : any;
-  // @Output() sendval = new EventEmitter<any>();
+  selectedName : string;
   constructor(private approvalService: GlobalService) {
   }
   ngOnInit(){
@@ -27,8 +27,9 @@ export class HomeComponent {
   }
   sendApproval() {
     this.data = {
-      batchId: this.storeCurrent,
-      techCalendar: true
+      batchName: this.storeCurrent,
+      // techCurriculum: -1,
+      techCalendar : 1
     }
     this.approvalService.postApproval(this.data)
       .subscribe();
@@ -36,8 +37,9 @@ export class HomeComponent {
   }
   sendDisApproval() {
     this.data = {
-      batchId: this.storeCurrent,
-      techCalendar: false
+      batchName: this.storeCurrent,
+      // techCurriculum: -1,
+      techCalendar : -1
     }
     this.approvalService.postApproval(this.data)
       .subscribe();
