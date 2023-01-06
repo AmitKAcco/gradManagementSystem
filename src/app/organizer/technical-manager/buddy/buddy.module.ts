@@ -14,7 +14,7 @@ import { WidgetsModule } from 'src/app/shared/widgets/widgets.module';
   declarations: [
     HomeComponent,
     AddBuddyComponent,
-    ViewBuddyComponent,
+    ViewBuddyComponent
 
   ],
   imports: [
@@ -24,10 +24,11 @@ import { WidgetsModule } from 'src/app/shared/widgets/widgets.module';
     FormsModule,
     MatTabsModule,
     WidgetsModule
-  ],
-  exports : [
-    AddBuddyComponent,
-    ViewBuddyComponent
   ]
+  // ,
+  // exports : [
+  //   AddBuddyComponent,
+  //   ViewBuddyComponent
+  // ]
 })
 export class BuddyModule { }

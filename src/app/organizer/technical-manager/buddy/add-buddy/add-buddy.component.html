@@ -4,7 +4,7 @@
    <form [formGroup]="buddyForm" (ngSubmit)="onSubmit()">
 
     <div class="form-group">
-      <label>Gradudate ID </label>
+      <label>Graduate ID </label>
       <select  formControlName="gradId" class="form-control">
         <option value="">Grad Id</option>
         <!-- <option *ngFor="let obj of here" [ngValue]="obj">{{obj}}</option> -->
@@ -19,7 +19,7 @@
       <select  formControlName="buddyId" class="form-control">
         <option value="">Buddy Id</option>
         <!-- <option *ngFor="let obj of here" [ngValue]="obj">{{obj}}</option> -->
-        <option [value]="i.empId" *ngFor="let i of getEmpId">{{i.empId}}</option>
+        <option [value]="i.empId" *ngFor="let i of getBuddyEmpId">{{i.empId}}</option>
 
       </select>
     </div>

@@ -15,7 +15,7 @@ export class HomeComponent {
   constructor(private router: Router) {
     this.navLinks = [
       {
-        label: 'Add buddy',
+        label: 'Add Buddy',
         link: './add',
         index: 0
       }, 
