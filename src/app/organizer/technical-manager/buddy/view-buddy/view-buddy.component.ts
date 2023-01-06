@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { RegistrationService } from '../registration.service';
+import { BuddyService } from '../buddy.service';
 @Component({
   selector: 'app-view-buddy',
   templateUrl: './view-buddy.component.html',
   styleUrls: ['./view-buddy.component.scss']
 })
 export class ViewBuddyComponent {
-  constructor(private buddyService : RegistrationService) {}
+  constructor(private buddyService : BuddyService) {}
 
   dataSource:any;
   ngOnInit(): void {
@@ -19,6 +19,7 @@ export class ViewBuddyComponent {
     //   this.dataSource = data;
     // })
   }
+  // {"buddyTableId":2,"batchId":6000,"batchName":"Jan 2022","gradId":8000,"buddyId":8020,"gradName":"Twinkle","buddyName":"Rachna",
   columns = [
     //{ columnDef: 'id', header: 'Project Calender Id',    cell: (element: any) => `${element.projectCalendarId}` },
     { columnDef: 'batchId',   header: 'Batch Id', cell: (element: any) => `${element.batchId}`  },

@@ -1,13 +1,13 @@
 import { Component, ChangeDetectorRef, ElementRef, ViewChild, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
-import { RegistrationService } from '../registration.service';
 import { ForbiddenNameValidator } from '../shared/user-name.validator';
 import { PasswordValidator } from '../shared/password.validator';
 import { AbstractControlOptions } from '@angular/forms';
 import { UserService } from './user.service';
 import { GlobalService } from 'src/app/global.service';
 import { employeeData } from 'src/app/employeeData';
+import { BuddyService } from '../buddy.service';
 @Component({
   selector: 'app-add-buddy',
   templateUrl: './add-buddy.component.html',
@@ -17,9 +17,10 @@ export class AddBuddyComponent implements OnInit{
  
   buddyForm: FormGroup;
 
-  constructor(private fb: FormBuilder,private _registrationService: RegistrationService,private globalService:GlobalService) { }
+  constructor(private fb: FormBuilder,private buddyService:BuddyService,private globalService:GlobalService) { }
   
   getEmpId : employeeData[];
+  getBuddyEmpId : employeeData[];
   ngOnInit() {
     this.buddyForm = this.fb.group({
           gradId : [''],
@@ -28,11 +29,20 @@ export class AddBuddyComponent implements OnInit{
       this.globalService.getAllEmployees().subscribe(data => {
         this.getEmpId = data;
       })
+      this.globalService.getAllEmployees().subscribe(data => {
+        this.getBuddyEmpId = data;
+      })
      
   }
 
   onSubmit(){
     console.log(this.buddyForm.value);
+    this.buddyService.postBuddy(this.buddyForm.value)
+    .subscribe(
+       // response => console.log('Success!', response),
+      // error => console.error('Error!', error)
+
+    );
   }
   // onSubmit() {
   //   console.log(this.registrationForm.value);
