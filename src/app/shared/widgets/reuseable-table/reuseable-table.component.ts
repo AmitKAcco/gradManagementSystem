@@ -23,6 +23,8 @@ export class ReuseableTableComponent implements OnInit {
   dataSource:any;
   apiResponse : any;
   batches :any;
+  storeBatchName : batchesGet[];
+  show : boolean = false;
   constructor(private global : GlobalService){
   }
   tasks : Task[] = [];
@@ -33,8 +35,12 @@ export class ReuseableTableComponent implements OnInit {
     this.displayedColumns = this.columns.map((c: { columnDef: any; }) => c.columnDef);
     console.log(this.dataSource);
     this.batches = this.rowData;
+    console.log(this.storeBatchName);
+    this.global.getAllBatches().subscribe(data=>{
+      this.storeBatchName = data;
+    })
       this.dataSource.filterPredicate = (data: any, filter: string) => {
-        return data.batchId == filter;
+        return data.batchName == filter;
     }
   }
  
@@ -43,6 +49,7 @@ export class ReuseableTableComponent implements OnInit {
     this.dataSource.filter = num;
     this.global.emitBatchId(num);
     console.log(num);
+    this.show = true;
   }
 
 

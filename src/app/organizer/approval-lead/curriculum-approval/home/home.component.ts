@@ -9,40 +9,35 @@ import { EventEmitter, Output } from '@angular/core';
 
 export class HomeComponent {
   dataSource : any;
-  batches = [1, 2, 3];
-  selectedBatch = 2;
+  selectedName : string;
   data: any;
   // @Output() sendval = new EventEmitter<any>();
   constructor(private approvalService: GlobalService) {
   }
+  ngOnInit(){
+    this.approvalService.batchEmitter.subscribe(data =>{
+      this.selectedName = data;
+   })
+  }
   onChangeValue(newValue: any) {
     console.log(newValue);
-    this.selectedBatch = newValue;
+    this.selectedName = newValue;
   }
   sendApproval() {
     this.data = {
-      batchId: this.selectedBatch,
-      techCurriculum: true
+      batchName: this.selectedName,
+      techCurriculum: 1,
+      // techCalendar : -1
     }
+    
     this.approvalService.postApproval(this.data)
-      .subscribe();
-    this.approvalService.getUser(0).subscribe( data=>
-      this.dataSource = data);
-
-    this.approvalService.batchEmitter.subscribe(data =>{
-      this.selectedBatch = data;
-      console.log("i am here" + data);
-    })
-    setTimeout(() => {
-      console.log( this.selectedBatch);
-    }, 100);
-    
-    
+    .subscribe(); 
   }
   sendDisApproval() {
     this.data = {
-      batchId: this.selectedBatch,
-      techCurriculum: false
+      batchName: this.selectedName,
+      techCurriculum: -1
+      // techCalendar : -1
     }
     this.approvalService.postApproval(this.data)
       .subscribe(
