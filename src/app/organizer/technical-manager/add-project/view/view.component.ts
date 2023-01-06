@@ -23,7 +23,7 @@ export class ViewComponent {
   }
   columns = [
     //{ columnDef: 'id', header: 'Project Calender Id',    cell: (element: any) => `${element.projectCalendarId}` },
-    { columnDef: 'batchId',   header: 'Batch Id', cell: (element: any) => `${element.batchId}`  },
+    { columnDef: 'batchName',   header: 'Batch Name', cell: (element: any) => `${element.batchName}`  },
     
     { columnDef: 'projectName',   header: 'Project Name', cell: (element: any) => `${element.projectName}`  },
     
