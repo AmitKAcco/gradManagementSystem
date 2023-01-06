@@ -5,7 +5,7 @@ import { TrannierAssignrRoutingModule } from './trannier-assignr-routing.module'
 import { HomeComponent } from './home/home.component';
 import { AddComponent } from './add/add.component';
 import { ViewComponent } from './view/view.component';
-import { NgbModule} from "@ng-bootstrap/ng-bootstrap";
+
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatTabsModule } from '@angular/material/tabs';
 import { WidgetsModule } from 'src/app/shared/widgets/widgets.module';
@@ -21,7 +21,7 @@ import { WidgetsModule } from 'src/app/shared/widgets/widgets.module';
     CommonModule,
     TrannierAssignrRoutingModule,
     ReactiveFormsModule,
-    NgbModule,
+
     MatTabsModule,
     WidgetsModule
     
