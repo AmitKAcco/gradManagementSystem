@@ -31,6 +31,7 @@ export class ViewEvaluationComponent {
   columns = [
     //{ columnDef: 'id', header: 'Project Calender Id',    cell: (element: any) => `${element.projectCalendarId}` },
     { columnDef: 'batchId',   header: 'Batch Id', cell: (element: any) => `${element.batchId}`  },
+    { columnDef: 'batchName',   header: 'Batch Name', cell: (element: any) => `${element.batchName}`  },
     { columnDef: 'empId',   header: 'Employee ID', cell: (element: any) => `${element.empId}`  },
     { columnDef: 'topicName',   header: 'Topic Name', cell: (element: any) => `${element.topicName}`  },
     { columnDef: 'empName',   header: 'Employee Name', cell: (element: any) => `${element.empName}`  },

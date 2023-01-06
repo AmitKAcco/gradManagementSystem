@@ -13,8 +13,8 @@ export class ScheduleInterviewService {
   getInterview(): Observable<any>{
     return this._http.get<any>(this._urlOne);
   }
-  postInterview(userData: any) {
-    console.log(userData);
+  postInterview(userData: any) : Observable<any> {
+    console.log("hi " + " " + userData);
     return this._http.post<any>(this._url, userData);
   }
 

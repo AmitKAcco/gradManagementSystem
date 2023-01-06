@@ -27,7 +27,7 @@ export class AddMockInterviewComponent {
        empId : [''], 
        interviewerName : [''],
        interviewDate : Date,
-       time : [''],
+       time : Date,
        selectBatchId : ['']
     })
     // this.globalService.getAllBatches().subscribe(data => {
