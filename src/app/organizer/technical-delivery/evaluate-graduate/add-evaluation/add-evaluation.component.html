@@ -11,24 +11,24 @@
   
      <form [formGroup]="evaluationDesgin" (ngSubmit)="onSubmit()">
       <div class="form-group">
-        <label>Batch Id </label>
-        <select  formControlName="selectedBatch" class="form-control">
+        <label>Batch Name</label>
+        <select  formControlName="batchName" class="form-control">
           <option value="">Select Batch Name </option>
-          <option *ngFor="let batch of batchIdList" [ngValue]="batch">{{batch}}</option>
+          <option [value]="i.batchName" *ngFor="let i of getBatchName">{{i.batchName}}</option>
         </select>
       </div>
       <div class="form-group">
         <label>Graduate Id </label>
-        <select  formControlName="graduateSelected" class="form-control">
+        <select  formControlName="empId" class="form-control">
           <option value="">Select Graduate Id </option>
-          <option *ngFor="let graduate of empIdlist" [ngValue]="graduate">{{graduate}}</option>
+          <option [value]="i.empId" *ngFor="let i of getEmpId">{{i.empId}}</option>
         </select>
       </div>
       <div class="form-group">
         <label>Topic Name </label>
-        <select  formControlName="topicSelected" class="form-control">
+        <select  formControlName="topicName" class="form-control">
           <option value="">Select Topic Name </option>
-          <option *ngFor="let topic of topics" [ngValue]="topic">{{topic}}</option>
+          <option [value]="i.topicName" *ngFor="let i of getTopicName">{{i.topicName}}</option>
         </select>
       </div>
       

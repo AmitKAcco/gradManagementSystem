@@ -19,6 +19,7 @@ import { WidgetsModule } from 'src/app/shared/widgets/widgets.module';
     CommonModule,
     MockInterviewRoutingModule,
     ReactiveFormsModule,
+    RouterModule,
     FormsModule,
     MatTabsModule,
     WidgetsModule
