@@ -43,6 +43,7 @@ export class SharedDashBoardComponent {
     })
     this.sharedDashSer.getcountRequstion(num1).subscribe(data=>{
       this.totalReq = data;
+      console.log(data);
     })
     setTimeout(() => {
       this.unplacedGrads = this.totalGrads - this.selectedGrads;
