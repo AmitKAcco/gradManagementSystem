@@ -36,16 +36,15 @@ export class ViewJobComponent {
 // "interviewList":[]}
 
   
-//       selectBatchId:[''],
+//       batchId:[''],
 //       client:[''],
 //       vertical:[''],
 //       openings:[''] 
 
 columns = [
-  { columnDef: 'id', header: 'BatchId',    cell: (element: any) => `${element.selectBatchId}` },
+  { columnDef: 'batchName', header: 'Batch Name',    cell: (element: any) => `${element.batchName}` },
   { columnDef: 'client',   header: 'Client', cell: (element: any) => `${element.client}`   },
-  { columnDef: 'vertical',   header: 'Vertical', cell: (element: any) => `${element.vertical}`   },
-  { columnDef: 'openings',   header: 'Openings', cell: (element: any) => `${element.openings}`   }
+  { columnDef: 'vertical',   header: 'Vertical', cell: (element: any) => `${element.vertical}`   }
  
 ];
 

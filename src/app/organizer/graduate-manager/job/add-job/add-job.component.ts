@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { JobService } from '../job.service';
+import { GlobalService } from 'src/app/global.service';
+import { batchesGet } from 'src/backend.Data';
 
 
 @Component({
@@ -13,17 +15,21 @@ export class AddJobComponent {
 
   JobForm: FormGroup;
 
-  constructor(private fb:FormBuilder,private jobService:JobService){}
+  constructor(private fb:FormBuilder,private jobService:JobService,private globalService:GlobalService){}
 
-  batchIdList = [];
+  //batchIdList = [];
+
+  getBatchName : batchesGet[];
   
   ngOnInit(){
     this.JobForm = this.fb.group({
-      selectBatchId:[''],
+      batchName:[''],
       client:[''],
-      vertical:[''],
-      openings:['']
-    });
+      vertical:['']
+    })
+    this.globalService.getAllBatches().subscribe(data =>{
+      this.getBatchName = data;
+    })
   }
 
   onSubmit(){

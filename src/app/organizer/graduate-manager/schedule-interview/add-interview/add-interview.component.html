@@ -7,6 +7,14 @@ interview time
 block status -> 1
 interview date -->
 
+<!-- batchNameList = [];
+empIdList = [];
+jobIdList = [];
+
+getEmpId : employeeData[];
+getBatchName : batchesGet[];
+getJob : jobData[]; -->
+
 <div class="container-fluid addMockInterview">
   <h2>Registration Form</h2>
 
@@ -16,15 +24,15 @@ interview date -->
       <label>Employee ID </label>
       <select formControlName="empId" class="form-control">
         <option value="">Employee ID</option>
-        <option *ngFor="let empId of empIdList" [ngValue]="empId">{{empId}}</option>
+        <option [value]="i.empId" *ngFor="let i of getEmpId">{{i.empId}}</option>
       </select>
     </div>
 
     <div class="form-group">
-      <label>Batch ID </label>
-      <select formControlName="batchId" class="form-control">
-        <option value="">Batch ID</option>
-        <option *ngFor="let batchId of batchIdList" [ngValue]="batchId">{{batchId}}</option>
+      <label>Batch Name</label>
+      <select formControlName="batchName" class="form-control">
+        <option value="">Batch Name</option>
+        <option [value]="i.batchName" *ngFor="let i of getBatchName">{{i.batchName}}</option>
       </select>
     </div>
 
@@ -32,7 +40,7 @@ interview date -->
       <label>Job ID </label>
       <select formControlName="jobId" class="form-control">
         <option value="">Job ID</option>
-        <option *ngFor="let jobId of jobIdList" [ngValue]="jobId">{{jobId}}</option>
+        <option [value]="i.jobId" *ngFor="let i of getJob">{{i.jobId}}</option>
       </select>
     </div>
 
@@ -42,7 +50,7 @@ interview date -->
     </div>
     <div class="form-group">
       <label for="time" class="formbold-form-label">Interview Time</label>
-      <input type="time" formControlName="time" id="interviewerTime" class="formbold-form-input" required>
+      <input type="time" formControlName="time" id="interviewTime" class="formbold-form-input" required>
     </div>
     <button class="btn btn-primary" type="submit">Schedule</button>
 
