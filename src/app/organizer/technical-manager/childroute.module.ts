@@ -1,6 +1,12 @@
 
 export const childRoutes = [
-  
+  {
+    path : 'batch',
+    loadChildren: () =>
+    import('./batch/batch.module')
+    .then(m => m.BatchModule),
+     data: { icon: 'details', text: 'Batch' }
+  },
   {
     path: 'buddy',
     loadChildren: () =>
