@@ -7,6 +7,9 @@ import { AddInterviewComponent } from './add-interview/add-interview.component';
 import { ViewInterviewComponent } from './view-interview/view-interview.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { MatTabsModule } from '@angular/material/tabs';
+import { RouterModule } from '@angular/router';
+import { WidgetsModule } from 'src/app/shared/widgets/widgets.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     ScheduleInterviewRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTabsModule,
+    WidgetsModule
   ]
 })
 export class ScheduleInterviewModule { }
