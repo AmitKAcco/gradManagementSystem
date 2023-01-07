@@ -6,33 +6,45 @@
         <label>Batch Name</label>
         <select  formControlName="batchName" class = "form-control">
           <option value="">Batch Name</option>
-          <!-- <option *ngFor="let batchId of batchIdList" [ngValue]="batchId">{{batchId}}</option> -->
           <option [value]="i.batchName" *ngFor="let i of getBatchName">{{i.batchName}}</option>
         </select>
         </div>
+
         <div class="form-group">
           <label>Team Number</label>
           <input type="number" formControlName="teamNumber" id="teamNumber" class="formbold-form-input" required>
       </div>
   
-      <div class="form-group">
-        <label>Employee Id</label>
-        <input type="text" formControlName="empId" id="empId" class="formbold-form-input" required>
+ 
+    <div class="form-group">
+      <label>Graduate</label>
+      <button type="button" class="btn btn-secondary btn-sm m-2" (click)="addEmpIds()">Add Graduate</button>
+      <div formArrayName="empIds" *ngFor="let email of empIds.controls; let i=index">
+      
+        <select  class = "form-control" class="form-control my-1" [formControlName]="i">
+          <option value="">Select Id</option>
+          <!-- <option *ngFor="let batchId of batchIdList" [ngValue]="batchId">{{batchId}}</option> -->
+          <option [value]="i.empId" *ngFor="let i of getEmpName">{{i.empId}}</option>
+        </select>
+      </div>
     </div>
+
     <div class="form-group">
       <label>Project Lead 1</label>
       <input type="text" formControlName="projectLead1" id="projectLead1" class="formbold-form-input" required>
   </div>
+
   <div class="form-group">
     <label>Project Lead 2</label>
     <input type="text" formControlName="projectLead2" id="projectLead2" class="formbold-form-input" required>
    </div>
+
    <div class="form-group">
     <label>Project Name</label>
     <input type="text" formControlName="projectName" id="projectName" class="formbold-form-input" required>
 </div>
 
-      <button class="btn btn-primary" type="submit">Register</button> 
+    <button class="btn btn-primary" type="submit">Register</button> 
     
     </form>
   </div>

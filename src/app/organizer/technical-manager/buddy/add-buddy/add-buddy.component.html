@@ -1,32 +1,37 @@
 <div class="container-fluid addFeedback">
-  <h2>Registration Form</h2>
+  <h2>Buddy Form</h2>
 
-   <form [formGroup]="buddyForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="buddyForm" (ngSubmit)="onSubmit()">
 
     <div class="form-group">
-      <label>Gradudate ID </label>
-      <select  formControlName="gradId" class="form-control">
+      <label>Graduate ID </label>
+      <select formControlName="gradId" class="form-control"
+        [class.is-invalid]="gradId?.invalid && gradId?.touched">
         <option value="">Grad Id</option>
         <!-- <option *ngFor="let obj of here" [ngValue]="obj">{{obj}}</option> -->
         <option [value]="i.empId" *ngFor="let i of getEmpId">{{i.empId}}</option>
-      
       </select>
+      {{gradId?.invalid}}
+      <div *ngIf="gradId?.invalid && gradId?.touched">
+
+        <small class="text-danger" *ngIf="gradId?.errors?.['required']">Username
+          is required</small>
+      </div>
     </div>
 
-    
+
+
+
     <div class="form-group">
       <label>Buddy Id</label>
-      <select  formControlName="buddyId" class="form-control">
+      <select formControlName="buddyId" class="form-control">
         <option value="">Buddy Id</option>
         <!-- <option *ngFor="let obj of here" [ngValue]="obj">{{obj}}</option> -->
-        <option [value]="i.empId" *ngFor="let i of getEmpId">{{i.empId}}</option>
-
+        <option [value]="i.empId" *ngFor="let i of getBuddyEmpId">{{i.empId}}</option>
       </select>
     </div>
 
-   
-    <button class="btn btn-primary" type="submit">Register</button> 
 
+    <button class="btn btn-primary" type="submit" [disabled]="!buddyForm.valid">Register</button>
   </form>
-
-
+</div>

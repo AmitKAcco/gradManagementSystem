@@ -1,21 +1,23 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+
+
 @Injectable({
   providedIn: 'root'
 })
-export class ScheduleInterviewService {
+export class BuddyService {
 
   constructor(private _http: HttpClient) { }
  
-  _url = 'http://localhost:8900/addInterview';
-  _urlOne = 'http://localhost:8900/allInterview';
-  getInterview(): Observable<any>{
+
+  _url = 'http://localhost:8900/addBuddy';
+  _urlOne = 'http://localhost:8900/allBuddy';
+  getBuddy(): Observable<any>{
     return this._http.get<any>(this._urlOne);
   }
-  postInterview(userData: any) : Observable<any> {
-    console.log("hi " + " " + userData);
+  postBuddy(userData: any) {
+    console.log(userData);
     return this._http.post<any>(this._url, userData);
   }
-
 }

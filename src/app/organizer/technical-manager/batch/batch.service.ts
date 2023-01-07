@@ -1,19 +1,21 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+
+
 @Injectable({
   providedIn: 'root'
 })
-export class RegistrationService {
-
+export class BatchService {
   constructor(private _http: HttpClient) { }
  
-  _url = 'http://localhost:8900/addBuddy';
-  _urlOne = 'http://localhost:8900/allBuddy';
-  getBuddy(): Observable<any>{
+
+  _url = 'http://localhost:8900/addBatch';
+  _urlOne = 'http://localhost:8900/allBatches';
+  getBatch(): Observable<any>{
     return this._http.get<any>(this._urlOne);
   }
-  postBuddy(userData: any) {
+  postBatch(userData: any) {
     console.log(userData);
     return this._http.post<any>(this._url, userData);
   }

@@ -22,12 +22,13 @@ export class AddblockedComponent {
   getBatchName : batchesGet[];
   getEmployeeId : employeeData[];
   getJobId : jobData[];
+  submitted : boolean = false;
 
   ngOnInit() {
     this.blocked = this.fb.group({
-       batchName : [''],
-       empId : [''],
-       jobId : [''],
+       batchName : ['',[Validators.required]],
+       empId : ['',[Validators.required]],
+       jobId : ['',[Validators.required]],
        
        
        
@@ -41,6 +42,18 @@ export class AddblockedComponent {
     this.globalService.getJob().subscribe(data=> {
       this.getJobId= data;
     })
+  }
+  get batchName() {
+    return this.blocked.get('batchName');
+
+  }
+  get jobId() {
+    return this.blocked.get('jobId');
+
+  }
+  get empId() {
+    return this.blocked.get('empId');
+
   }
  
   onSubmit(){
