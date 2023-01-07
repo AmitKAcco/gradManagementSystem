@@ -13,7 +13,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { SideNavComponent } from './layout/side-nav/side-nav.component';
 import { TopNavComponent } from './layout/top-nav/top-nav.component';
 import { SharedDashBoardComponent } from 'src/app/shared/shared-dash-board/shared-dash-board.component';
-
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -33,8 +33,9 @@ import { SharedDashBoardComponent } from 'src/app/shared/shared-dash-board/share
     MatInputModule,
     MatMenuModule,
     MatListModule,
-    TechnicalManagerRoutingModule
-
+    TechnicalManagerRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
 
   ],
   
