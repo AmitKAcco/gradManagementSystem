@@ -26,7 +26,7 @@ export class ViewInterviewComponent {
     
     { columnDef: 'batchName',   header: 'Batch Name', cell: (element: any) => `${element.batchName}`  },
     { columnDef: 'empId',   header: 'Employee ID', cell: (element: any) => `${element.empId}`  },
-    { columnDef: 'empName',   header: 'Employee Name', cell: (element: any) => `${element.empName}`  },
+    { columnDef: 'gradName',   header: 'Graduate Name', cell: (element: any) => `${element.gradName}`  },
     { columnDef: 'jobId',   header: 'JobId', cell: (element: any) => `${element.jobId}`  },
     { columnDef: 'interviewDate',     header: 'Interview Date',   cell: (element: any) => `${element.interviewDate}`},
     { columnDef: 'time',   header: 'Interview Time', cell: (element: any) => `${element.time}` }
