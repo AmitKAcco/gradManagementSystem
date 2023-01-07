@@ -66,7 +66,7 @@ export class AddInterviewComponent {
 
   }
  
-  onSubmit(){
+ onSubmit(){
     console.log(this.scheduleInterview.value);
     this.scheduleInterviewService.postInterview(this.scheduleInterview.value)
     .subscribe(
