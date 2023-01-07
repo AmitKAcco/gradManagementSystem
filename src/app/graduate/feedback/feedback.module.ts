@@ -8,6 +8,9 @@ import { ViewFeedbackComponent } from './view-feedback/view-feedback.component';
 import { WidgetsModule } from 'src/app/shared/widgets/widgets.module';
 import { MatTabsModule } from '@angular/material/tabs';
 import {  RouterModule } from '@angular/router';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import {  RouterModule } from '@angular/router';
     FormsModule,
     ReactiveFormsModule,
     MatTabsModule,
-    RouterModule
+    RouterModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    MatTableModule
   ],
   exports : [
     ViewFeedbackComponent

@@ -12,10 +12,15 @@ export class FeedbackService {
  
   _url = 'http://localhost:8900/addFeedback';
   _urlOne = 'http://localhost:8900/allFeedback';
+
   getFeedback(): Observable<any>{
     return this._http.get<any>(this._urlOne);
   }
   register(userData: any) {
     return this._http.post<any>(this._url, userData);
+  }
+  getUser(empId: any): Observable<any> {
+    let urlx = `http://localhost:8900/feedbackByEmpId/${empId}`;
+    return this._http.get< any >(urlx);  
   }
 }

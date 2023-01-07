@@ -16,12 +16,14 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     CalendarViewComponent,
     CurriculumViewComponent,
     GraduateDetailsComponent,
     SharedDashBoardComponent,
+
 
   ],
   imports: [
