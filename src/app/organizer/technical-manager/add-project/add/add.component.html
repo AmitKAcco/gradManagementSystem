@@ -3,8 +3,10 @@
   <form [formGroup]="addProject" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="projectName" class="formbold-form-label">Project Name</label>
-      <input type="text" formControlName="projectName" id="projectName"
-        class="formbold-form-input" required>
+      <input  type="text" formControlName="projectName" id="projectName"
+        class="formbold-form-input" 
+        class="form-control form-control-sm">
+        <!-- required minlength="1" maxlength="2"  -->
     </div>
     <div class="form-group">
       <label>Batch Name</label>
