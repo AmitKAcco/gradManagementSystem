@@ -9,6 +9,7 @@ import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTabsModule } from '@angular/material/tabs';
 import { WidgetsModule } from 'src/app/shared/widgets/widgets.module';
+
 @NgModule({
   declarations: [
     HomeComponent,
@@ -23,7 +24,8 @@ import { WidgetsModule } from 'src/app/shared/widgets/widgets.module';
     FormsModule,
     MatToolbarModule,
     MatTabsModule,
-    WidgetsModule
+    WidgetsModule,
+  
   ]
 })
 export class AddProjectModule { }
