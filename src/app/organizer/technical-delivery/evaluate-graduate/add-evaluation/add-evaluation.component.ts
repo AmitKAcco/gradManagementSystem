@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder , FormGroup} from '@angular/forms';
+import { FormBuilder , FormGroup, Validators} from '@angular/forms';
 import { NgbDate } from '@ng-bootstrap/ng-bootstrap';
 import { AbstractControlOptions } from '@angular/forms';
 import { EvaluateGradService } from '../evaluate-grad.service';
@@ -26,15 +26,16 @@ export class AddEvaluationComponent {
   getEmpId : employeeData[];
   getBatchName : batchesGet[];
   getTopicName : topicNameGet[];
+  submitted : boolean = false;
   ngOnInit() {
     
     this.evaluationDesgin = this.fb.group({
-          batchName : [''],
-          empId : [''],
-          topicName: [''],
+          batchName : ['',[Validators.required]],
+          empId : ['',[Validators.required]],
+          topicName: ['',[Validators.required]],
           date: Date,
-          score:[''],
-          feedback:['']
+          score:['',[Validators.required]],
+          feedback:['',[Validators.required]]
       })
       this.globalService.getAllEmployees().subscribe(data => {
         this.getEmpId = data;
@@ -45,6 +46,30 @@ export class AddEvaluationComponent {
       this.globalService.getTopic().subscribe(data => {
         this.getTopicName = data;
       });
+  }
+  get batchName() {
+    return this.evaluationDesgin.get('batchName');
+
+  }
+  get empId() {
+    return this.evaluationDesgin.get('empId');
+
+  }
+  get topicName() {
+    return this.evaluationDesgin.get('topicName');
+
+  }
+  get date() {
+    return this.evaluationDesgin.get('date');
+
+  }
+  get score() {
+    return this.evaluationDesgin.get('score');
+
+  }
+  get feedback() {
+    return this.evaluationDesgin.get('feedback');
+
   }
   onSubmit(){
     console.log(this.evaluationDesgin.value);

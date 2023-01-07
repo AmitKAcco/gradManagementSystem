@@ -41,6 +41,10 @@ export class AddComponent {
     return this.addProject.get('projectName');
 
   }
+  get batchName() {
+    return this.addProject.get('batchName');
+
+  }
 
 
   onChangeValue(newValue: any) {
