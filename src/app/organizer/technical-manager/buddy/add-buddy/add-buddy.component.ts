@@ -23,7 +23,7 @@ export class AddBuddyComponent implements OnInit{
   getBuddyEmpId : employeeData[];
   ngOnInit() {
     this.buddyForm = this.fb.group({
-          gradId : [''],
+          gradId : ['',[Validators.required]],
           buddyId : ['']         
       })
       this.globalService.getAllEmployees().subscribe(data => {
@@ -33,6 +33,9 @@ export class AddBuddyComponent implements OnInit{
         this.getBuddyEmpId = data;
       })
      
+  }
+  get gradId(){
+    return this.buddyForm.get('gradId');
   }
 
   onSubmit(){
