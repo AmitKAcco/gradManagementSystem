@@ -3,10 +3,15 @@
   <form [formGroup]="addProject" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="projectName" class="formbold-form-label">Project Name</label>
+
       <input  type="text" formControlName="projectName" id="projectName"
-        class="formbold-form-input" 
-        class="form-control form-control-sm">
-        <!-- required minlength="1" maxlength="2"  -->
+      <input [class.is-invalid]="projectName?.invalid && projectName?.touched" type="text" formControlName="projectName" id="projectName"
+        class="formbold-form-input" required>
+    {{projectName?.invalid}}  
+        <div *ngIf="projectName?.invalid && projectName?.touched">
+          <small class="text-danger" *ngIf="projectName?.errors?.['required']">Username is required</small>
+        </div>
+
     </div>
     <div class="form-group">
       <label>Batch Name</label>
@@ -16,7 +21,7 @@
         <option [value]="i.batchName" *ngFor="let i of batches">{{i.batchName}}</option>
       </select>
       </div>
-    <button class="btn btn-primary" type="submit">Register</button>
+    <button class="btn btn-primary" type="submit" [disabled]="!addProject.valid">Register</button>
   </form>
 </div>
 <div>

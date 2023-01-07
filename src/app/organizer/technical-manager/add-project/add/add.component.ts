@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+
 import { FormBuilder , FormGroup, Validator, Validators, AbstractControl} from '@angular/forms';
+
 import { AddprojectServiceService } from '../addproject-service.service';
 import { batchesGet } from '../batchData'; 
 import { GlobalService } from 'src/app/global.service';
@@ -13,6 +15,7 @@ import { NgModule }      from '@angular/core';
 })
 
 export class AddComponent {
+  
   addProject : FormGroup;
   batches : batchesGet[];
   selectedBatch = 1;
@@ -21,7 +24,10 @@ export class AddComponent {
 
   ngOnInit() {
     this.addProject = this.fb.group({
+
           projectName:['',[Validators.required]],
+        
+
           batchName:['']
       })
    this.globalService.getAllBatches().subscribe(data =>{
@@ -30,6 +36,11 @@ export class AddComponent {
    
   }
   get f() { return this.addProject.controls; }
+
+  get projectName() {
+    return this.addProject.get('projectName');
+
+  }
 
 
   onChangeValue(newValue: any) {
