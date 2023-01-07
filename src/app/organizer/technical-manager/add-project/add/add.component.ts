@@ -28,7 +28,7 @@ export class AddComponent {
           projectName:['',[Validators.required]],
         
 
-          batchName:['']
+          batchName:['' , [Validators.required]]
       })
    this.globalService.getAllBatches().subscribe(data =>{
       this.batches = data;
@@ -39,6 +39,10 @@ export class AddComponent {
 
   get projectName() {
     return this.addProject.get('projectName');
+
+  }
+  get batchName() {
+    return this.addProject.get('batchName');
 
   }
 

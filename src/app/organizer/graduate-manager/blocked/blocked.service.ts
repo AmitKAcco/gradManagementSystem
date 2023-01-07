@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -10,11 +10,29 @@ export class BlockedService {
  
   _url = 'http://localhost:8900/addBlocked';
   _urlOne = 'http://localhost:8900/allBlocked';
+  _urlScheduleInterview = 'http://localhost:8900/interviewScheduled';
+  x:any;
   getBlocked(): Observable<any>{
     return this._http.get<any>(this._urlOne);
   }
   postBlocked(userData: any) {
     console.log(userData);
+    this.x=userData;
     return this._http.post<any>(this._url, userData);
+  }
+  updateBlockedscheduleInterview(userData: any): Observable<any>{
+    // console.log(empData);
+    // // console.log(this._urlScheduleInterview);
+    // setTimeout(()=>{
+    //   this._http.put(this._url,this.x).pipe(tap(()=>{
+    //     console.log("yo yo");
+    //   }));
+    // },1000)
+    // console.log("works");
+        return this._http.post(this._urlScheduleInterview,userData)
+          // console.log(this._http.post<any>(this._url, userData));
+          // return this._http.post<any>(this._url, userData);;
+
+
   }
 }
