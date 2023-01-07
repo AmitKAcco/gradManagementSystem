@@ -20,18 +20,30 @@ export class AddJobComponent {
   //batchIdList = [];
 
   getBatchName : batchesGet[];
+  submitted : boolean = false;
   
   ngOnInit(){
     this.JobForm = this.fb.group({
-      batchName:[''],
-      client:[''],
-      vertical:['']
+      batchName:['',[Validators.required]],
+      client:['',[Validators.required]],
+      vertical:['',[Validators.required]]
     })
     this.globalService.getAllBatches().subscribe(data =>{
       this.getBatchName = data;
     })
   }
+  get client() {
+    return this.JobForm.get('client');
 
+  }
+  get vertical() {
+    return this.JobForm.get('vertical');
+
+  }
+  get batchName() {
+    return this.JobForm.get('batchName');
+
+  }
   onSubmit(){
     console.log(this.JobForm.value);
     this.jobService.postJob(this.JobForm.value)
