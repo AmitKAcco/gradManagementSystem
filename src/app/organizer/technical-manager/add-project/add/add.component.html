@@ -15,8 +15,11 @@
       <select  formControlName="batchName" class = "form-control">
         <option value="">Batch Name</option>
         <!-- <option *ngFor="let batchId of batchIdList" [ngValue]="batchId">{{batchId}}</option> -->
+        
         <option [value]="i.batchName" *ngFor="let i of batches">{{i.batchName}}</option>
+ 
       </select>
+   
       </div>
     <button class="btn btn-primary" type="submit" [disabled]="!addProject.valid">Register</button>
   </form>

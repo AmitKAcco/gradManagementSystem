@@ -24,14 +24,15 @@ export class AddInterviewComponent {
   getEmpId : employeeData[];
   getBatchName : batchesGet[];
   getJob : jobData[];
+  submitted : boolean = false;
 
   ngOnInit() {
     this.scheduleInterview = this.fb.group({
-      batchName : [''],
-      empId : [''],
-      jobId : [''],
+      batchName : ['',[Validators.required]],
+      empId : ['',[Validators.required]],
+      jobId : ['',[Validators.required]],
       interviewDate : Date,
-      time : [''],
+      time : ['',[Validators.required]],
       
     })
     this.globalService.getAllEmployees().subscribe(data => {
@@ -43,6 +44,26 @@ export class AddInterviewComponent {
     this.globalService.getJob().subscribe(data => {
       this.getJob = data;
     })
+  }
+  get batchName() {
+    return this.scheduleInterview.get('batchName');
+
+  }
+  get jobId() {
+    return this.scheduleInterview.get('jobId');
+
+  }
+  get empId() {
+    return this.scheduleInterview.get('empId');
+
+  }
+  get interviewDate() {
+    return this.scheduleInterview.get('interviewDate');
+
+  }
+  get time() {
+    return this.scheduleInterview.get('time');
+
   }
  
   onSubmit(){
