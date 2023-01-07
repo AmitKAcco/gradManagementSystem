@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup ,Validators} from '@angular/forms';
 import { CurriculumDesignService } from '../curriculum-design.service';
 import { batchesGet } from 'src/backend.Data';
 import { GlobalService } from 'src/app/global.service';
@@ -11,16 +11,25 @@ import { GlobalService } from 'src/app/global.service';
 export class AddCurriculumComponent {
   batchNameList : [];
   getBatchName : batchesGet[];
+  submitted : boolean = false;
   curriculumDesign : FormGroup;
   constructor(private fb: FormBuilder, private curriculumService:CurriculumDesignService , private globalService: GlobalService) { }
   ngOnInit() {
     this.curriculumDesign = this.fb.group({
-         batchName : [''],
-         topicName : ['']
+         batchName : ['',[Validators.required]],
+         topicName : ['',[Validators.required]]
       });
       this.globalService.getAllBatches().subscribe(data=> {
         this.getBatchName = data;
       })
+  }
+  get batchName() {
+    return this.curriculumDesign.get('batchName');
+
+  }
+  get topicName() {
+    return this.curriculumDesign.get('topicName');
+
   }
   onSubmit(){
     console.log(this.curriculumDesign.value);
