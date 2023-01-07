@@ -28,7 +28,7 @@ export class AddComponent {
           projectName:['',[Validators.required]],
         
 
-          batchName:['']
+          batchName:['' , [Validators.required]]
       })
    this.globalService.getAllBatches().subscribe(data =>{
       this.batches = data;
