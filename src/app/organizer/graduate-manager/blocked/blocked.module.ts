@@ -11,6 +11,7 @@ import { RouterModule } from '@angular/router';
 import { WidgetsModule } from 'src/app/shared/widgets/widgets.module';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { MatTableModule } from '@angular/material/table'  
+import { CdkTableModule} from '@angular/cdk/table';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { MatTableModule } from '@angular/material/table'
     MatTabsModule,
     WidgetsModule,
     MatCheckboxModule,
-    MatTableModule
+    MatTableModule,
+    CdkTableModule
   ]
 })
 export class BlockedModule { }
