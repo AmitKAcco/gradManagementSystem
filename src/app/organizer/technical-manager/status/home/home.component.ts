@@ -8,10 +8,12 @@ import { StatusData } from '../statusData';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-
+  showStausDiv = false;
   batches: batchesGet[];
   status: StatusData;
   value : any;
+  statusApprovalCalendar : string;
+  statusApprovalCurriculum : string;
   approvalCalendar :number = 0;
   approvalCurriculum :number = 0;
   constructor(private statusService: StatusServiceService) {
@@ -37,20 +39,28 @@ export class HomeComponent {
       console.log( data);
       setTimeout(() => {
         this.display();
-      }, 1000);
-      // // console.log(this.status.length);
-      // // if(this.status.length > 0){
-      //   this.approvalCalendar = this.status[0].techCalendar;
-      //   this.approvalCurriculum = this.status[0].techCurriculum;
-      //   console.log(this.approvalCalendar + " " + this.approvalCurriculum);
-      // // }
+        this.showStausDiv = true;
+      }, 1000); 
     });
   }
   display(){
     
       this.approvalCalendar = this.status.techCalendar;
+      if(this.approvalCalendar == 1){
+        this.statusApprovalCalendar = 'Approved';
+      } else if (this.approvalCalendar == 0){
+        this.statusApprovalCalendar = 'Not Approved Yet'
+      } else {
+        this.statusApprovalCalendar = 'Disapproved'
+      }
       this.approvalCurriculum = this.status.techCurriculum;
-      console.log(this.approvalCalendar + " " + this.approvalCurriculum);
+      if(this.approvalCurriculum == 1){
+        this.statusApprovalCurriculum = 'Approved';
+      } else if (this.approvalCurriculum == 0){
+        this.statusApprovalCurriculum = 'Not Approved Yet'
+      } else {
+        this.statusApprovalCurriculum = 'Disapproved'
+      }
  
   }
 }
