@@ -54,5 +54,6 @@ export class AddComponent {
   
   onSubmit(){
     console.log(this.addProject.value);
+    this.addser.postAddProject(this.addProject.value).subscribe();
   }
 }
