@@ -89,3 +89,30 @@ body {
     outline: none;
     resize: none;
   }
+  .mat-icon {
+
+    height : 16px !important;
+  
+}
+
+.material-icons {
+   
+    line-height: .7;
+
+}
+.mat-mdc-list-item .mdc-list-item__primary-text {
+    font-size: medium;
+    color: rebeccapurple;
+    transition: box-shadow .3s;
+}
+a.mdc-list-item {
+  
+    box-shadow: 0 0 11px rgba(142, 136, 186, 0.2); 
+  
+}
+.form-control{
+  margin-bottom: 10px !important;
+}
+.btn-primary{
+  background-color: #460C68 !important;
+}

@@ -11,7 +11,7 @@
   
      <form [formGroup]="trannierAssignment" (ngSubmit)="onSubmit()">
 
-      <div class="form-group">
+      <div class="form-group  givespace ">
         <label>Batch Name</label>
         <select  formControlName="batchName" class = "form-control"  [class.is-invalid]="batchName?.invalid && batchName?.touched">
           <option value="">Batch Name</option>
@@ -22,7 +22,7 @@
             </div>
         
         </div>
-        <div class="form-group">
+        <div class="form-group  givespace">
           <label>Topic Name</label>
           <select  formControlName="topicName" class = "form-control"   [class.is-invalid]="topicName?.invalid && topicName?.touched">
             <option value="">Topic Name</option>
@@ -33,7 +33,7 @@
             </div>
         
           </div>
-          <div class="form-group">
+          <div class="form-group  givespace">
             <label>Trainer Name 1</label>
             <input   [class.is-invalid]="trainerName1?.invalid && trainerName1?.touched" type="text" formControlName="trainerName1" id="trainerName1" class="formbold-form-input" required>
             <div *ngIf="trainerName1?.invalid && trainerName1?.touched">
@@ -41,7 +41,7 @@
                 </div>
             
           </div>
-        <div class="form-group">
+        <div class="form-group  givespace">
           <label>Trainer Name 2</label>
           <input   [class.is-invalid]="trainerName2?.invalid && trainerName2?.touched" type="text" formControlName="trainerName2" id="trainerName2" class="formbold-form-input" required>
           <div *ngIf="trainerName2?.invalid && trainerName2?.touched">
@@ -49,11 +49,11 @@
               </div>
           
         </div>
-      <div class="form-group">
+      <div class="form-group  givespace">
         <label>Training Date</label>
         <input  type="date" formControlName="training_date" id="training_date" class="formbold-form-input" required>
     </div>
-    <div class="form-group">
+    <div class="form-group  givespace">
       <label>Training Session</label>
       <input   [class.is-invalid]="training_session?.invalid && training_session?.touched" type="text" formControlName="training_session" id="training_session" class="formbold-form-input" required>
       <div *ngIf="training_session?.invalid && training_session?.touched">
@@ -63,7 +63,7 @@
           </div>
       
     </div>
-  <div class="form-group">
+  <div class="form-group  givespace">
     <label>Training Objective</label>
     <input   [class.is-invalid]="trainingObjective?.invalid && trainingObjective?.touched" type="text" formControlName="trainingObjective" id="trainingObjective" class="formbold-form-input" required>
     <div *ngIf="trainingObjective?.invalid && trainingObjective?.touched">

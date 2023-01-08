@@ -29,7 +29,7 @@
     <div class="form-group">
       <label>Graduate</label>
       <button type="button" class="btn btn-secondary btn-sm m-2" (click)="addEmpIds()">Add Graduate</button>
-      <div formArrayName="empIds" *ngFor="let email of empIds.controls; let i=index">
+      <div formArrayName="empIds" *ngFor="let e of empIds.controls; let i=index">
       
         <select  class = "form-control" class="form-control my-1" [formControlName]="i">
           <option value="">Select Id</option>
