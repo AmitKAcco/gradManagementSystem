@@ -1,5 +1,5 @@
 <div class="container-fluid addMockInterview">
-    <h2>Registration Form</h2>
+    <h2>Blocked Form</h2>
   
     <form [formGroup]="blocked" (ngSubmit)="onSubmit()">
         <div class="form-group">
@@ -13,28 +13,28 @@
         <!-- <option *ngFor="let obj of here" [ngValue]="obj">{{obj}}</option> -->
         <option [value]="i.batchName" *ngFor="let i of getBatchName">{{i.batchName}}</option>
       </select>
-      {{batchName?.invalid}}
+      <!-- {{batchName?.invalid}} -->
       <div *ngIf="batchName?.invalid && batchName?.touched">
 
-        <small class="text-danger" *ngIf="batchName?.errors?.['required']">Batch Name
+        <small class="text-danger" *ngIf="batchName?.errors?.['required']">Field
           is required</small>
       </div>
           </div>
       <div class="form-group">
-        <label>Employee ID </label>
+        <label>Graduate ID </label>
        
         <!-- <option [value]="i.empId" *ngFor="let i of getEmpId">{{i.empId}}</option> -->
         <select formControlName="empId" class="form-control"
         [class.is-invalid]="empId?.invalid && empId?.touched">
 
-        <option value="">Employee ID</option>
+        <option value="">Graduate ID</option>
         <!-- <option *ngFor="let obj of here" [ngValue]="obj">{{obj}}</option> -->
         <option [value]="i.empId" *ngFor="let i of getEmployeeId">{{i.empId}}</option>
       </select>
-      {{empId?.invalid}}
+      <!-- {{empId?.invalid}} -->
       <div *ngIf="empId?.invalid && empId?.touched">
 
-        <small class="text-danger" *ngIf="empId?.errors?.['required']">Employee Id
+        <small class="text-danger" *ngIf="empId?.errors?.['required']">Field 
           is required</small>
       </div>
       </div>
@@ -47,10 +47,10 @@
         <!-- <option *ngFor="let obj of here" [ngValue]="obj">{{obj}}</option> -->
         <option [value]="i.jobId" *ngFor="let i of getJobId">{{i.jobId}}</option>
       </select>
-      {{jobId?.invalid}}
+      <!-- {{jobId?.invalid}} -->
       <div *ngIf="jobId?.invalid && jobId?.touched">
   
-        <small class="text-danger" *ngIf="jobId?.errors?.['required']">Job Id
+        <small class="text-danger" *ngIf="jobId?.errors?.['required']">Field
           is required</small>
       </div>
       </div>
