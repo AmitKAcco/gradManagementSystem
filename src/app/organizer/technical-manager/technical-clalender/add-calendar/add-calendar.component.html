@@ -9,7 +9,7 @@
     <h2>Technical Calendar Form</h2>
   
     <form [formGroup]="TechnicalCalendarForm" (ngSubmit)="onSubmit()">
-      <div class="form-group">
+      <div class="form-group givespace">
         <label>Batch Name</label>
         <select  formControlName="batchName" class = "form-control"[class.is-invalid]="batchName?.invalid && batchName?.touched">
           
@@ -22,7 +22,7 @@
           <small class="text-danger" *ngIf="batchName?.errors?.['required']">Field required</small>
         </div>
         </div>
-                <div class="form-group">
+                <div class="form-group givespace">
             <label>Training Topic Name</label>
             <select  formControlName="trainingTopicName" class = "form-control"[class.is-invalid]="trainingTopicName?.invalid && trainingTopicName?.touched">
           
@@ -35,11 +35,11 @@
               <small class="text-danger" *ngIf="batchName?.errors?.['required']">Field required</small>
             </div>
             </div>
-        <div class="form-group">
+        <div class="form-group givespace">
             <label>Training Calendar Date</label>
             <input type="date" formControlName="trainingCalendarDate" id="trainingCalendarDate" class="formbold-form-input" required>
         </div>
-        <div class="form-group">
+        <div class="form-group givespace">
           <label>Training Session</label>
           <input [class.is-invalid]="trainingSession?.invalid && trainingSession?.touched" type="text" formControlName="trainingSession" id="trainingSession" class="formbold-form-input" required>
           <div *ngIf="trainingSession?.invalid && trainingSession?.touched">

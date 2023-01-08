@@ -1,7 +1,7 @@
 <div class="container-fluid addFeedback">
- 
+ <h2>Add Project</h2>
   <form [formGroup]="addProject" (ngSubmit)="onSubmit()">
-    <div class="form-group">
+    <div class="form-group givespace">
       <label for="projectName" class="formbold-form-label">Project Name</label>
       <input [class.is-invalid]="projectName?.invalid && projectName?.touched" type="text" formControlName="projectName" id="projectName"
         class="formbold-form-input" required>
@@ -10,7 +10,7 @@
           <small class="text-danger" *ngIf="projectName?.errors?.['required']">Field is required</small>
         </div>
     </div>
-    <div class="form-group">
+    <div class="form-group givespace">
       <label>Batch Name</label>
       <select formControlName="batchName" class="form-control"
       [class.is-invalid]="batchName?.invalid && batchName?.touched">
@@ -27,6 +27,7 @@
     </div>
    
       </div>
+      <br>
     <button class="btn btn-primary" type="submit" [disabled]="!addProject.valid">Register</button>
   </form>
 </div>

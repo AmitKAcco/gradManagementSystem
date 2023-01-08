@@ -3,7 +3,7 @@
 
   <form [formGroup]="buddyForm" (ngSubmit)="onSubmit()">
 
-    <div class="form-group">
+    <div class="form-group givespace">
       <label>Graduate ID </label>
       <select formControlName="gradId" class="form-control"
         [class.is-invalid]="gradId?.invalid && gradId?.touched">
@@ -18,10 +18,7 @@
       </div>
     </div>
 
-
-
-
-    <div class="form-group">
+    <div class="form-group givespace">
       <label>Buddy Id</label>
       <select formControlName="buddyId" class="form-control">
         <option value="">Buddy Id</option>
