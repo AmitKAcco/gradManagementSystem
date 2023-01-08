@@ -1,11 +1,25 @@
 <div class="form-group">
-    <label>Select Batch</label>
-    <select #val (click)="onChangeValue(val.value)"
-      name="sel3">
-      <option val=""> select Batches</option>
-      <option  [value]="i.batchName" *ngFor="let i of batches">{{i.batchName}}</option>
-    </select>
+  <select #val (click)="onChangeValue(val.value)" class="form-control"
+    name="sel3">
+    <option val=""> Select Batch </option>
+    <option [value]="i.batchName" *ngFor="let i of batches">{{i.batchName}}</option>
+  </select>
+</div>
+<button type="button" class="btn btn-primary formbold-btn"
+  (click)="getStatus()">Approval Status</button>
+
+<div *ngIf="showStausDiv" class="container" [ngClass]="[approvalCalendar == 1? 'GreenClass' : 'RedClass']">
+  <div  class="content">
+    <h1>Technical Calendar {{statusApprovalCalendar}}</h1>
   </div>
-  <button type="button" class="btn btn-primary" (click)="getStatus()">Primary</button>
-  <div *ngIf="approvalCalendar">Technical Calendar {{approvalCalendar}}</div>
-  <div *ngIf="approvalCurriculum">Curriculum Approved {{approvalCurriculum}}</div>
+</div>
+
+<div *ngIf="showStausDiv" class="container"  [ngClass]="[approvalCurriculum == 1? 'GreenClass' : 'RedClass']">
+  <div class="content">
+    <h1>Curriculum Approved  {{statusApprovalCurriculum}}</h1>
+  </div>
+</div>
+<!-- [ngClass]="[(data.postionA === true &&  data.postionB === true)? 'class3' : '', 
+         (data.postionA === true &&  data.postionB === false) ? 'class1' : '', 
+         (data.postionA === false &&  data.postionB === true) ? 'class2' : '',
+         (data.snakeHead === true) ? 'class4':'',]" -->

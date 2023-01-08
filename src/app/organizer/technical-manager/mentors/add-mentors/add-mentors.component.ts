@@ -27,11 +27,11 @@ export class AddMentorsComponent {
 
   ngOnInit() {
     this.MentorForm = this.fb.group({
-      empIdGrad:[''],
-      empIdMentor:[''],
-      clientProjectName:[''],
-      stakeholderName:[''],
-      client:['']
+      empIdGrad:['',Validators.required],
+      empIdMentor:['',Validators.required],
+      clientProjectName:['',Validators.required],
+      stakeholderName:['',Validators.required],
+      client:['',Validators.required]
     })
     this.globalService.getAllEmployees().subscribe(data => {
       this.getEmpId = data;
@@ -39,11 +39,23 @@ export class AddMentorsComponent {
     this.globalService.getAllEmployees().subscribe(data => {
       this.getMentorEmpId = data;
     })
-    
-
-
   }
 
+  get empIdGrad(){
+    return this.MentorForm.get('empIdGrad');
+  }
+  get empIdMentor(){
+    return this.MentorForm.get('empIdMentor');
+  }
+  get clientProjectName(){
+    return this.MentorForm.get('clientProjectName');
+  }
+  get stakeholderName(){
+    return this.MentorForm.get('stakeholderName');
+  }
+  get client(){
+    return this.MentorForm.get('client');
+  }
 
   onSubmit(){
     console.log(this.MentorForm.value);

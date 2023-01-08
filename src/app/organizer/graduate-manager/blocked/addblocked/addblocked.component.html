@@ -44,17 +44,17 @@
         <select formControlName="jobId" class="form-control"
         [class.is-invalid]="jobId?.invalid && jobId?.touched">
         <option value="">Job Id</option>
-        <!-- <option *ngFor="let obj of here" [ngValue]="obj">{{obj}}</option> -->
+        
         <option [value]="i.jobId" *ngFor="let i of getJobId">{{i.jobId}}</option>
       </select>
-      <!-- {{jobId?.invalid}} -->
+     
       <div *ngIf="jobId?.invalid && jobId?.touched">
   
         <small class="text-danger" *ngIf="jobId?.errors?.['required']">Field
           is required</small>
       </div>
       </div>
-  
+      <br>
      <button class="btn btn-primary" type="submit"  [disabled]="!blocked.valid">Register</button>
   
     </form>

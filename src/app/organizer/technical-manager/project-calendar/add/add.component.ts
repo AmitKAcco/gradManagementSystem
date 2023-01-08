@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, Validators } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { CalendarService } from '../calendar.service';
 import { batchesGet } from 'src/backend.Data';
@@ -17,21 +17,38 @@ export class AddComponent {
 
   getBatchName : batchesGet[];
 
+  submitted : boolean =false;
   ngOnInit() {
     this.projectCalendar = this.fb.group({
-       batchName :[''],
-       teamNumber : [''],
-       projectName : [''],
+       batchName :['',[Validators.required]],
+       teamNumber : ['',[Validators.required]],
+       projectName : ['',[Validators.required]],
        date : Date,
-       projectProgress : [''],
-       description : [''],
-       selectBatchId : ['']
+       projectProgress : ['',[Validators.required]],
+       description : ['',[Validators.required]],
+      //  selectBatchId : ['']
     })
     this.globalService.getAllBatches().subscribe(data => {
       this.getBatchName = data;
     })
   }
- 
+  get batchName(){
+    return this.projectCalendar.get('batchName');
+  }
+  get teamNumber(){
+    return this.projectCalendar.get('teamNumber');
+  }
+  get projectName(){
+    return this.projectCalendar.get('projectName');
+  }
+  get projectProgress(){
+    return this.projectCalendar.get('projectProgress');
+  }
+  get description(){
+    return this.projectCalendar.get('description');
+  }
+  
+  
   onSubmit(){
     console.log(this.projectCalendar.value);
    

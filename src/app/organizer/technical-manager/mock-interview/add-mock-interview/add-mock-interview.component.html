@@ -1,38 +1,44 @@
 <div class="container-fluid addMockInterview">
-  <h2>Registration Form</h2>
+  <h2>Mock Interview Form</h2>
 
   <form [formGroup]="mockInterview" (ngSubmit)="onSubmit()">
 
     <div class="form-group">
-      <label>Employee ID </label>
-      <select formControlName="empId" class="form-control">
-        <option value="">Employee ID</option>
+      <label>Grad ID </label>
+      <select formControlName="empId" class="form-control" [class.is-invalid]="empId?.invalid && empId?.touched">
+        <option value="">Grad ID</option>
         <!-- <option *ngFor="let empId of empIdList" [ngValue]="empId">{{empId}}</option> -->
         <option [value]="i.empId" *ngFor="let i of getEmpId">{{i.empId}}</option>
       </select>
+      <div *ngIf="empId?.invalid && empId?.touched">
+
+        <small class="text-danger" *ngIf="empId?.errors?.['required']">Field required</small>
+      
+          </div>
+      
     </div>
-<!-- 
-    <div class="form-group">
-      <label>Batch Name </label>
-      <select formControlName="batchName" class="form-control">
-        <option value="">Batch Name</option>
-      comment  <option *ngFor="let batchId of batchIdList" [ngValue]="batchId">{{batchId}}</option>
-        <option [value]="i.batchName" *ngFor="let i of getBatchName">{{i.batchName}}</option>
-      </select>
-    </div> 
-  -->
+
     <div class="form-group">
       <label for="interviewerName" class="formbold-form-label">Interviewer Name</label>
-      <input type="text" formControlName="interviewerName" id="interviewerName" class="formbold-form-input" required>
+      <input  [class.is-invalid]="interviewerName?.invalid && interviewerName?.touched" type="text" formControlName="interviewerName" id="interviewerName" class="formbold-form-input" required>
+      <div *ngIf="interviewerName?.invalid && interviewerName?.touched">
+        
+        <small class="text-danger" *ngIf="interviewerName?.errors?.['required']">Field required</small>
+      </div>
+
     </div>
     <div class="form-group">
       <label class="control-label" for="date">Date</label>
-      <input  type="date" formControlName="interviewDate" class="form-control" id="date" name="date" placeholder="MM/DD/YYYY"/>
+      <input type="date" formControlName="interviewDate" class="form-control" id="date" name="date" placeholder="MM/DD/YYYY"/>
+      
+
     </div>
     <div class="form-group">
       <label for="time" class="formbold-form-label">Interviewer Time</label>
       <input type="time" formControlName="time" id="interviewTime" class="formbold-form-input" required>
     </div>
-    <button class="btn btn-primary" type="submit">Register</button>
+    <br>
+    <button class="btn btn-primary" type="submit"  [disabled]="!mockInterview.valid">Register</button>
 
   </form>
+  </div>
