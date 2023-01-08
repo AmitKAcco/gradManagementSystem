@@ -17,13 +17,13 @@ export const childRoutes = [
     path: 'calenderApproval',
     loadChildren: () =>
       import('./calender-approval/calender-approval.module').then(m => m.CalenderApprovalModule),
-    data: { icon: 'details', text: 'Calender Approval' }
+    data: { icon: 'domain_verification', text: 'Calender Approval' }
   },
   {
     path: 'Curriculum Approval',
     loadChildren: () =>
       import('./curriculum-approval/curriculum-approval.module').then(m => m.CurriculumApprovalModule),
-    data: { icon: 'details', text: 'Curriculum Approval' }
+    data: { icon: 'published_with_changes', text: 'Curriculum Approval' }
   },
   
   

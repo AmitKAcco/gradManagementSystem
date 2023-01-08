@@ -21,18 +21,18 @@ export const childRoutes = [
     path: 'scheduleInterview',
     loadChildren: () =>
       import('./schedule-interview/schedule-interview.module').then(m => m.ScheduleInterviewModule),
-    data: { icon: 'details', text: 'Schedule Interview' }
+    data: { icon: 'access_time', text: 'Schedule Interview' }
   },
   {
     path: 'Jobs',
     loadChildren: () =>
       import('./job/job.module').then(m => m.JobModule),
-    data: { icon: 'details', text: 'Jobs' }
+    data: { icon: 'cases', text: 'Jobs' }
   },
   {
     path : 'blocked',
     loadChildren: () =>
       import('./blocked/blocked.module').then(m => m.BlockedModule),
-    data: { icon: 'details', text: 'Blocked' }
+    data: { icon: 'block', text: 'Blocked' }
   }
 ]
