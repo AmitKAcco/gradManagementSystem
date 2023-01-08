@@ -9,13 +9,13 @@ export const childRoutes = [
     path: 'grad-details',
     loadChildren: () =>
       import('./graduate-detail-grad-mang/graduate-detail-grad-mang.module').then(m => m.GraduateDetailGradMangModule),
-    data: { icon: 'details', text: 'Graduate Details' }
+    data: { icon: 'how_to_reg', text: 'Graduate Details' }
   },
   {
     path: 'clientsRequirements',
     loadChildren: () =>
       import('./clients-requirements/clients-requirements.module').then(m => m.ClientsRequirementsModule),
-    data: { icon: 'details', text: 'Clients Requirements' }
+    data: { icon: 'meeting_room', text: 'Clients Requirements' }
   },
   {
     path: 'scheduleInterview',
