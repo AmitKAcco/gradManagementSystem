@@ -7,8 +7,8 @@
             <label>Batch Name</label>
             <input type="text" formControlName="batchName" id="batchName" class="formbold-form-input" required>
         </div>
-    
-        <button class="btn btn-primary" type="submit">Register</button> 
+    <br>
+        <button class="btn btn-primary" type="submit"[disabled]="!batchForm.valid">Submit</button> 
 
      </form>
     </div>
