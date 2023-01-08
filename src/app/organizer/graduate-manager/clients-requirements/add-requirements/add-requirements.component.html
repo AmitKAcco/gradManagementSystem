@@ -7,7 +7,7 @@
   
      
   
-      <div class="form-group">
+      <div class="form-group givespace">
         <label>Batch Name </label>
          
         <!-- <option [value]="i.batchName" *ngFor="let i of getBatchName">{{i.batchName}}</option> -->
@@ -25,7 +25,7 @@
           is required</small>
       </div>
       </div>
-      <div class="form-group">
+      <div class="form-group givespace">
         <label>Job ID </label>
         <select formControlName="jobId" class="form-control"
         [class.is-invalid]="jobId?.invalid && jobId?.touched">
@@ -40,7 +40,7 @@
           is required</small>
       </div>
       </div>
-      <div class="form-group">
+      <div class="form-group givespace">
         <label for="noOfPositions" class="formbold-form-label">Number of Openings</label>
        
         <input [class.is-invalid]="noOfPositions?.invalid && noOfPositions?.touched" type="number" formControlName="noOfPositions" id="noOfPositions"
@@ -50,7 +50,7 @@
           <small class="text-danger" *ngIf="noOfPositions?.errors?.['required']">Field is required</small>
         </div>
       </div>
-      <div class="form-group">
+      <div class="form-group givespace">
         
         <!-- <input type="text" formControlName="stakeholder" id="stakeholder" class="formbold-form-input" required> -->
         <label for="stakeholder" class="formbold-form-label">Stakeholder Name</label>
@@ -63,7 +63,7 @@
         </div>
       </div>
 
-      <div class="form-group">
+      <div class="form-group givespace">
        
         <label for="department" class="formbold-form-label">Department Name</label>
        
@@ -74,7 +74,7 @@
           <small class="text-danger" *ngIf="department?.errors?.['required']">Field is required</small>
         </div>
       </div>
-      <div class="form-group">
+      <div class="form-group givespace">
         
         <label for="location" class="formbold-form-label">Location</label>
        
@@ -86,7 +86,7 @@
         </div>
         </div>
       
-      <div class="form-group">
+      <div class="form-group givespace">
        
         <label for="gender" class="formbold-form-label">Gender</label>
        
