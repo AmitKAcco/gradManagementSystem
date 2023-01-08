@@ -8,38 +8,33 @@ import { EventEmitter, Output } from '@angular/core';
 })
 
 export class HomeComponent {
-  dataSource : any;
+  dataSource: any;
   batches = [1, 2, 3];
   selectedBatch = 2;
   data: any;
-  storeCurrent : any;
-  selectedName : string;
+  storeCurrent: any;
+  selectedName: string;
+  show = false;
   constructor(private approvalService: GlobalService) {
   }
-  ngOnInit(){
-   this.approvalService.batchEmitter.subscribe(data =>{
+  ngOnInit() {
+    this.approvalService.batchEmitter.subscribe(data => {
       this.storeCurrent = data;
-   })
-  }
-  onChangeValue(newValue: any) {
-    console.log(newValue);
-    this.selectedBatch = newValue;
+    })
   }
   sendApproval() {
     this.data = {
       batchName: this.storeCurrent,
-      // techCurriculum: -1,
-      techCalendar : 1
+      techCalendar: 1
     }
     this.approvalService.postApproval(this.data)
       .subscribe();
-        
+
   }
   sendDisApproval() {
     this.data = {
       batchName: this.storeCurrent,
-      // techCurriculum: -1,
-      techCalendar : -1
+      techCalendar: -1
     }
     this.approvalService.postApproval(this.data)
       .subscribe();

@@ -26,11 +26,14 @@ export class ViewCalendarComponent {
       this.batchvalue = data;
     }) 
     
-    console.log(this.batchvalue)
-    this.globalservice.getApproval(1).subscribe(data=>{
+    console.log("hi from here" + this.batchvalue)
+    this.globalservice.getApproval(this.batchvalue).subscribe(data=>{
       this.approvalData = data;
     })
     setTimeout(() => {
+      this.globalservice.getApproval(this.batchvalue).subscribe(data=>{
+        this.approvalData = data;
+      })
       console.log(this.approvalData);
     }, 1000);
     

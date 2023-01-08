@@ -1,13 +1,13 @@
 .addFeedback {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    // box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     width: 100%;
     border-radius: 5px;
     padding: 2%;
 }
-.addFeedback:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
+// .addFeedback:hover {
+//     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+// }
 .formbold-btn {
     text-align: center;
     width: 100%;
@@ -21,6 +21,11 @@
     cursor: pointer;
     margin-top: 25px;
   }
+  .formbold-btn:active {
+    background-color: #0e0a5c;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
    .formbold-form-label {
     
     color: rgb(31, 19, 61);
@@ -32,7 +37,7 @@
 
   }
   .formbold-btn:hover {
-    box-shadow: 0px 3px 8px rgba(168, 61, 61, 0.05);
+    box-shadow: 0px 3px 8px rgba(182, 26, 26, 0.05);
   }
   .formbold-form-input {
     width: 100%;

@@ -12,7 +12,7 @@ export const childRoutes = [
     loadChildren: () =>
       import('./curriculum-design/curriculum-design.module')
         .then(m => m.CurriculumDesignModule),
-    data: { icon: 'dashboard', text: 'Curriculum Design' }
+    data: { icon: 'table_chart', text: 'Curriculum Design' }
   
   },
   {
@@ -20,7 +20,7 @@ export const childRoutes = [
     loadChildren: () =>
       import('./evaluate-graduate/evaluate-graduate.module')
         .then(m => m.EvaluateGraduateModule),
-    data: { icon: 'dashboard', text: 'Evaluate Graduate' }
+    data: { icon: 'receipt', text: 'Evaluate Graduate' }
   },
   {
     path: 'grad-details',
@@ -32,7 +32,7 @@ export const childRoutes = [
     path: 'Status',
     loadChildren: () =>
       import('../technical-manager/status/status.module').then(m => m.StatusModule),
-      data: { icon: 'details', text: 'Status' }
+      data: { icon: 'check_circle', text: 'Status' }
   }
  
 

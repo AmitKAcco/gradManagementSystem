@@ -12,7 +12,8 @@ import { HomeComponent } from './home/home.component';
   imports: [
     CommonModule,
     CurriculumViewRoutingModule,
-    CurriculumDesignModule
+    CurriculumDesignModule,
+    
   ]
 })
 export class CurriculumViewModule { }
