@@ -22,13 +22,14 @@ export class AddMockInterviewComponent {
 
  // getBatchName : batchesGet[];
   getEmpId : employeeData[]; 
+  submitted : boolean = false;
   ngOnInit() {
     this.mockInterview = this.fb.group({
-       empId : [''], 
-       interviewerName : [''],
+       empId : ['',[Validators.required]], 
+       interviewerName : ['',[Validators.required]],
        interviewDate : Date,
        time : Date,
-       selectBatchId : ['']
+      //  selectBatchId : ['',[Validators.required]]
     })
     // this.globalService.getAllBatches().subscribe(data => {
     //   this.getBatchName = data;
@@ -39,6 +40,16 @@ export class AddMockInterviewComponent {
     })
   }
  
+  get empId(){
+    return this.mockInterview.get('empId');
+  }
+  get interviewerName(){
+    return this.mockInterview.get('interviewerName');
+  }
+  get interviewDate(){
+    return this.mockInterview.get('interviewDate');
+  }
+  
   onSubmit(){
     console.log(this.mockInterview.value);
     this.interviewService.postMockInterview(this.mockInterview.value)
@@ -47,21 +58,8 @@ export class AddMockInterviewComponent {
       // error => console.error('Error!', error)
     );
   }
-  }
 
-  // @Column(name = "emp_id")
-  // private int empId; // Foreign Key
-  // @Column(name = "emp_name")
-  // private String empName;
-  // @Column(name = "interviewer_name")
-  // private String interviewerName;
-  // @Column(name = "interview_date")
-  // private Date interviewDate;
-  // @Column(name = "time")
-  // private String time;
-  // @Column(name = "batch_id")
-  // private int batchId;
-  // @Column(name = "batchName")
-  // private String batchName;// Foreign Key
+
+  }
 
 

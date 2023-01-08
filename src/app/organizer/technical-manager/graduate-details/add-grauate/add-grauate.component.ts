@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, Validators } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { GraduateDetailsService } from '../graduate-details.service';
 import { batchesGet } from 'src/backend.Data';
@@ -18,22 +18,45 @@ export class AddGrauateComponent {
 
   batchNameList = [];
   getBatchName : batchesGet[];
+  submitted : boolean =false;
 
   ngOnInit(){
     this.graduateForm = this.fb.group({
-      batchName:[''],
-      employeeName:[''],
-      designation:[''],
+      batchName:['',[Validators.required]],
+      employeeName:['',[Validators.required]],
+      designation:['',[Validators.required]],
       dateOfJoining:Date,
-      mobileNumber:[''],
-      email:[''],
+      mobileNumber:['',[Validators.required]],
+      email:['',[Validators.required]],
       dateOfBirth:Date,
-      gender:[''],
-      deliveryDirector:['']
+      gender:['',[Validators.required]],
+      deliveryDirector:['',[Validators.required]]
     });
     this.globalService.getAllBatches().subscribe(data=> {
       this.getBatchName = data;
     })
+  }
+
+  get batchName(){
+    return this.graduateForm.get('batchName');
+  }
+  get employeeName(){
+    return this.graduateForm.get('employeeName');
+  }
+  get designation(){
+    return this.graduateForm.get('designation');
+  }
+  get mobileNumber(){
+    return this.graduateForm.get('mobileNumber');
+  }
+  get email(){
+    return this.graduateForm.get('email');
+  }
+  get gender(){
+    return this.graduateForm.get('gender');
+  }
+  get deliveryDirector(){
+    return this.graduateForm.get('deliveryDirector');
   }
 
   onSubmit(){

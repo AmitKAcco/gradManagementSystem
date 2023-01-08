@@ -63,7 +63,7 @@ export const childRoutes = [
     loadChildren: () =>
     import('./trannier-assignr/trannier-assignr.module')
     .then(m => m.TrannierAssignrModule),
-     data: { icon: 'details', text: 'Trannier Assign' }
+     data: { icon: 'details', text: 'Trainer Assign' }
   },
   {
     path : 'projectAssignment',

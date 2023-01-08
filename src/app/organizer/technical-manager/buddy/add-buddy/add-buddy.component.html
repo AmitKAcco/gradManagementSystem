@@ -11,11 +11,10 @@
         <!-- <option *ngFor="let obj of here" [ngValue]="obj">{{obj}}</option> -->
         <option [value]="i.empId" *ngFor="let i of getEmpId">{{i.empId}}</option>
       </select>
-      {{gradId?.invalid}}
+      <!-- {{gradId?.invalid}} -->
       <div *ngIf="gradId?.invalid && gradId?.touched">
 
-        <small class="text-danger" *ngIf="gradId?.errors?.['required']">Username
-          is required</small>
+        <small class="text-danger" *ngIf="gradId?.errors?.['required']">Field required</small>
       </div>
     </div>
 
@@ -29,9 +28,16 @@
         <!-- <option *ngFor="let obj of here" [ngValue]="obj">{{obj}}</option> -->
         <option [value]="i.empId" *ngFor="let i of getBuddyEmpId">{{i.empId}}</option>
       </select>
+      <!-- {{buddyId?.invalid}} -->
+      <div *ngIf="buddyId?.invalid && buddyId?.touched">
+
+      <small class="text-danger" *ngIf="buddyId?.errors?.['required']">Field required</small>
+    </div>
     </div>
 
 
+    <br>
     <button class="btn btn-primary" type="submit" [disabled]="!buddyForm.valid">Register</button>
+  
   </form>
 </div>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder , FormGroup} from '@angular/forms';
+import { FormBuilder , FormGroup, Validators} from '@angular/forms';
 import { NgbDate } from '@ng-bootstrap/ng-bootstrap';
 import { AbstractControlOptions } from '@angular/forms';
 import { TrainerAssignService } from '../trainer-assign.service';
@@ -25,16 +25,17 @@ export class AddComponent {
   // getBatcheId : batchesGet[];
   getBatchName : batchesGet[];
   getTopicName : topicNameGet[];
+  submitted : boolean = false;
   //trainerNameList:[]
   ngOnInit() {
     this.trannierAssignment = this.fb.group({
-          selectBatchName:[''],
-          selectTopicName:[''],
-          trainerName1:[''],
-          trainerName2:[''],
+          batchName:['',[Validators.required]],
+          topicName:['',[Validators.required]],
+          trainerName1:['',[Validators.required]],
+          trainerName2:['',[Validators.required]],
           training_date: Date,
-          training_session:[''],
-          tranningObjective:['']
+          training_session:['',[Validators.required]],
+          trainingObjective:['',[Validators.required]]
           
       })
       console.log("hello")
@@ -47,6 +48,28 @@ export class AddComponent {
         
       })
   }
+  get batchName(){
+    return this.trannierAssignment.get('batchName');
+  }
+  get topicName(){
+    return this.trannierAssignment.get('topicName');
+  }
+  get trainerName1(){
+    return this.trannierAssignment.get('trainerName1');
+  }
+  get trainerName2(){
+    return this.trannierAssignment.get('trainerName2');
+  }
+  get training_session(){
+    return this.trannierAssignment.get('training_session');
+  }
+  get trainingObjective(){
+    return this.trannierAssignment.get('trainingObjective');
+  }
+
+
+
+
   onSubmit(){
     console.log(this.trannierAssignment.value);
     this.trainerAssignService.postTrainerAssign(this.trannierAssignment.value)
