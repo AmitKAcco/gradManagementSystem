@@ -1,12 +1,23 @@
 <div class="form-group">
   <label>Select Batch</label>
-  <select #val (click)="onChangeValue(val.value)" class="form-control"  name="sel3">
+  <select #val (click)="onChangeValue(val.value)" class="form-control"
+    name="sel3">
     <option val=""> select Batches</option>
     <option [value]="i.batchName" *ngFor="let i of batches">{{i.batchName}}</option>
   </select>
 </div>
 <button type="button" class="btn btn-primary" (click)="getStatus()">Primary</button>
+
 <div *ngIf="approvalCalendar">Technical Calendar {{approvalCalendar}}</div>
 <div *ngIf="approvalCurriculum">Curriculum Approved {{approvalCurriculum}}</div>
-<div class="box" style="--shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;"></div>
-<div class="box" style="--shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;"></div>
+<div class="float-container">
+
+  <div class="float-child">
+    <div class="green">Float Column 1</div>
+  </div>
+  
+  <div class="float-child">
+    <div class="blue">Float Column 2</div>
+  </div>
+  
+</div>
