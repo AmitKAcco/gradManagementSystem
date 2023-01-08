@@ -20,7 +20,7 @@ export const childRoutes = [
     loadChildren: () =>
       import('./evaluate-graduate/evaluate-graduate.module')
         .then(m => m.EvaluateGraduateModule),
-    data: { icon: 'dashboard', text: 'Evaluate Grauate' }
+    data: { icon: 'dashboard', text: 'Evaluate Graduate' }
   },
   {
     path: 'grad-details',
