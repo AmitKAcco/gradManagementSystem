@@ -13,7 +13,6 @@ import { BlockedService } from '../blocked.service';
 export class ViewblockedComponent {
 
   constructor(private blockedService : BlockedService) {}
-  interviewScheduled:any = "interviewScheduled"
   columns = [
     { columnDef: 'batchId',   header: 'Batch Id', cell: (element: any) => `${element.batchId}`  },
     { columnDef: 'batchName',   header: 'Batch Name', cell: (element: any) => `${element.batchName}`  },
@@ -25,7 +24,6 @@ export class ViewblockedComponent {
   displayedColumns: any;
   dataSource:any;
   checkboxColor:any = "primary";
-  aa:any = false;
 
   ngOnInit(): void {
     this.blockedService.getBlocked()

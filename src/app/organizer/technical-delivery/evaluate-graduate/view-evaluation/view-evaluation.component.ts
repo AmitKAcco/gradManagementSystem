@@ -35,7 +35,7 @@ export class ViewEvaluationComponent {
     { columnDef: 'empId',   header: 'Employee ID', cell: (element: any) => `${element.empId}`  },
     { columnDef: 'topicName',   header: 'Topic Name', cell: (element: any) => `${element.topicName}`  },
     { columnDef: 'empName',   header: 'Employee Name', cell: (element: any) => `${element.empName}`  },
-    { columnDef: 'date',     header: 'Scheduled Date',   cell: (element: any) => `${element.date}`},
+    { columnDef: 'date',     header: 'Scheduled Date',   cell: (element: any) => `${element.date}`.split("T", 1)},
     { columnDef: 'score',   header: 'Score', cell: (element: any) => `${element.score}` },     
     { columnDef: 'feedback',   header: 'Feedback', cell: (element: any) => `${element.feedback}`  },
    
