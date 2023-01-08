@@ -48,7 +48,6 @@ export class ReuseableTableComponent implements OnInit {
   filterData(num: any){
     this.dataSource.filter = num;
     this.global.emitBatchId(num);
-    console.log(num);
     this.show = true;
   }
 

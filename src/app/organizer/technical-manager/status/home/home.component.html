@@ -10,13 +10,13 @@
 
 <div *ngIf="showStausDiv" class="container" [ngClass]="[approvalCalendar == 1? 'GreenClass' : 'RedClass']">
   <div  class="content">
-    <h1>Technical Calendar {{statusApprovalCalendar}}</h1>
+    <h1>Technical Calendar : {{statusApprovalCalendar}}</h1>
   </div>
 </div>
 
 <div *ngIf="showStausDiv" class="container"  [ngClass]="[approvalCurriculum == 1? 'GreenClass' : 'RedClass']">
   <div class="content">
-    <h1>Curriculum Approved  {{statusApprovalCurriculum}}</h1>
+    <h1>Curriculum : {{statusApprovalCurriculum}}</h1>
   </div>
 </div>
 <!-- [ngClass]="[(data.postionA === true &&  data.postionB === true)? 'class3' : '', 

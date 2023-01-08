@@ -11,7 +11,7 @@ export class HomeComponent {
   dataSource : any;
   selectedName : string;
   data: any;
-  // @Output() sendval = new EventEmitter<any>();
+
   constructor(private approvalService: GlobalService) {
   }
   ngOnInit(){
@@ -27,7 +27,6 @@ export class HomeComponent {
     this.data = {
       batchName: this.selectedName,
       techCurriculum: 1,
-      // techCalendar : -1
     }
     
     this.approvalService.postApproval(this.data)
@@ -37,11 +36,8 @@ export class HomeComponent {
     this.data = {
       batchName: this.selectedName,
       techCurriculum: -1
-      // techCalendar : -1
     }
     this.approvalService.postApproval(this.data)
-      .subscribe(
-
-    );
+      .subscribe();
   }
 }
