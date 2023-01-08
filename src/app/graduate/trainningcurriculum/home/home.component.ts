@@ -33,7 +33,7 @@ export class HomeComponent {
       
 
     }
-     displayedColumns: string[] = ['topicName'];
+     displayedColumns: string[] = ['Serial No.','Topic Name'];
   }
  
 

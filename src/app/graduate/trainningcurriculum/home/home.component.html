@@ -16,8 +16,12 @@
   </table>
    -->
    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-    <ng-container matColumnDef="topicName">
-      <th mat-header-cell *matHeaderCellDef> Topic </th>
+    <ng-container matColumnDef="Serial No.">
+      <th mat-header-cell *matHeaderCellDef>Serial No.</th>
+      <td mat-cell *matCellDef="let element; let i = index;"> {{i + 1}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Topic Name">
+      <th mat-header-cell *matHeaderCellDef> Topic Name </th>
       <td mat-cell *matCellDef="let element"> {{element.topicName}} </td>
     </ng-container>
   
