@@ -22,7 +22,7 @@ export class ViewRequirementsComponent {
   }
   columns = [
     //{ columnDef: 'id', header: 'Project Calender Id',    cell: (element: any) => `${element.projectCalendarId}` },
-    { columnDef: 'batchId',   header: 'Batch Id', cell: (element: any) => `${element.batchId}`  },
+    { columnDef: 'batchName',   header: 'Batch Name', cell: (element: any) => `${element.batchName}`  },
     { columnDef: 'jobId',   header: 'Job ID', cell: (element: any) => `${element.jobId}`  },
     { columnDef: 'client',   header: 'Client', cell: (element: any) => `${element.client}` }, 
     { columnDef: 'vertical',   header: 'Vertical', cell: (element: any) => `${element.vertical}` }, 
