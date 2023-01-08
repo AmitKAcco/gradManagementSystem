@@ -11,7 +11,7 @@ deliveryDirector:[''] -->
     <h2>Graduate Form</h2>
   
     <form [formGroup]="graduateForm" (ngSubmit)="onSubmit()">
-      <div class="form-group">
+      <div class="form-group givespace">
         <label>Batch Name</label>
         <select [class.is-invalid]="batchName?.invalid && batchName?.touched"   formControlName="batchName" class = "form-control">
           <option value="">Batch Name</option>
@@ -27,7 +27,7 @@ deliveryDirector:[''] -->
         </div>
         </div>
         
-        <div class="form-group">
+        <div class="form-group givespace">
           <label>Employee Name</label>
           <input [class.is-invalid]="employeeName?.invalid && employeeName?.touched" type="text" formControlName="employeeName" id="empName" class="formbold-form-input" required>
           <!-- {{employeeName?.invalid}}   -->
@@ -37,7 +37,7 @@ deliveryDirector:[''] -->
   
         </div>
   
-      <div class="form-group">
+      <div class="form-group givespace">
         <label>Designation</label>
         <input [class.is-invalid]="designation?.invalid && designation?.touched" type="text" formControlName="designation" id="designation" class="formbold-form-input" required>
         <!-- {{designation?.invalid}}   -->
@@ -45,11 +45,11 @@ deliveryDirector:[''] -->
             <small class="text-danger" *ngIf="designation?.errors?.['required']">Field required</small>
           </div>
     </div>
-    <div class="form-group">
+    <div class="form-group givespace">
       <label>Date of Joining</label>
       <input type="date" formControlName="dateOfJoining" id="dateOfJoining" class="formbold-form-input" required>
   </div>
-  <div class="form-group">
+  <div class="form-group givespace">
     <label>Mobile Number</label>
     <input [class.is-invalid]="mobileNumber?.invalid && mobileNumber?.touched" type="number" formControlName="mobileNumber" id="mobileNumber" class="formbold-form-input" required>
     <!-- {{mobileNumber?.invalid}}   -->
@@ -57,7 +57,7 @@ deliveryDirector:[''] -->
             <small class="text-danger" *ngIf="mobileNumber?.errors?.['required']">Field required</small>
           </div>
 </div>
-  <div class="form-group">
+  <div class="form-group givespace">
     <label>Email</label>
     <input [class.is-invalid]="email?.invalid && email?.touched" type="email" formControlName="email" id="email" class="formbold-form-input" required>
     <!-- {{email?.invalid}}   -->
@@ -66,12 +66,12 @@ deliveryDirector:[''] -->
           </div>
 </div>
 
-<div class="form-group">
+<div class="form-group givespace">
     <label>Date of Birth</label>
     <input  type="date" formControlName="dateOfBirth" id="dateOfBirth" class="formbold-form-input" required>
 </div>
 
-<div class="form-group">
+<div class="form-group givespace">
     <label>Gender</label>
     <input [class.is-invalid]="gender?.invalid && gender?.touched" type="text" formControlName="gender" id="gender" class="formbold-form-input" required>
     <!-- {{gender?.invalid}}   -->
@@ -79,7 +79,7 @@ deliveryDirector:[''] -->
             <small class="text-danger" *ngIf="gender?.errors?.['required']">Field required</small>
           </div>
 </div>
-<div class="form-group">
+<div class="form-group givespace">
     <label>Delivery Director</label>
     <input [class.is-invalid]="deliveryDirector?.invalid && deliveryDirector?.touched" type="text" formControlName="deliveryDirector" id="deliveryDirector" class="formbold-form-input" required>
     <!-- {{deliveryDirector?.invalid}}   -->
