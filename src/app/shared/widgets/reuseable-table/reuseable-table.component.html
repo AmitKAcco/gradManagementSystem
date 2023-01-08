@@ -13,7 +13,7 @@
 name="sel3">
 <option [value]="i.batchId" *ngFor="let i of batches">{{i.batchId}}</option>
 </select> -->
-<mat-form-field>
+<mat-form-field class="MatForm">
   <mat-select placeholder="Batch">
    <mat-option *ngFor="let i of storeBatchName"[value]="i.batchName" (click)="filterData(i.batchName)">
            {{i.batchName}}
