@@ -15,12 +15,12 @@ export class BlockedService {
   getBlocked(): Observable<any>{
     return this._http.get<any>(this._urlOne);
   }
-  postBlocked(userData: any) {
-    console.log(userData);
-    this.x=userData;
-    return this._http.post<any>(this._url, userData);
+  postBlocked(empData: any) {
+    console.log(empData);
+    this.x=empData;
+    return this._http.post<any>(this._url, empData);
   }
-  updateBlockedscheduleInterview(userData: any): Observable<any>{
+  updateBlockedscheduleInterview(empData: any): Observable<any>{
     // console.log(empData);
     // // console.log(this._urlScheduleInterview);
     // setTimeout(()=>{
@@ -29,7 +29,7 @@ export class BlockedService {
     //   }));
     // },1000)
     // console.log("works");
-        return this._http.post(this._urlScheduleInterview,userData)
+        return this._http.post(this._urlScheduleInterview,empData)
           // console.log(this._http.post<any>(this._url, userData));
           // return this._http.post<any>(this._url, userData);;
 
