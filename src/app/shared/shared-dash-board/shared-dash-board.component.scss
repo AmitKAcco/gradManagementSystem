@@ -5,26 +5,52 @@
 .card {
 
 
-  margin: 2%;
+  margin: 4%;
   // background-color: red;
 }
 
 .totalStudent {
-  background: linear-gradient(60deg, #26c6da, #00acc1);
+  background: linear-gradient(60deg, #c0eef5, #99dee7);
+  width:100%;
+
+  
 }
 
 .studentPlaced {
-  background: linear-gradient(60deg, #66bb6a, #43a047);
+  background: linear-gradient(60deg, #c3eec5, #baeebc);
+  width:100%;
+
+  
 }
 
 .yetPlaced {
-  background: linear-gradient(60deg, #ffa726, #fb8c00);
+  background: linear-gradient(60deg, #FFDCA9, #FFDCA9);
+  width:100%;
+ 
+  
 }
 
 .Requirements {
-  background: linear-gradient(60deg, #ec407a, #d81b60);
-}
+  background: linear-gradient(60deg, #e8b4c5, #e3b0c2);
+  width:100%;
 
+
+}
+.card-body{
+  // height: 20%;
+   //width: 20%;
+   align-content: center;
+}
+.dashboardGrad{
+ // width: 10%;
+  height: 180px;
+  //width: 200px;
+
+ 
+}
+.textfield{
+ 
+}
 // .icon-lg {
 //   font-size: 40px;
 // }
