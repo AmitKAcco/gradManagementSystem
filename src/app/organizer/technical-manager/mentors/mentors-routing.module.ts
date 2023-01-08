@@ -11,8 +11,7 @@ const routes: Routes = [
   {
     path : '',
     component : HomeComponent,
-    canActivate : [CoreGuard],
-    canActivateChild : [CoreGuard],
+
     children :[
       {
         path: '',
