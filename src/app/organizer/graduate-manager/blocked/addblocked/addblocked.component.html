@@ -2,7 +2,7 @@
     <h2>Blocked Form</h2>
   
     <form [formGroup]="blocked" (ngSubmit)="onSubmit()">
-        <div class="form-group">
+        <div class="form-group givespace">
             <label>Batch Name </label>
             
         <!-- <option [value]="i.batchName" *ngFor="let i of getBatchName">{{i.batchName}}</option> -->
@@ -20,7 +20,7 @@
           is required</small>
       </div>
           </div>
-      <div class="form-group">
+      <div class="form-group givespace">
         <label>Graduate ID </label>
        
         <!-- <option [value]="i.empId" *ngFor="let i of getEmpId">{{i.empId}}</option> -->
@@ -39,7 +39,7 @@
       </div>
       </div>
 
-      <div class="form-group">
+      <div class="form-group givespace">
         <label>Job ID </label>
         <select formControlName="jobId" class="form-control"
         [class.is-invalid]="jobId?.invalid && jobId?.touched">
