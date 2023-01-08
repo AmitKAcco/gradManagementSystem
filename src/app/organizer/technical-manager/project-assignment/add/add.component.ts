@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ProjectAssignmentService } from '../project-assignment.service';
 import { batchesGet } from 'src/backend.Data';
 import { GlobalService } from 'src/app/global.service';
@@ -20,14 +20,15 @@ export class AddComponent {
 
   getBatchName: batchesGet[];
   getEmpName: Graduate[];
+  submitted : boolean = false;
   ngOnInit() {
     this.projectAssignmentForm = this.fb.group({
-      batchName: [''],
-      teamNumber: [''],
-      allotedEmp: [''],
-      projectLead1: [''],
-      projectLead2: [''],
-      projectName: [''],
+      batchName: ['',[Validators.required]],
+      teamNumber: ['',[Validators.required]],
+      allotedEmp: ['',[Validators.required]],
+      projectLead1: ['',[Validators.required]],
+      projectLead2: ['',[Validators.required]],
+      projectName: ['',[Validators.required]],
       empIds: this.fb.array([])
     })
     this.globalService.getAllBatches().subscribe(data => {
@@ -37,6 +38,25 @@ export class AddComponent {
       this.getEmpName = data;
     })
   }
+  get batchName(){
+    return this.projectAssignmentForm.get('batchName');
+  }
+  get teamNumber(){
+    return this.projectAssignmentForm.get('teamNumber');
+  }
+  get allotedEmp(){
+    return this.projectAssignmentForm.get('allotedEmp');
+  }
+  get projectLead1(){
+    return this.projectAssignmentForm.get('projectLead1');
+  }
+  get projectLead2(){
+    return this.projectAssignmentForm.get('projectLead2');
+  }
+  get projectName(){
+    return this.projectAssignmentForm.get('projectName');
+  }
+
   get empIds() {
     return this.projectAssignmentForm.get('empIds') as FormArray;
   }

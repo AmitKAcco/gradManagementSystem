@@ -21,15 +21,16 @@ export class AddCalendarComponent {
 
   getBatchName : batchesGet[];
   getTopicName : topicNameGet[];
+  submitted : boolean = false;
   
  
 
   ngOnInit(){
     this.TechnicalCalendarForm = this.fb.group({
-      batchName:[''],
-      trainingTopicName:[''],
+      batchName:['',[Validators.required]],
+      trainingTopicName:['',[Validators.required]],
       trainingCalendarDate:Date,
-      trainingSession:['']
+      trainingSession:['',[Validators.required]]
 
     })
     this.globalService.getAllBatches().subscribe(data => {
@@ -39,6 +40,17 @@ export class AddCalendarComponent {
       this.getTopicName = data;
     })
   }
+  get batchName() {
+    return this.TechnicalCalendarForm.get('batchName');
+  }
+
+  get trainingTopicName() {
+    return this.TechnicalCalendarForm.get('trainingTopicName');
+  }
+  get trainingSession() {
+    return this.TechnicalCalendarForm.get('trainingSession');
+  }
+
   onSubmit(){
     console.log(this.TechnicalCalendarForm.value);
     this.technicalCalendarService.postCalendar(this.TechnicalCalendarForm.value)
