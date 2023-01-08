@@ -33,10 +33,10 @@ export class ViewGraduateComponent {
   columns = [
     { columnDef: 'empName', header: 'Employee Name',    cell: (element: any) => `${element.employeeName}` },
     { columnDef: 'designation',  header: 'Designation',   cell: (element: any) => `${element.designation}`},
-    { columnDef: 'dateOfJoining',   header: 'Date Of Joining', cell: (element: any) => `${element.dateOfJoining}`   },
+    { columnDef: 'dateOfJoining',   header: 'Date Of Joining', cell: (element: any) => `${element.dateOfJoining}`.split("T", 1)   },
     { columnDef: 'mobileNumber',   header: 'Mobile Number', cell: (element: any) => `${element.mobileNumber}`   },
     { columnDef: 'email',   header: 'Email', cell: (element: any) => `${element.email}`   },
-    { columnDef: 'dateOfBirth',   header: 'Date Of Birth', cell: (element: any) => `${element.dateOfBirth}`   },
+    { columnDef: 'dateOfBirth',   header: 'Date Of Birth', cell: (element: any) => `${element.dateOfBirth}`.split("T", 1)   },
     { columnDef: 'gender',   header: 'Gender', cell: (element: any) => `${element.gender}`   },
     { columnDef: 'deliveryDirector',   header: 'Delivery Director', cell: (element: any) => `${element.deliveryDirector}`   }
   ];
