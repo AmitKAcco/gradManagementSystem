@@ -11,7 +11,7 @@ export const childRoutes = [
     path: 'graddetails',
     loadChildren: () =>
       import('./graduate-detail-app-lead/graduate-detail-app-lead.module').then(m => m.GraduateDetailAppLeadModule),
-    data: { icon: 'details', text: 'Graduate Details' }
+    data: { icon: 'how_to_reg', text: 'Graduate Details' }
   },
   {
     path: 'calenderApproval',
