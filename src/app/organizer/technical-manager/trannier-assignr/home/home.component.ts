@@ -17,12 +17,12 @@ export class HomeComponent {
   constructor(private router: Router) {
     this.navLinks = [
       {
-        label: 'Add Trannier',
+        label: 'Add Trainer',
         link: './add',
         index: 0
       }, 
       {
-        label: 'View Trannier',
+        label: 'View Trainer',
         link: './view',
         index: 1
       }
