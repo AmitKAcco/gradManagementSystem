@@ -38,7 +38,7 @@ export class ViewComponent {
     { columnDef: 'topicId',  header: 'Topic Id',   cell: (element: any) => `${element.topicId}`},
     { columnDef: 'trainerName1',  header: 'Trainer Name 1',   cell: (element: any) => `${element.trainerName1}`},
     { columnDef: 'trainerName2',  header: 'Trainer Name 2',   cell: (element: any) => `${element.trainerName2}`},
-    { columnDef: 'trainingDate',   header: 'Training Date', cell: (element: any) => `${element.training_date}`   },
+    { columnDef: 'trainingDate',   header: 'Training Date', cell: (element: any) => `${element.training_date}`.split("T", 1)   },
     { columnDef: 'tranninngSession',   header: 'Training Session', cell: (element: any) => `${element.training_session}`   },
     { columnDef: 'tranningObjective',   header: 'Training Objective', cell: (element: any) => `${element.training_objective}`   }
   ];
