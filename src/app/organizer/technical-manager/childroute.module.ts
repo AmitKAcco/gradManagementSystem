@@ -5,7 +5,7 @@ export const childRoutes = [
     loadChildren: () =>
     import('./batch/batch.module')
     .then(m => m.BatchModule),
-     data: { icon: 'details', text: 'Batch' }
+     data: { icon: ' list_alt', text: 'Batch' }
   },
   {
     path: 'buddy',
@@ -30,7 +30,7 @@ export const childRoutes = [
     path: 'grad-details',
     loadChildren: () =>
       import('./graduate-details/graduate-details.module').then(m => m.GraduateDetailsModule),
-    data: { icon: 'details', text: 'Graduate Details' }
+    data: { icon: 'how_to_reg', text: 'Graduate Details' }
   },
   {
     path: 'mockInterview',
@@ -56,35 +56,35 @@ export const childRoutes = [
     loadChildren: () =>
     import('./project-calendar/project-calendar.module')
     .then(m => m.ProjectCalendarModule),
-     data: { icon: 'details', text: 'Project Calendar' }
+     data: { icon: 'calendar_view_day', text: 'Project Calendar' }
   },
   {
     path : 'trannierAssign',
     loadChildren: () =>
     import('./trannier-assignr/trannier-assignr.module')
     .then(m => m.TrannierAssignrModule),
-     data: { icon: 'details', text: 'Trainer Assign' }
+     data: { icon: 'assignment_ind', text: 'Trainer Assign' }
   },
   {
     path : 'projectAssignment',
     loadChildren: () =>
     import('./project-assignment/project-assignment.module')
     .then(m => m.ProjectAssignmentModule),
-     data: { icon: 'details', text: 'Project Assignment' }
+     data: { icon: 'assignment', text: 'Project Assignment' }
   },
   {
     path : 'Add project',
     loadChildren: () =>
     import('./add-project/add-project.module')
     .then(m => m.AddProjectModule),
-     data: { icon: 'details', text: 'Add Project' }
+     data: { icon: 'note_add', text: 'Add Project' }
   },
   {
     path : 'Status',
     loadChildren: () =>
     import('./status/status.module')
     .then(m => m.StatusModule),
-     data: { icon: 'details', text: 'Status' }
+     data: { icon: 'check_circle', text: 'Status' }
   }
 
 ]
