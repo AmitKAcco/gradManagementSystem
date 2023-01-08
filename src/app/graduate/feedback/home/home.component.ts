@@ -18,12 +18,12 @@ export class HomeComponent {
   constructor(private router: Router) {
     this.navLinks = [
       {
-        label: 'Add Project',
+        label: 'Add Feedback',
         link: './addFeedback',
         index: 0
       }, 
       {
-        label: 'View Project',
+        label: 'View Feedback',
         link: './viewFeedback',
         index: 1
       }
