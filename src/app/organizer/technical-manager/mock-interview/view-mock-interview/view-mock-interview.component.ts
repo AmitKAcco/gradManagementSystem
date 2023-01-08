@@ -27,7 +27,9 @@ export class ViewMockInterviewComponent {
     { columnDef: 'empName',   header: 'Employee Name', cell: (element: any) => `${element.empName}`  },
     { columnDef: 'interviewerName',   header: 'Interviewer Name', cell: (element: any) => `${element.interviewerName}`  },
     { columnDef: 'interviewDate',     header: 'Interview Date',   cell: (element: any) => `${element.interviewDate}`.split("T", 1)},
-    { columnDef: 'time',   header: 'Interview Time', cell: (element: any) => `${element.time}` }
+    { columnDef: 'time',   header: 'Interview Time', cell: (element: any) => `${element.time}` },
+    { columnDef: 'score',   header: 'Score', cell: (element: any) => `${element.score}` }
+
   ];
 
 

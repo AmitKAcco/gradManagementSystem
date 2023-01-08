@@ -1,8 +1,8 @@
 <div class="container-fluid addFeedback">
 
-  
+  <h2>Evaluation Form</h2>
      <form [formGroup]="evaluationDesgin" (ngSubmit)="onSubmit()">
-      <div class="form-group">
+      <div class="form-group givespace">
         <label>Batch Name</label>
           <!-- <option [value]="i.batchName" *ngFor="let i of getBatchName">{{i.batchName}}</option> -->
           <select formControlName="batchName" class="form-control"
@@ -19,7 +19,7 @@
             is required</small>
         </div>
       </div>
-      <div class="form-group">
+      <div class="form-group givespace">
         <label>Graduate Id </label>
              <!-- <option [value]="i.empId" *ngFor="let i of getEmpId">{{i.empId}}</option> -->
              <select formControlName="empId" class="form-control"
@@ -36,7 +36,7 @@
                is required</small>
            </div>
       </div>
-      <div class="form-group">
+      <div class="form-group givespace">
         <label>Topic Name </label>
         <label for="topicName" class="formbold-form-label">Session Name</label>
         <!-- <input type="time" formControlName="time" id="interviewTime" class="formbold-form-input" required> -->
@@ -49,11 +49,11 @@
 
       </div>
       
-    <div class="form-group">
+    <div class="form-group givespace">
         <label for="date" class="formbold-form-label">Date of Evaluation</label>
         <input requried type="date" formControlName="date" id="date" class="formbold-form-input" required>
     </div>
-    <div class="form-group">
+    <div class="form-group givespace">
       <label for="score" class="formbold-form-label">Score</label>
       <!-- <input type="time" formControlName="time" id="interviewTime" class="formbold-form-input" required> -->
       <input [class.is-invalid]="score?.invalid && score?.touched" type="number" formControlName="score" id="score"
@@ -64,12 +64,12 @@
       </div>
   </div>
 
-    <div class ="form-group">
+    <div class ="form-group givespace">
         <label for="feedback" class="formbold-form-label"> Feedback </label>
         <textarea rows="4" name="feedback" id="feedback" placeholder="Type Feedback" class="formbold-form-input"
             formControlName="feedback"></textarea>
     </div>
-
+<br>
  
       <button class="btn btn-primary" type="submit" [disabled]="!evaluationDesgin.valid">Register</button> 
   
