@@ -83,3 +83,8 @@ a.mdc-list-item {
 .btn-primary{
   background-color: #460C68 !important;
 }
+.btn-primary:active {
+  background-color: rgb(5, 1, 72);
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
