@@ -18,6 +18,7 @@ export class TopNavComponent implements OnInit  {
   }
 
   onLoggedout() {
-    this.router.navigate(['/home']);
+    this.router.navigate(['/login']);
+    localStorage.setItem('graduateManager', 'false');
   }
 }

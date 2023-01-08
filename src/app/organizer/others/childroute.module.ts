@@ -21,4 +21,11 @@ export const childRoutes = [
       .then(m => m.GraduateDetailsOthersModule),
     data: { icon: 'details', text: 'Graduate Details' }
   },
+  {
+    path : 'dashboard',
+    loadChildren: () =>
+      import('./dashboard/dashboard.module')
+      .then(m => m.DashboardModule),
+    data: { icon: 'details', text: 'Dashboard' }
+  }
 ]

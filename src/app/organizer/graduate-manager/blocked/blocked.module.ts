@@ -9,6 +9,9 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MatTabsModule } from '@angular/material/tabs';
 import { RouterModule } from '@angular/router';
 import { WidgetsModule } from 'src/app/shared/widgets/widgets.module';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatTableModule } from '@angular/material/table'  
+import { CdkTableModule} from '@angular/cdk/table';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { WidgetsModule } from 'src/app/shared/widgets/widgets.module';
     ReactiveFormsModule,
     FormsModule,
     MatTabsModule,
-    WidgetsModule
+    WidgetsModule,
+    MatCheckboxModule,
+    MatTableModule,
+    CdkTableModule
   ]
 })
 export class BlockedModule { }

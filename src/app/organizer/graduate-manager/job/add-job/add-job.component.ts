@@ -55,18 +55,4 @@ export class AddJobComponent {
 
 }
 
-//     //FK
-//     @Column(name="batch_id")
-//     private int batchId;
 
-
-
-//     @Column(name="client")
-//     private String client;
-
-//     @Column(name = "vertical")
-//     private String vertical;
-
-
-// //    @Column(name="openings")
-// //    private int openings;
