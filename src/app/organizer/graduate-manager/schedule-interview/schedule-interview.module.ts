@@ -10,6 +10,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatTabsModule } from '@angular/material/tabs';
 import { RouterModule } from '@angular/router';
 import { WidgetsModule } from 'src/app/shared/widgets/widgets.module';
+import { MatTableModule } from '@angular/material/table'  
+import { CdkTableModule} from '@angular/cdk/table';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { WidgetsModule } from 'src/app/shared/widgets/widgets.module';
     FormsModule,
     ReactiveFormsModule,
     MatTabsModule,
-    WidgetsModule
+    WidgetsModule,
+    MatTableModule,
+    CdkTableModule,
+    MatCheckboxModule
   ]
 })
 export class ScheduleInterviewModule { }

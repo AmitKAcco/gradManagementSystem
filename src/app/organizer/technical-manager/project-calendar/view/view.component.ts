@@ -25,7 +25,7 @@ export class ViewComponent {
     { columnDef: 'batchName',   header: 'Batch Name', cell: (element: any) => `${element.batchName}`  },
     { columnDef: 'teamNumber',   header: 'Team Number', cell: (element: any) => `${element.teamNumber}`  },
     { columnDef: 'projectName',   header: 'Project Name', cell: (element: any) => `${element.projectName}`  },
-    { columnDef: 'date',     header: 'Scheduled Date',   cell: (element: any) => `${element.date}`},
+    { columnDef: 'date',     header: 'Scheduled Date',   cell: (element: any) => `${element.date}`.split("T", 1)},
     { columnDef: 'description',   header: 'Evaluation description', cell: (element: any) => `${element.description}` }, 
     
     { columnDef: 'projectProgress',   header: 'Project Progress', cell: (element: any) => `${element.projectProgress}`  },
