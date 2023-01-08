@@ -43,8 +43,8 @@ export class ViewCalendarComponent {
   }
   
   columns = [
-    { columnDef: 'id', header: 'Training Calendar Id',    cell: (element: any) => `${element.trainingCalendarId}` },
-    { columnDef: 'topicId',  header: 'Topic Id',   cell: (element: any) => `${element.topicId}`},
+
+    // { columnDef: 'topicId',  header: 'Topic Id',   cell: (element: any) => `${element.topicId}`},    // { columnDef: 'id', header: 'Training Calendar Id',    cell: (element: any) => `${element.trainingCalendarId}` },
     { columnDef: 'trainingTopicName',   header: 'Training Topic Name', cell: (element: any) => `${element.trainingTopicName}`   },
     { columnDef: 'trainingCalendarDate',   header: 'Training Calendar Date', cell: (element: any) => `${element.trainingCalendarDate}`.split("T", 1)   },
     { columnDef: 'trainingSession',   header: 'Training Session', cell: (element: any) => `${element.trainingSession}`   }

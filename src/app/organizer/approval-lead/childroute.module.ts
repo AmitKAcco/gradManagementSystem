@@ -11,19 +11,19 @@ export const childRoutes = [
     path: 'graddetails',
     loadChildren: () =>
       import('./graduate-detail-app-lead/graduate-detail-app-lead.module').then(m => m.GraduateDetailAppLeadModule),
-    data: { icon: 'details', text: 'Graduate Details' }
+    data: { icon: 'how_to_reg', text: 'Graduate Details' }
   },
   {
     path: 'calenderApproval',
     loadChildren: () =>
       import('./calender-approval/calender-approval.module').then(m => m.CalenderApprovalModule),
-    data: { icon: 'details', text: 'Calender Approval' }
+    data: { icon: 'domain_verification', text: 'Calender Approval' }
   },
   {
     path: 'Curriculum Approval',
     loadChildren: () =>
       import('./curriculum-approval/curriculum-approval.module').then(m => m.CurriculumApprovalModule),
-    data: { icon: 'details', text: 'Curriculum Approval' }
+    data: { icon: 'published_with_changes', text: 'Curriculum Approval' }
   },
   
   
