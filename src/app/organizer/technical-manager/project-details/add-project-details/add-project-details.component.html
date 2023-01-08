@@ -3,7 +3,7 @@
   <h2>Registration Form</h2>
 
   <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
+    <div class="form-group givespace">
       <label>Username</label>
       <input type="text" [class.is-invalid]="userName!.invalid && userName!.touched" formControlName="userName" class="form-control">
       <!-- <small class="text-danger" [class.d-none]="userName.valid || userName.untouched">Username is required</small> -->
@@ -64,7 +64,7 @@
      
     <button (click)="loadAPIData()" class="btn btn-secondary ml-2" type="button">Load API Data</button> -->
 
-
+<br>
     <button class="btn btn-primary" [disabled]="!registrationForm.valid" type="submit">Register</button> 
   </form>
 

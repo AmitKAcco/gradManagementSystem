@@ -8,7 +8,7 @@
     selectBatchId : ['']
  }) -->
     <form [formGroup]="projectCalendar" (ngSubmit)="onSubmit()">
-        <div class="form-group">
+        <div class="form-group givespace">
             <label>Batch Name </label>
             <select formControlName="batchName" class="form-control" [class.is-invalid]="batchName?.invalid && batchName?.touched">
               <option value="">Batch Name</option>
@@ -22,7 +22,7 @@
                 </div>
             
           </div>
-        <div class="form-group">
+        <div class="form-group givespace">
             <label for="teamNumber" class="formbold-form-label">Team Number</label>
             <input [class.is-invalid]="teamNumber?.invalid && teamNumber?.touched"  type="number" formControlName="teamNumber" id="teamNumber" class="formbold-form-input" required>
             <div *ngIf="teamNumber?.invalid && teamNumber?.touched">
@@ -33,7 +33,7 @@
 
           </div>
      
-      <div class="form-group">
+      <div class="form-group givespace">
         <label for="projectName" class="formbold-form-label">Project Name</label>
         <input  [class.is-invalid]="projectName?.invalid && projectName?.touched" type="text" formControlName="projectName" id="projectName" class="formbold-form-input" required>
         <div *ngIf="projectName?.invalid && projectName?.touched">
@@ -43,7 +43,7 @@
             </div>
 
       </div>
-      <div class="form-group">
+      <div class="form-group givespace">
         <label for="description" class="formbold-form-label">Type of Evaluation</label>
         <input  [class.is-invalid]="description?.invalid && description?.touched" type="text" formControlName="description" id="description" class="formbold-form-input" required>
         <div *ngIf="description?.invalid && description?.touched">
@@ -53,13 +53,13 @@
             </div>
 
       </div>
-      <div class="form-group">
+      <div class="form-group givespace">
         <label class="control-label" for="date">Evaluation Date</label>
         <input type="date" formControlName="date" class="form-control" id="date" name="date" placeholder="MM/DD/YYYY"/>
       
       </div>
 
-      <div class="form-group">
+      <div class="form-group givespace">
         <label for="projectProgress" class="formbold-form-label">Project Progress</label>
         <input  [class.is-invalid]="projectProgress?.invalid && projectProgress?.touched" type="text" formControlName="projectProgress" id="projectProgress" class="formbold-form-input" required>
         <div *ngIf="projectProgress?.invalid && projectProgress?.touched">

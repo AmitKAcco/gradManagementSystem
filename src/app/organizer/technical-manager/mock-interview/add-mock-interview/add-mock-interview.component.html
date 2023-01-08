@@ -3,7 +3,7 @@
 
   <form [formGroup]="mockInterview" (ngSubmit)="onSubmit()">
 
-    <div class="form-group">
+    <div class="form-group givespace">
       <label>Grad ID </label>
       <select formControlName="empId" class="form-control" [class.is-invalid]="empId?.invalid && empId?.touched">
         <option value="">Grad ID</option>
@@ -18,7 +18,7 @@
       
     </div>
 
-    <div class="form-group">
+    <div class="form-group givespace">
       <label for="interviewerName" class="formbold-form-label">Interviewer Name</label>
       <input  [class.is-invalid]="interviewerName?.invalid && interviewerName?.touched" type="text" formControlName="interviewerName" id="interviewerName" class="formbold-form-input" required>
       <div *ngIf="interviewerName?.invalid && interviewerName?.touched">
@@ -27,13 +27,13 @@
       </div>
 
     </div>
-    <div class="form-group">
+    <div class="form-group givespace">
       <label class="control-label" for="date">Date</label>
       <input type="date" formControlName="interviewDate" class="form-control" id="date" name="date" placeholder="MM/DD/YYYY"/>
       
 
     </div>
-    <div class="form-group">
+    <div class="form-group givespace">
       <label for="time" class="formbold-form-label">Interviewer Time</label>
       <input type="time" formControlName="time" id="interviewTime" class="formbold-form-input" required>
     </div>
