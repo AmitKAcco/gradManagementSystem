@@ -5,7 +5,8 @@
   align-items: center;
   justify-content: center;
   height: 100%;
-  position: relative;
+  top : 25%;
+
   .content {
     z-index: 1;
     display: flex;
@@ -25,6 +26,8 @@
         box-shadow: 0 0 0 30px $white inset;
         -webkit-box-shadow: 0 0 0 30px $white inset;
       }
+      position: absolute;
+      top: 25%;
     }
   }
   &:after {

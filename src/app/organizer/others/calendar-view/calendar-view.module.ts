@@ -6,7 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { SharedModule } from 'src/app/shared/shared.module';
  import { WidgetsModule } from "../../../shared/widgets/widgets.module";
 import { TestComponent } from './test/test.component';
-
+import { TechnicalClalenderModule } from '../../technical-manager/technical-clalender/technical-clalender.module';
  @NgModule({
     declarations: [
         HomeComponent,
@@ -18,6 +18,7 @@ import { TestComponent } from './test/test.component';
         CalendarViewRoutingModule,
         SharedModule,
         WidgetsModule,
+        TechnicalClalenderModule
         
     ]
 })

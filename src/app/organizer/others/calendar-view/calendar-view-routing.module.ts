@@ -6,7 +6,7 @@ import { CalendarViewComponent } from 'src/app/shared/calendar-view/calendar-vie
 const routes: Routes = [
   {
     path:'',
-    component : TestComponent
+    component : HomeComponent
   },
   // {
   //   path: 'test',
