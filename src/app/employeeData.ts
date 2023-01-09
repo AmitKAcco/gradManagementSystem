@@ -6,5 +6,9 @@
 export class employeeData{
 
     empId : number;
-    empName : string;
+    employeeName : string;
+}
+export class buddyData{
+    buddyId : number;
+    buddyName : string;
 }

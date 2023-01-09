@@ -1,5 +1,5 @@
 <div class="container-fluid addFeedback">
-  <h2>Project Assignment Form</h2>
+  <h1 class="titleForm">Project Assignment Form</h1>
 
   <form [formGroup]="projectAssignmentForm" (ngSubmit)="onSubmit()">
     <div class="form-group givespace">
@@ -41,7 +41,7 @@
           [formControlName]="i">
           <option value="">Graduate Id</option>
           <!-- <option *ngFor="let batchId of batchIdList" [ngValue]="batchId">{{batchId}}</option> -->
-          <option [value]="i.empId" *ngFor="let i of getEmpName">{{i.empId}}</option>
+          <option [value]="i.empId" *ngFor="let i of getEmpName">{{i.empId}} - {{i.employeeName}}</option>
         </select>
       </div>
     </div>
@@ -96,4 +96,5 @@
     <br>
     <br>
   </form>
+  <br>
 </div>

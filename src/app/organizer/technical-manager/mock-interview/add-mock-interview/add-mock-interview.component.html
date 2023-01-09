@@ -1,5 +1,5 @@
 <div class="container-fluid addMockInterview">
-  <h2>Mock Interview Form</h2>
+  <h1 class="titleForm">Mock Interview Form</h1>
 
   <form [formGroup]="mockInterview" (ngSubmit)="onSubmit()">
 
@@ -8,7 +8,7 @@
       <select formControlName="empId" class="form-control" [class.is-invalid]="empId?.invalid && empId?.touched">
         <option value="">Grad ID</option>
         <!-- <option *ngFor="let empId of empIdList" [ngValue]="empId">{{empId}}</option> -->
-        <option [value]="i.empId" *ngFor="let i of getEmpId">{{i.empId}}</option>
+        <option [value]="i.empId" *ngFor="let i of getEmpId">{{i.empId}} - {{i.employeeName}}</option>
       </select>
       <div *ngIf="empId?.invalid && empId?.touched">
 

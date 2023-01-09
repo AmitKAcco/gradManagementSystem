@@ -18,6 +18,9 @@ body {
 .mat-elevation-z8{
     box-shadow: none;
 }
+.mat-elevation-z10{
+  background-color: #f2f2f2;
+}
 .formbold-btn {
     text-align: center;
     width: 100%;
@@ -87,4 +90,25 @@ a.mdc-list-item {
   background-color: rgb(5, 1, 72);
   box-shadow: 0 5px #666;
   transform: translateY(4px);
+}
+.bg-white{
+  --bs-bg-opacity: 0.5;
+
+}
+.mat-elevation-z10{
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+}
+.titleForm{
+  font-family: monospace !important;
+  font-weight: 300;
+  text-align: center;
+  margin-top: 10px !important;
+  margin-bottom: -10px !important;
+  // margin-bottom: % !important;
+}
+label {
+  display: inline-block;
+  color: #243a5a;
+  margin: .2%;
+  font-family: revert;
 }

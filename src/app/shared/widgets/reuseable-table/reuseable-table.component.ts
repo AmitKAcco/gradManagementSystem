@@ -31,6 +31,7 @@ export class ReuseableTableComponent implements OnInit {
   ngOnInit() {
     this.dataSource = new MatTableDataSource(this.rowData);
     this.columns = this.colData;
+    // console.log("hi");
     //console.log(this.dataSource);
     this.displayedColumns = this.columns.map((c: { columnDef: any; }) => c.columnDef);
     //console.log(this.dataSource);

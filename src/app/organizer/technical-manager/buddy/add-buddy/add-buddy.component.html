@@ -1,5 +1,5 @@
 <div class="container-fluid addFeedback">
-  <h2>Buddy Form</h2>
+  <h1 class="titleForm">Buddy Form</h1>
 
   <form [formGroup]="buddyForm" (ngSubmit)="onSubmit()">
 
@@ -9,7 +9,7 @@
         [class.is-invalid]="gradId?.invalid && gradId?.touched">
         <option value="">Grad Id</option>
         <!-- <option *ngFor="let obj of here" [ngValue]="obj">{{obj}}</option> -->
-        <option [value]="i.empId" *ngFor="let i of getEmpId">{{i.empId}}</option>
+        <option [value]="i.empId" *ngFor="let i of getEmpId">{{i.empId}} - {{i.employeeName}}</option>
       </select>
       <!-- {{gradId?.invalid}} -->
       <div *ngIf="gradId?.invalid && gradId?.touched">
@@ -23,7 +23,7 @@
       <select formControlName="buddyId" class="form-control">
         <option value="">Buddy Id</option>
         <!-- <option *ngFor="let obj of here" [ngValue]="obj">{{obj}}</option> -->
-        <option [value]="i.empId" *ngFor="let i of getBuddyEmpId">{{i.empId}}</option>
+        <option [value]="i.buddyId" *ngFor="let i of getBuddyEmpId">{{i.buddyId}} - {{i.buddyName}}</option>
       </select>
       <!-- {{buddyId?.invalid}} -->
       <div *ngIf="buddyId?.invalid && buddyId?.touched">

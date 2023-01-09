@@ -10,6 +10,7 @@ import { Task } from './graduate/feedback/shared/models/task.model';
   batchEmitter = new BehaviorSubject<any>(-1);
   newVal = new Subject<any>();
   constructor(private _http: HttpClient) { }
+  
   _url = 'http://localhost:8900/addApproval';
   _urlGetAllTopics = 'http://localhost:8900/allTopics';
   _urlGetAllBatchTable = 'http://localhost:8900/allBatches'
@@ -18,7 +19,13 @@ import { Task } from './graduate/feedback/shared/models/task.model';
   _urlGetEmployees = 'http://localhost:8900/allEmployees'
   _urlGetJob = 'http://localhost:8900/allJobs'
   _urlGetProjectTopics = 'http://localhost:8900/allProjectTopics'
-  _urlGetFeedback = 'http://localhost:8900/allFeedback'
+  _urlGetFeedback = 'http://localhost:8900/allFeedback';
+  _urlGetBuddy = 'http://localhost:8900/allBuddy';
+
+  
+  getBuddy(){
+    return this._http.get<any>(this._urlGetBuddy);
+  }
   getFeedback(){
     return this._http.get< any >(this._urlGetFeedback);  
   }

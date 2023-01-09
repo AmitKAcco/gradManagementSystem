@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { BatchService } from '../batch.service';
+import { batchesGet } from 'src/backend.Data';
 
 @Component({
   selector: 'app-view-batch',
@@ -10,19 +11,14 @@ export class ViewBatchComponent {
 
   constructor(private batchService:BatchService){}
   dataSource:any;
+  batchDetails : batchesGet[];
   ngOnInit(): void {
-    this.batchService.getBatch()
+  this.batchService.getBatch()
     .subscribe(data => {
       this.dataSource = data;
     });
+
     
   }
-
-  columns = [
-    //{ columnDef: 'id', header: 'Project Calender Id',    cell: (element: any) => `${element.projectCalendarId}` },
-    { columnDef: 'batchId',   header: 'Batch Id', cell: (element: any) => `${element.batchId}`  },
-    { columnDef: 'batchName',   header: 'Batch Name', cell: (element: any) => `${element.batchName}`  }
-  ];
-
-
+  displayedColumns: string[] = ['batchName'];
 }

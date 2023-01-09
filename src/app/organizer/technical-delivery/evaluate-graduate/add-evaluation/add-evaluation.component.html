@@ -1,6 +1,6 @@
 <div class="container-fluid addFeedback">
 
-  <h2>Evaluation Form</h2>
+  <h1 class="titleForm">Evaluation Form</h1>
      <form [formGroup]="evaluationDesgin" (ngSubmit)="onSubmit()">
       <div class="form-group givespace">
         <label>Batch Name</label>
@@ -27,7 +27,7 @@
      
              <option value="">Graduate ID</option>
              <!-- <option *ngFor="let obj of here" [ngValue]="obj">{{obj}}</option> -->
-             <option [value]="i.empId" *ngFor="let i of getEmpId">{{i.empId}}</option>
+             <option [value]="i.empId" *ngFor="let i of getEmpId">{{i.empId}} - {{i.employeeName}}</option>
            </select>
            <!-- {{empId?.invalid}} -->
            <div *ngIf="empId?.invalid && empId?.touched">

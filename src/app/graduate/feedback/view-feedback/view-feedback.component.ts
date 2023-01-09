@@ -11,7 +11,7 @@ import { userLoginData } from 'src/app/login/login/loginData';
   styleUrls: ['./view-feedback.component.scss']
 })
 export class ViewFeedbackComponent {
-  tasks: Task[] = [];
+  //tasks: Task[] = [];
 
   constructor(private feedback: FeedbackService, private global : GlobalService, private login: LoginService) {}
 
