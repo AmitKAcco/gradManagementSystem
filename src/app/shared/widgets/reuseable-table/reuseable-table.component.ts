@@ -31,11 +31,11 @@ export class ReuseableTableComponent implements OnInit {
   ngOnInit() {
     this.dataSource = new MatTableDataSource(this.rowData);
     this.columns = this.colData;
-    console.log(this.dataSource);
+    //console.log(this.dataSource);
     this.displayedColumns = this.columns.map((c: { columnDef: any; }) => c.columnDef);
-    console.log(this.dataSource);
+    //console.log(this.dataSource);
     this.batches = this.rowData;
-    console.log(this.storeBatchName);
+    //console.log(this.storeBatchName);
     this.global.getAllBatches().subscribe(data=>{
       this.storeBatchName = data;
     })
