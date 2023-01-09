@@ -48,8 +48,11 @@ export class AddJobComponent {
     console.log(this.JobForm.value);
     this.jobService.postJob(this.JobForm.value)
     .subscribe(
-      // response => console.log('Success!', response),
-      // error => console.error('Error!', error)
+      response => {
+        console.log('Success!', response);
+        this.JobForm.reset();
+      },
+      error => console.error('Error!', error)
     );
   }
 

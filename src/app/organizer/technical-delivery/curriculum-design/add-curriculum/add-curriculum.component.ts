@@ -35,8 +35,11 @@ export class AddCurriculumComponent {
     console.log(this.curriculumDesign.value);
     this.curriculumService.postTopic(this.curriculumDesign.value)
     .subscribe(
-      // response => console.log('Success!', response),
-      // error => console.error('Error!', error)
+      response => {
+        console.log('Success!', response);
+        this.curriculumDesign.reset();
+      },
+      error => console.error('Error!', error)
     );
   }
 }

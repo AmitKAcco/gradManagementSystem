@@ -94,6 +94,11 @@ export class AddInterviewComponent {
     console.log(this.scheduleInterview.value);
     this.scheduleInterviewService.postInterview(this.scheduleInterview.value)
     .subscribe(
+      response => {
+        console.log('Success!', response);
+        this.scheduleInterview.reset();
+      },
+      error => console.error('Error!', error)
     );
 
   }

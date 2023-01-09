@@ -108,7 +108,11 @@ export class AddblockedComponent {
     console.log(this.blocked.value);
     this.blockedService.postBlocked(this.blocked.value)
       .subscribe(
-
+        response => {
+          console.log('Success!', response);
+          this.blocked.reset();
+        },
+        error => console.error('Error!', error)
     );
   }
 

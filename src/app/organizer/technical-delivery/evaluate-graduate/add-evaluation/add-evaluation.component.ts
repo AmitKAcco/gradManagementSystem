@@ -75,8 +75,11 @@ export class AddEvaluationComponent {
     console.log(this.evaluationDesgin.value);
     this.evaluationService.postEvaluateGrad(this.evaluationDesgin.value)
     .subscribe(
-      // response => console.log('Success!', response),
-      // error => console.error('Error!', error)
+      response => {
+        console.log('Success!', response);
+        this.evaluationDesgin.reset();
+      },
+      error => console.error('Error!', error)
     );
   }
 }

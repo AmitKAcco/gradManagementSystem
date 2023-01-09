@@ -72,8 +72,11 @@ export class AddRequirementsComponent {
     console.log(this.clientRequirements.value);
     this.clientRequirementService.postClientRequirements(this.clientRequirements.value)
     .subscribe(
-      // response => console.log('Success!', response),
-      // error => console.error('Error!', error)
+      response => {
+        console.log('Success!', response);
+        this.clientRequirements.reset();
+      },
+      error => console.error('Error!', error)
     );
   }
 
