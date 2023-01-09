@@ -62,6 +62,9 @@ export class SharedDashBoardComponent {
     })
     setTimeout(() => {
        this.realRequirements = this.countRequirement - this.selectedGrads;
+       if(this.realRequirements < 0){
+        this.realRequirements = 0;
+       }
      //  console.log(this.realRequirements);
     }, 500);
   }
