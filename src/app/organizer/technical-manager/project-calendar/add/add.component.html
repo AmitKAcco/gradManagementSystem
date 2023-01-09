@@ -47,16 +47,6 @@
             </div>
         
       </div>
-    <div class="form-group givespace">
-        <label for="teamNumber" class="formbold-form-label">Team Number</label>
-        <input [class.is-invalid]="teamNumber?.invalid && teamNumber?.touched"  type="number" formControlName="teamNumber" id="teamNumber" class="formbold-form-input" required>
-        <div *ngIf="teamNumber?.invalid && teamNumber?.touched">
-
-          <small class="text-danger" *ngIf="teamNumber?.errors?.['required']">Field required</small>
-        
-            </div>
-
-      </div>
       <div class="form-group givespace">
         <label for="description" class="formbold-form-label">Type of Evaluation</label>
         <input  [class.is-invalid]="description?.invalid && description?.touched" type="text" formControlName="description" id="description" class="formbold-form-input" required>
