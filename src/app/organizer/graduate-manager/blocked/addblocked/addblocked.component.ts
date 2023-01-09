@@ -14,69 +14,75 @@ import { elegibity } from '../elegibity';
 })
 export class AddblockedComponent {
 
-  blocked : FormGroup;
-  constructor(private fb: FormBuilder ,private blockedService : BlockedService,private globalService:GlobalService) { }
+  blocked: FormGroup;
+  constructor(private fb: FormBuilder, private blockedService: BlockedService, private globalService: GlobalService) { }
   empIdList = [];
   batchNameList = [];
   jobIdList = [];
-  batchIdSelected : number = -1;
-  jobIdSelected : number = -1;
+  batchIdSelected: number = -1;
+  jobIdSelected: number = -1;
 
-  getBatchName : batchesGet[];
-  getEmployeeId : employeeData[];
-  getJobId : jobData[];
-  submitted : boolean = false;
+  getBatchName: batchesGet[];
+  getEmployeeId: employeeData[];
+  getJobId: jobData[];
+  submitted: boolean = false;
   dataHere = new elegibity();
-  elegibleList : employeeData[];
+  elegibleList: employeeData[];
   isDisabled = true;
   batchGiven = true;
   jobGiven = true;
   ngOnInit() {
     this.blocked = this.fb.group({
-       batchName : ['',[Validators.required]],
-       empId : [{value: '', disabled: true},[Validators.required]],
-       jobId : ['',[Validators.required]],
+      batchName: ['', [Validators.required]],
+      empId: [{ value: '', disabled: true }, [Validators.required]],
+      jobId: ['', [Validators.required]],
     });
-    this.globalService.getAllBatches().subscribe(data=> {
+    this.globalService.getAllBatches().subscribe(data => {
       this.getBatchName = data;
     });
-    this.globalService.getAllEmployees().subscribe(data=> {
+    this.globalService.getAllEmployees().subscribe(data => {
       this.getEmployeeId = data;
     });
-    this.globalService.getJob().subscribe(data=> {
-      this.getJobId= data;
+    this.globalService.getJob().subscribe(data => {
+      this.getJobId = data;
     })
   }
-  getBatch(batchId : any){
-    
+  getBatch(batchId: any) {
+    if (batchId == '') {
+      this.batchIdSelected = -1;
+    } else {
       this.batchIdSelected = batchId;
+    }
+    console.log(batchId);
+    if (this.jobIdSelected != -1 && batchId != '') {
 
-      // this.blocked.value.batchName = "one";
-      console.log(batchId);
-      if(this.jobIdSelected != -1){
-        
-           this.dataHere.jobId = this.jobIdSelected;
-          this.dataHere.batchId = batchId;
-          this.blockedService.checkEligiblity(this.dataHere).subscribe(data=>{
-            this.elegibleList = data;
-            this.blocked.get('empId')?.enable();
-          });
-      }
-     
+      this.dataHere.jobId = this.jobIdSelected;
+      this.dataHere.batchId = batchId;
+      this.blockedService.checkEligiblity(this.dataHere).subscribe(data => {
+        this.elegibleList = data;
+        this.blocked.get('empId')?.enable();
+      });
+    }
+
   }
-  getJobIdSlected(jobId : any){
+  getJobIdSlected(jobId: any) {
+    if(jobId == ''){
+      this.jobIdSelected = -1;
+    } else {
       this.jobIdSelected = jobId;
+    }
+   
     
+    this.dataHere.batchId = this.batchIdSelected;
+    if (this.batchIdSelected != -1 && jobId != '') {
+      this.dataHere.jobId = this.jobIdSelected;
       this.dataHere.batchId = this.batchIdSelected;
-        if(this.batchIdSelected != -1){
-          this.dataHere.jobId =  this.jobIdSelected;
-          this.dataHere.batchId = this.batchIdSelected;
-          console.log(this.dataHere);
-          this.blockedService.checkEligiblity(this.dataHere).subscribe(data=>{
-            this.elegibleList = data;
-            this.blocked.get('empId')?.enable();
-          });
-        }
+      console.log(this.dataHere);
+      this.blockedService.checkEligiblity(this.dataHere).subscribe(data => {
+        this.elegibleList = data;
+        this.blocked.get('empId')?.enable();
+      });
+    }
   }
   get batchName() {
     return this.blocked.get('batchName');
@@ -88,21 +94,21 @@ export class AddblockedComponent {
     return this.blocked.get('empId');
 
   }
- 
-  onSubmit(){
-    for(let i = 0; i < this.getBatchName.length; i++){
+
+  onSubmit() {
+    for (let i = 0; i < this.getBatchName.length; i++) {
       console.log(this.blocked.value.batchName);
-      if(this.blocked.value.batchName == this.getBatchName[i].batchId){
+      if (this.blocked.value.batchName == this.getBatchName[i].batchId) {
         this.blocked.value.batchName = this.getBatchName[i].batchName;
         this.blocked.value.batchId = this.getBatchName[i].batchId;
         console.log(this.blocked.value.batchName);
         console.log(this.blocked.value)
       }
-  }
+    }
     console.log(this.blocked.value);
     this.blockedService.postBlocked(this.blocked.value)
-    .subscribe(
-     
+      .subscribe(
+
     );
   }
 
