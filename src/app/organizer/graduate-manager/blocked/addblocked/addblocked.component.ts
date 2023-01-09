@@ -48,14 +48,17 @@ export class AddblockedComponent {
     })
   }
   getBatch(batchId : any){
-    //  console.log("hi");
+    
       this.batchIdSelected = batchId;
-      // console.log(batchId);
+
+      // this.blocked.value.batchName = "one";
+      console.log(batchId);
       if(this.jobIdSelected != -1){
+        
+           this.dataHere.jobId = this.jobIdSelected;
           this.dataHere.batchId = batchId;
           this.blockedService.checkEligiblity(this.dataHere).subscribe(data=>{
             this.elegibleList = data;
-            // console.log(data);
             this.blocked.get('empId')?.enable();
           });
       }
@@ -71,7 +74,6 @@ export class AddblockedComponent {
           console.log(this.dataHere);
           this.blockedService.checkEligiblity(this.dataHere).subscribe(data=>{
             this.elegibleList = data;
-            // console.log(data);
             this.blocked.get('empId')?.enable();
           });
         }
@@ -88,11 +90,19 @@ export class AddblockedComponent {
   }
  
   onSubmit(){
+    for(let i = 0; i < this.getBatchName.length; i++){
+      console.log(this.blocked.value.batchName);
+      if(this.blocked.value.batchName == this.getBatchName[i].batchId){
+        this.blocked.value.batchName = this.getBatchName[i].batchName;
+        this.blocked.value.batchId = this.getBatchName[i].batchId;
+        console.log(this.blocked.value.batchName);
+        console.log(this.blocked.value)
+      }
+  }
     console.log(this.blocked.value);
     this.blockedService.postBlocked(this.blocked.value)
     .subscribe(
-      // response => console.log('Success!', response),
-      // error => console.error('Error!', error)
+     
     );
   }
 
