@@ -6,6 +6,7 @@ import { GlobalService } from 'src/app/global.service';
 import { employeeData } from 'src/app/employeeData';
 import { ScheduleInterviewService } from '../schedule-interview.service';
 import { jobData } from 'src/app/jobData';
+import { elegibity } from '../elegibity';
 
 
 @Component({
@@ -14,37 +15,60 @@ import { jobData } from 'src/app/jobData';
   styleUrls: ['./add-interview.component.scss']
 })
 export class AddInterviewComponent {
+
   scheduleInterview : FormGroup;
   constructor(private fb: FormBuilder ,private scheduleInterviewService : ScheduleInterviewService ,private globalService:GlobalService) { }
  
   batchNameList = [];
   empIdList = [];
   jobIdList = [];
+  jobIdSelected : number = -1;
 
-  getEmpId : employeeData[];
+
+  getEmployeeId : employeeData[];
   getBatchName : batchesGet[];
-  getJob : jobData[];
+  getJobId : jobData[];
   submitted : boolean = false;
+  dataHere = new elegibity();
+  elegibleList : employeeData[];
+
 
   ngOnInit() {
     this.scheduleInterview = this.fb.group({
       batchName : ['',[Validators.required]],
-      empId : ['',[Validators.required]],
+      empId : [{value: '', disabled: true},[Validators.required]],
       jobId : ['',[Validators.required]],
       interviewDate : Date,
       time : ['',[Validators.required]],
       
     })
     this.globalService.getAllEmployees().subscribe(data => {
-      this.getEmpId = data;
+      this.getEmployeeId = data;
     });
     this.globalService.getAllBatches().subscribe(data => {
       this.getBatchName = data;
     });
     this.globalService.getJob().subscribe(data => {
-      this.getJob = data;
+      this.getJobId = data;
     })
   }
+
+  getJobIdSlected(jobId : any){
+          
+
+        this.jobIdSelected = jobId;
+       
+        this.dataHere.jobId =  this.jobIdSelected;
+        this.scheduleInterviewService.getInterviewScheduledGrads(this.dataHere).subscribe(data=>{
+          this.elegibleList = data;
+          if(jobId != ''){
+            this.scheduleInterview.get('empId')?.enable();
+          }
+         
+        });
+      
+}
+
   get batchName() {
     return this.scheduleInterview.get('batchName');
 
@@ -70,17 +94,7 @@ export class AddInterviewComponent {
     console.log(this.scheduleInterview.value);
     this.scheduleInterviewService.postInterview(this.scheduleInterview.value)
     .subscribe(
-      // response => console.log('Success!', response),
-      // error => console.error('Error!', error)
     );
 
-    // this.onboarding.schedule(this.scheduleInterview.value)
-    // .subscribe(
-     
-    //   response => {
-    //   console.log('Success!', response)
-    // },  
-    //   error => console.error('Error!', error)
-    // );
   }
 }
