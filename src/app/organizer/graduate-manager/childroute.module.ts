@@ -12,10 +12,23 @@ export const childRoutes = [
     data: { icon: 'how_to_reg', text: 'Graduate Details' }
   },
   {
+    path: 'Jobs',
+    loadChildren: () =>
+      import('./job/job.module').then(m => m.JobModule),
+    data: { icon: 'cases', text: 'Jobs' }
+  },
+  {
     path: 'clientsRequirements',
     loadChildren: () =>
       import('./clients-requirements/clients-requirements.module').then(m => m.ClientsRequirementsModule),
     data: { icon: 'meeting_room', text: 'Clients Requirements' }
+  },
+  
+  {
+    path : 'blocked',
+    loadChildren: () =>
+      import('./blocked/blocked.module').then(m => m.BlockedModule),
+    data: { icon: 'block', text: 'Blocked' }
   },
   {
     path: 'scheduleInterview',
@@ -23,16 +36,5 @@ export const childRoutes = [
       import('./schedule-interview/schedule-interview.module').then(m => m.ScheduleInterviewModule),
     data: { icon: 'access_time', text: 'Schedule Interview' }
   },
-  {
-    path: 'Jobs',
-    loadChildren: () =>
-      import('./job/job.module').then(m => m.JobModule),
-    data: { icon: 'cases', text: 'Jobs' }
-  },
-  {
-    path : 'blocked',
-    loadChildren: () =>
-      import('./blocked/blocked.module').then(m => m.BlockedModule),
-    data: { icon: 'block', text: 'Blocked' }
-  }
+  
 ]

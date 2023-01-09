@@ -28,10 +28,13 @@ export class AddblockedComponent {
   submitted : boolean = false;
   dataHere = new elegibity();
   elegibleList : employeeData[];
+  isDisabled = true;
+  batchGiven = true;
+  jobGiven = true;
   ngOnInit() {
     this.blocked = this.fb.group({
        batchName : ['',[Validators.required]],
-       empId : ['',[Validators.required]],
+       empId : [{value: '', disabled: true},[Validators.required]],
        jobId : ['',[Validators.required]],
     });
     this.globalService.getAllBatches().subscribe(data=> {
@@ -45,36 +48,35 @@ export class AddblockedComponent {
     })
   }
   getBatch(batchId : any){
-    //  console.log("hi");
+    
       this.batchIdSelected = batchId;
-      // console.log(batchId);
+
+      // this.blocked.value.batchName = "one";
+      console.log(batchId);
       if(this.jobIdSelected != -1){
+        
+           this.dataHere.jobId = this.jobIdSelected;
           this.dataHere.batchId = batchId;
           this.blockedService.checkEligiblity(this.dataHere).subscribe(data=>{
             this.elegibleList = data;
-            console.log(data);
+            this.blocked.get('empId')?.enable();
           });
       }
+     
   }
   getJobIdSlected(jobId : any){
       this.jobIdSelected = jobId;
-      // console.log(jobId);
+    
       this.dataHere.batchId = this.batchIdSelected;
-     
-      // console.log(this.dataHere);
-      
-      // setTimeout(() => {
         if(this.batchIdSelected != -1){
           this.dataHere.jobId =  this.jobIdSelected;
           this.dataHere.batchId = this.batchIdSelected;
           console.log(this.dataHere);
           this.blockedService.checkEligiblity(this.dataHere).subscribe(data=>{
             this.elegibleList = data;
-            console.log(data);
+            this.blocked.get('empId')?.enable();
           });
         }
-      // }, 1000);
-      
   }
   get batchName() {
     return this.blocked.get('batchName');
@@ -88,11 +90,19 @@ export class AddblockedComponent {
   }
  
   onSubmit(){
+    for(let i = 0; i < this.getBatchName.length; i++){
+      console.log(this.blocked.value.batchName);
+      if(this.blocked.value.batchName == this.getBatchName[i].batchId){
+        this.blocked.value.batchName = this.getBatchName[i].batchName;
+        this.blocked.value.batchId = this.getBatchName[i].batchId;
+        console.log(this.blocked.value.batchName);
+        console.log(this.blocked.value)
+      }
+  }
     console.log(this.blocked.value);
     this.blockedService.postBlocked(this.blocked.value)
     .subscribe(
-      // response => console.log('Success!', response),
-      // error => console.error('Error!', error)
+     
     );
   }
 

@@ -18,7 +18,10 @@ import { Task } from './graduate/feedback/shared/models/task.model';
   _urlGetEmployees = 'http://localhost:8900/allEmployees'
   _urlGetJob = 'http://localhost:8900/allJobs'
   _urlGetProjectTopics = 'http://localhost:8900/allProjectTopics'
-
+  _urlGetFeedback = 'http://localhost:8900/allFeedback'
+  getFeedback(){
+    return this._http.get< any >(this._urlGetFeedback);  
+  }
   getApproval(batch: any): Observable<any> {
     let urlx = `http://localhost:8900/approval/${batch}`;
     return this._http.get< any >(urlx);  
