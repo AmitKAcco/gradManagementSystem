@@ -13,6 +13,7 @@ export class ScheduleInterviewService {
   _urlSelected = 'http://localhost:8900/addSelectedGrad';
   _urlGradSelected = 'http://localhost:8900/gradSelected';
   _urlDeleteSelectedGrad = 'http://localhost:8900/deleteSelectedGrad';
+  _urlCheckGradInterviewScheduled = 'http://localhost:8900/getInterviewScheduledGrads';
 
   getInterview(): Observable<any>{
     return this._http.get<any>(this._urlOne);
@@ -29,6 +30,9 @@ export class ScheduleInterviewService {
   }
   deleteSelectedGrad(empData: any): Observable<any>{
     return this._http.post(this._urlDeleteSelectedGrad,empData);
+  }
+  getInterviewScheduledGrads(jobData: any): Observable<any>{
+    return this._http.post(this._urlCheckGradInterviewScheduled,jobData);
   }
 
 }
