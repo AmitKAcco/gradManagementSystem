@@ -21,7 +21,11 @@ export class HomeComponent {
   }
   columns = [
     //{ columnDef: 'id', header: 'Project Calender Id',    cell: (element: any) => `${element.projectCalendarId}` },
+    { columnDef: 'empId',  header: 'Grad Id', cell: (element: any) => `${element.empId}`  },
+    { columnDef: 'empName',  header: 'Grad Name', cell: (element: any) => `${element.empName}`  },
     { columnDef: 'feedback',  header: 'Feedback', cell: (element: any) => `${element.feedbackNote}`  },
+
+    
     
     // { columnDef: 'fee',   header: 'Project Name', cell: (element: any) => `${element.projectName}`  },
   ];
