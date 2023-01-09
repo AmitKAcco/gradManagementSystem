@@ -24,4 +24,9 @@ export class SharedDashBoardService {
     let urlx = `http://localhost:8900/RequirementsCountByBatchId/${batchId}`;
     return this._http.get< any >(urlx);  
   }
+  // http://localhost:8900/requirementsByBatchId/5000
+  getAllRequstion(batchId: any): Observable<any> {
+    let urlx = `http://localhost:8900/requirementsByBatchId/${batchId}`;
+    return this._http.get< any >(urlx);  
+  }
 }
