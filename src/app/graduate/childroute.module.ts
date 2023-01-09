@@ -12,7 +12,7 @@ export const childRoutes = [
     loadChildren: () =>
       import('./trainningcurriculum/trainningcurriculum.module')
       .then(m => m.TrainningcurriculumModule),
-    data: { icon: 'dashboard', text: 'TranningCiriculum' }
+    data: { icon: 'dashboard', text: 'Training Curriculum' }
 
   },
 
