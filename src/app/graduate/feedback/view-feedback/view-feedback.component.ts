@@ -22,13 +22,13 @@ export class ViewFeedbackComponent {
 
     this.login.transferData.subscribe(data =>{
       this.userEmpdata = data;
-      console.log("hi" + this.userEmpdata);
+     // console.log("hi" + this.userEmpdata);
       if(this.userEmpdata.empId == null || this.userEmpdata.empId == undefined){
         this.userEmpdata.empId = localStorage.getItem('empId');
       }
       this.feedback.getUser(this.userEmpdata.empId).subscribe(data =>{
         this.dataSource = data;
-        console.log(this.dataSource);
+       // console.log(this.dataSource);
       })
     })
     
