@@ -8,6 +8,12 @@ export const childRoutes = [
     data: { icon: 'dashboard', text: 'Dashboard' }
   },
   {
+    path: 'grad-details',
+    loadChildren: () =>
+      import('./gaduate-details-tech-del/gaduate-details-tech-del.module').then(m => m.GaduateDetailsTechDelModule),
+    data: { icon: 'how_to_reg', text: 'Graduate Details' }
+  },
+  {
     path: 'curriculumDesign',
     loadChildren: () =>
       import('./curriculum-design/curriculum-design.module')
@@ -22,12 +28,7 @@ export const childRoutes = [
         .then(m => m.EvaluateGraduateModule),
     data: { icon: 'receipt', text: 'Evaluate Graduate' }
   },
-  {
-    path: 'grad-details',
-    loadChildren: () =>
-      import('./gaduate-details-tech-del/gaduate-details-tech-del.module').then(m => m.GaduateDetailsTechDelModule),
-    data: { icon: 'how_to_reg', text: 'Graduate Details' }
-  },
+  
   {
     path: 'Status',
     loadChildren: () =>
