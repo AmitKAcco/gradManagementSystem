@@ -29,9 +29,7 @@ export class AddMockInterviewComponent {
        interviewerName : ['',[Validators.required]],
        interviewDate : Date,
        time : Date,
-       score : ['',[Validators.required]]
-      //  selectBatchId : ['',[Validators.required]]
-    })
+      })
     // this.globalService.getAllBatches().subscribe(data => {
     //   this.getBatchName = data;
     //   console.log(this.getBatchName);
@@ -50,9 +48,6 @@ export class AddMockInterviewComponent {
   get interviewDate(){
     return this.mockInterview.get('interviewDate');
   }
-  get score(){
-    return this.mockInterview.get('score');
-  }  
   onSubmit(){
     console.log(this.mockInterview.value);
     this.interviewService.postMockInterview(this.mockInterview.value)
