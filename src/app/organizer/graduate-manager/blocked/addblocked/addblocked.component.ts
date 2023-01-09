@@ -6,6 +6,7 @@ import { batchesGet } from 'src/backend.Data';
 import { employeeData } from 'src/app/employeeData';
 import { GlobalService } from 'src/app/global.service';
 import { jobData } from 'src/app/jobData';
+import { elegibity } from '../elegibity';
 @Component({
   selector: 'app-addblocked',
   templateUrl: './addblocked.component.html',
@@ -18,20 +19,20 @@ export class AddblockedComponent {
   empIdList = [];
   batchNameList = [];
   jobIdList = [];
+  batchIdSelected : number = -1;
+  jobIdSelected : number = -1;
 
   getBatchName : batchesGet[];
   getEmployeeId : employeeData[];
   getJobId : jobData[];
   submitted : boolean = false;
-
+  dataHere = new elegibity();
+  elegibleList : employeeData[];
   ngOnInit() {
     this.blocked = this.fb.group({
        batchName : ['',[Validators.required]],
        empId : ['',[Validators.required]],
        jobId : ['',[Validators.required]],
-       
-       
-       
     });
     this.globalService.getAllBatches().subscribe(data=> {
       this.getBatchName = data;
@@ -43,13 +44,43 @@ export class AddblockedComponent {
       this.getJobId= data;
     })
   }
+  getBatch(batchId : any){
+    //  console.log("hi");
+      this.batchIdSelected = batchId;
+      // console.log(batchId);
+      if(this.jobIdSelected != -1){
+          this.dataHere.batchId = batchId;
+          this.blockedService.checkEligiblity(this.dataHere).subscribe(data=>{
+            this.elegibleList = data;
+            console.log(data);
+          });
+      }
+  }
+  getJobIdSlected(jobId : any){
+      this.jobIdSelected = jobId;
+      // console.log(jobId);
+      this.dataHere.batchId = this.batchIdSelected;
+     
+      // console.log(this.dataHere);
+      
+      // setTimeout(() => {
+        if(this.batchIdSelected != -1){
+          this.dataHere.jobId =  this.jobIdSelected;
+          this.dataHere.batchId = this.batchIdSelected;
+          console.log(this.dataHere);
+          this.blockedService.checkEligiblity(this.dataHere).subscribe(data=>{
+            this.elegibleList = data;
+            console.log(data);
+          });
+        }
+      // }, 1000);
+      
+  }
   get batchName() {
     return this.blocked.get('batchName');
-
   }
   get jobId() {
     return this.blocked.get('jobId');
-
   }
   get empId() {
     return this.blocked.get('empId');
