@@ -35,13 +35,17 @@
      
       <div class="form-group givespace">
         <label for="projectName" class="formbold-form-label">Project Name</label>
-        <input  [class.is-invalid]="projectName?.invalid && projectName?.touched" type="text" formControlName="projectName" id="projectName" class="formbold-form-input" required>
+        <select formControlName="projectName" class="form-control" [class.is-invalid]="projectName?.invalid && projectName?.touched">
+          <option value="">Project Name</option>
+          <!-- <option *ngFor="let batchId of batchIdList" [ngValue]="batchId">{{batchId}}</option> -->
+          <option [value]="i.projectName" *ngFor="let i of getProjectName">{{i.projectName}}</option>
+        </select>
         <div *ngIf="projectName?.invalid && projectName?.touched">
 
           <small class="text-danger" *ngIf="projectName?.errors?.['required']">Field required</small>
         
             </div>
-
+        
       </div>
       <div class="form-group givespace">
         <label for="description" class="formbold-form-label">Type of Evaluation</label>

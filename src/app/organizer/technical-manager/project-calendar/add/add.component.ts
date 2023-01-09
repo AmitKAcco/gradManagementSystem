@@ -4,6 +4,7 @@ import { FormBuilder } from '@angular/forms';
 import { CalendarService } from '../calendar.service';
 import { batchesGet } from 'src/backend.Data';
 import { GlobalService } from 'src/app/global.service';
+import { projectNameGet } from 'src/app/projectName';
 @Component({
   selector: 'app-add',
   templateUrl: './add.component.html',
@@ -16,6 +17,7 @@ export class AddComponent {
   //batchIdList = [];
 
   getBatchName : batchesGet[];
+  getProjectName : projectNameGet[];
 
   submitted : boolean =false;
   ngOnInit() {
@@ -30,6 +32,9 @@ export class AddComponent {
     })
     this.globalService.getAllBatches().subscribe(data => {
       this.getBatchName = data;
+    })
+    this.globalService.getProjectTopics().subscribe(data => {
+      this.getProjectName = data;
     })
   }
   get batchName(){
