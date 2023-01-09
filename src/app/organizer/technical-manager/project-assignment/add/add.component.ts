@@ -81,11 +81,12 @@ export class AddComponent {
       for (let j = 0; j < this.getEmpName.length; j++) {
         console.log(this.s +  "" + this.getEmpName[i].empId);
         if (this.s == this.getEmpName[j].empId) {
-          this.empVal = this.empVal+ " " +this.getEmpName[i].employeeName;
+          this.empVal = this.empVal+ " " +this.getEmpName[j].employeeName;
         }
       }
     }
       this.projectAssignmentForm.value.allotedEmp = this.empVal;
+      this.empVal = "";
       console.log( this.projectAssignmentForm.value.empName)
       console.log(this.projectAssignmentForm.value);
       this.projectAssignmentService.postProjectAssignment(this.projectAssignmentForm.value)
