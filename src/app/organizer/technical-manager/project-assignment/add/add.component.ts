@@ -81,7 +81,7 @@ export class AddComponent {
       for (let j = 0; j < this.getEmpName.length; j++) {
         console.log(this.s +  "" + this.getEmpName[i].empId);
         if (this.s == this.getEmpName[j].empId) {
-          this.empVal = this.empVal+ " " +this.getEmpName[i].employeeName;
+          this.empVal = this.empVal+ " " +this.getEmpName[j].employeeName;
         }
       }
     }
