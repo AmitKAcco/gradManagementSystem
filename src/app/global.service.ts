@@ -17,6 +17,7 @@ import { Task } from './graduate/feedback/shared/models/task.model';
   _urlThree = 'localhost:8900/trainingCurriculumByBatchId/1';
   _urlGetEmployees = 'http://localhost:8900/allEmployees'
   _urlGetJob = 'http://localhost:8900/allJobs'
+  _urlGetProjectTopics = 'http://localhost:8900/allProjectTopics'
 
   getApproval(batch: any): Observable<any> {
     let urlx = `http://localhost:8900/approval/${batch}`;
@@ -24,6 +25,9 @@ import { Task } from './graduate/feedback/shared/models/task.model';
   }
   getJob():Observable<any> {
     return this._http.get<any>(this._urlGetJob);
+  }
+  getProjectTopics():Observable<any>{
+    return this._http.get<any>(this._urlGetProjectTopics);
   }
 
   getUser(username: any): Observable<any> {

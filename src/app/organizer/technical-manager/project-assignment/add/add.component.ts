@@ -5,6 +5,7 @@ import { batchesGet } from 'src/backend.Data';
 import { GlobalService } from 'src/app/global.service';
 import { FormArray } from '@angular/forms';
 import { Graduate } from './graduate.data';
+import { projectNameGet } from 'src/app/projectName';
 @Component({
   selector: 'app-add',
   templateUrl: './add.component.html',
@@ -21,6 +22,7 @@ export class AddComponent {
   getBatchName: batchesGet[];
   getEmpName: Graduate[];
   submitted : boolean = false;
+  getProjectName : projectNameGet[];
   ngOnInit() {
     this.projectAssignmentForm = this.fb.group({
       batchName: ['',[Validators.required]],
@@ -36,6 +38,9 @@ export class AddComponent {
     })
     this.globalService.getAllEmployees().subscribe(data => {
       this.getEmpName = data;
+    })
+    this.globalService.getProjectTopics().subscribe(data =>{
+      this.getProjectName = data;
     })
   }
   get batchName(){
