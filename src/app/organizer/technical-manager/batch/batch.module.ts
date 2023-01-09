@@ -8,7 +8,7 @@ import { ViewBatchComponent } from './view-batch/view-batch.component';
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { MatTabsModule } from '@angular/material/tabs';
 import { WidgetsModule } from 'src/app/shared/widgets/widgets.module';
-
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,8 @@ import { WidgetsModule } from 'src/app/shared/widgets/widgets.module';
     ReactiveFormsModule,
     FormsModule,
     MatTabsModule,  
-    WidgetsModule
+    WidgetsModule,
+    MatTableModule
   ]
 })
 export class BatchModule { }
