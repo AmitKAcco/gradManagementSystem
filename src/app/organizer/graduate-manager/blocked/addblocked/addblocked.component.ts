@@ -28,10 +28,13 @@ export class AddblockedComponent {
   submitted : boolean = false;
   dataHere = new elegibity();
   elegibleList : employeeData[];
+  isDisabled = true;
+  batchGiven = true;
+  jobGiven = true;
   ngOnInit() {
     this.blocked = this.fb.group({
        batchName : ['',[Validators.required]],
-       empId : ['',[Validators.required]],
+       empId : [{value: '', disabled: true},[Validators.required]],
        jobId : ['',[Validators.required]],
     });
     this.globalService.getAllBatches().subscribe(data=> {
@@ -52,29 +55,26 @@ export class AddblockedComponent {
           this.dataHere.batchId = batchId;
           this.blockedService.checkEligiblity(this.dataHere).subscribe(data=>{
             this.elegibleList = data;
-            console.log(data);
+            // console.log(data);
+            this.blocked.get('empId')?.enable();
           });
       }
+     
   }
   getJobIdSlected(jobId : any){
       this.jobIdSelected = jobId;
-      // console.log(jobId);
+    
       this.dataHere.batchId = this.batchIdSelected;
-     
-      // console.log(this.dataHere);
-      
-      // setTimeout(() => {
         if(this.batchIdSelected != -1){
           this.dataHere.jobId =  this.jobIdSelected;
           this.dataHere.batchId = this.batchIdSelected;
           console.log(this.dataHere);
           this.blockedService.checkEligiblity(this.dataHere).subscribe(data=>{
             this.elegibleList = data;
-            console.log(data);
+            // console.log(data);
+            this.blocked.get('empId')?.enable();
           });
         }
-      // }, 1000);
-      
   }
   get batchName() {
     return this.blocked.get('batchName');

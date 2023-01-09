@@ -11,7 +11,7 @@
         <option value="">Batch Name</option>
 
         <!-- <option *ngFor="let obj of here" [ngValue]="obj">{{obj}}</option> -->
-        <option [value]="i.batchId" *ngFor="let i of getBatchName" >{{i.batchName}}{{i.batchId}}</option>
+        <option [value]="i.batchId" *ngFor="let i of getBatchName" >{{i.batchName}}</option>
       </select>
       <!-- {{batchName?.invalid}} -->
       <div *ngIf="batchName?.invalid && batchName?.touched">
@@ -40,7 +40,7 @@
 
       <!-- <option [value]="i.empId" *ngFor="let i of getEmpId">{{i.empId}}</option> -->
       <!-- {{jobId}} -->
-      <select formControlName="empId" class="form-control"
+      <select formControlName="empId" class="form-control" 
         [class.is-invalid]="empId?.invalid && empId?.touched"  >
 
         <option value="" [disabled]="!(!jobId?.invalid&&!batchName?.invalid)">Graduate ID</option>
