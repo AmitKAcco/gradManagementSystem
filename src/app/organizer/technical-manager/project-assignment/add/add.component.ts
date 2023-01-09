@@ -86,6 +86,7 @@ export class AddComponent {
       }
     }
       this.projectAssignmentForm.value.allotedEmp = this.empVal;
+      this.empVal = "";
       console.log( this.projectAssignmentForm.value.empName)
       console.log(this.projectAssignmentForm.value);
       this.projectAssignmentService.postProjectAssignment(this.projectAssignmentForm.value)
