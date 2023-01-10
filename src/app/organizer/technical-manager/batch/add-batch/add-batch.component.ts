@@ -63,7 +63,6 @@ export class AddBatchComponent {
             duration: 3000,
             panelClass: 'aa'
           });
-          
         }
         else{        
           this._snackBar.open(response, '', {

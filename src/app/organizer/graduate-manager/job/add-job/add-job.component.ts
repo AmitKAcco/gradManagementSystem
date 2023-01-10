@@ -52,7 +52,9 @@ export class AddJobComponent {
 
       response => {
         console.log('Success!', response);
-        this._snackBar.open(response);
+        this._snackBar.open("Job Added !", '', {
+          duration: 3000,
+        });        
         this.JobForm.reset();
       },
       error => console.error('Error!', error)
