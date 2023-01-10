@@ -8,6 +8,8 @@ import { GlobalService } from 'src/app/global.service';
 import { NgModel } from '@angular/forms';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule }      from '@angular/core';
+import {MatSnackBar} from '@angular/material/snack-bar';
+
 @Component({
   selector: 'app-add',
   templateUrl: './add.component.html',
@@ -20,7 +22,7 @@ export class AddComponent {
   batches : batchesGet[];
   selectedBatch = 1;
   submitted : boolean = false;
-  constructor(private fb: FormBuilder, private addser : AddprojectServiceService,private globalService:GlobalService) { }
+  constructor(private fb: FormBuilder, private addser : AddprojectServiceService,private globalService:GlobalService,private _snackBar: MatSnackBar) { }
 
   ngOnInit() {
     this.addProject = this.fb.group({
@@ -55,7 +57,16 @@ export class AddComponent {
   onSubmit(){
 
     //console.log(this.addProject.value);
-    this.addser.postAddProject(this.addProject.value).subscribe();
+    this.addser.postAddProject(this.addProject.value).subscribe(
+      response => {
+        console.log("heyy")
+        console.log("resp" + response);
+        this._snackBar.open(response);
+        this.addProject.reset();
+
+      },
+      error => console.log(error)
+    );
 
   }
 }

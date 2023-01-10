@@ -8,6 +8,8 @@ import { AbstractControlOptions } from '@angular/forms';
 import { GlobalService } from 'src/app/global.service';
 import { buddyData, employeeData } from 'src/app/employeeData';
 import { BuddyService } from '../buddy.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
+
 @Component({
   selector: 'app-add-buddy',
   templateUrl: './add-buddy.component.html',
@@ -17,7 +19,7 @@ export class AddBuddyComponent implements OnInit{
  
   buddyForm: FormGroup;
 
-  constructor(private fb: FormBuilder,private buddyService:BuddyService,private globalService:GlobalService) { }
+  constructor(private fb: FormBuilder,private buddyService:BuddyService,private globalService:GlobalService,private _snackBar: MatSnackBar) { }
   
   getEmpId : employeeData[];
   getBuddyEmpId : buddyData[];
@@ -44,8 +46,14 @@ export class AddBuddyComponent implements OnInit{
     console.log(this.buddyForm.value);
     this.buddyService.postBuddy(this.buddyForm.value)
     .subscribe(
-       // response => console.log('Success!', response),
-      // error => console.error('Error!', error)
+      response => {
+        console.log("heyy")
+        console.log("resp" + response);
+        this._snackBar.open(response);
+        this.buddyForm.reset();
+
+      },
+      error => console.log(error)
 
     );
   }

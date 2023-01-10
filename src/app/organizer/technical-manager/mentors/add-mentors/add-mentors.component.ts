@@ -5,6 +5,7 @@ import { MentorServiceService } from '../mentor-service.service';
 import { batchesGet } from 'src/backend.Data';
 import { GlobalService } from 'src/app/global.service';
 import { employeeData } from 'src/app/employeeData';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-add-mentors',
@@ -14,7 +15,7 @@ import { employeeData } from 'src/app/employeeData';
 export class AddMentorsComponent {
   MentorForm: FormGroup;
   
-  constructor(private fb: FormBuilder, private mentorService:MentorServiceService,private globalService : GlobalService) { }
+  constructor(private fb: FormBuilder, private mentorService:MentorServiceService,private globalService : GlobalService,private _snackBar: MatSnackBar) { }
 
   //batchIdList = [];
  // empIdGradList = [];
@@ -61,8 +62,15 @@ export class AddMentorsComponent {
     console.log(this.MentorForm.value);
     this.mentorService.postMentor(this.MentorForm.value)
     .subscribe(
-      // response => console.log('Success!', response),
-      // error => console.error('Error!', error)
+      response => {
+        console.log("heyy")
+        console.log("resp" + response);
+        this._snackBar.open(response);
+        this.MentorForm.reset();
+
+
+      },
+      error => console.log(error)
     );
   }
 }

@@ -6,6 +6,8 @@ import { GlobalService } from 'src/app/global.service';
 import { FormArray } from '@angular/forms';
 import { Graduate } from './graduate.data';
 import { projectNameGet } from 'src/app/projectName';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 @Component({
   selector: 'app-add',
   templateUrl: './add.component.html',
@@ -15,7 +17,7 @@ export class AddComponent {
 
   projectAssignmentForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private projectAssignmentService: ProjectAssignmentService, private globalService: GlobalService) { }
+  constructor(private fb: FormBuilder, private projectAssignmentService: ProjectAssignmentService, private globalService: GlobalService, private _snackBar: MatSnackBar) { }
 
   // batchIdList = [];
 
@@ -91,6 +93,14 @@ export class AddComponent {
       console.log(this.projectAssignmentForm.value);
       this.projectAssignmentService.postProjectAssignment(this.projectAssignmentForm.value)
         .subscribe(
+          response => {
+            console.log(response);
+            this._snackBar.open(response);
+          this.projectAssignmentForm.reset();
+          },
+          error => console.log(error)
+          
+
       );
     }
   

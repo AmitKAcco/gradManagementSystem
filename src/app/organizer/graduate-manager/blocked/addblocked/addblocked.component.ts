@@ -7,6 +7,8 @@ import { employeeData } from 'src/app/employeeData';
 import { GlobalService } from 'src/app/global.service';
 import { jobData } from 'src/app/jobData';
 import { elegibity } from '../elegibity';
+import {MatSnackBar} from '@angular/material/snack-bar';
+
 @Component({
   selector: 'app-addblocked',
   templateUrl: './addblocked.component.html',
@@ -15,7 +17,7 @@ import { elegibity } from '../elegibity';
 export class AddblockedComponent {
 
   blocked: FormGroup;
-  constructor(private fb: FormBuilder, private blockedService: BlockedService, private globalService: GlobalService) { }
+  constructor(private fb: FormBuilder, private blockedService: BlockedService, private globalService: GlobalService,private _snackBar: MatSnackBar) { }
   empIdList = [];
   batchNameList = [];
   jobIdList = [];
@@ -110,9 +112,11 @@ export class AddblockedComponent {
       .subscribe(
         response => {
           console.log('Success!', response);
+          this._snackBar.open(response);
           this.blocked.reset();
         },
         error => console.error('Error!', error)
+
     );
   }
 

@@ -9,6 +9,8 @@ import { employeeData } from 'src/app/employeeData';
 //import { ScheduleInterviewService } from '../schedule-interview.service';
 import { jobData } from 'src/app/jobData';
 import { topicNameGet } from 'src/app/organizer/technical-manager/trannier-assignr/topicName';
+import {MatSnackBar} from '@angular/material/snack-bar';
+
 @Component({
   selector: 'app-add-evaluation',
   templateUrl: './add-evaluation.component.html',
@@ -17,7 +19,7 @@ import { topicNameGet } from 'src/app/organizer/technical-manager/trannier-assig
 export class AddEvaluationComponent {
 
   evaluationDesgin : FormGroup;
-  constructor(private fb: FormBuilder,private evaluationService : EvaluateGradService ,private globalService:GlobalService) { }
+  constructor(private fb: FormBuilder,private evaluationService : EvaluateGradService ,private globalService:GlobalService,private _snackBar: MatSnackBar) { }
   batchNameList:[]
   empIdlist:[]
   topics:[]
@@ -77,6 +79,7 @@ export class AddEvaluationComponent {
     .subscribe(
       response => {
         console.log('Success!', response);
+        this._snackBar.open(response);
         this.evaluationDesgin.reset();
       },
       error => console.error('Error!', error)
