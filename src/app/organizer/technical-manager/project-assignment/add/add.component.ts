@@ -74,12 +74,12 @@ export class AddComponent {
   empVal = "";
   s: any;
   onSubmit() {
-    console.log(this.n = this.projectAssignmentForm.value.empIds.length);
+    // console.log(this.n = this.projectAssignmentForm.value.empIds.length);
     this.n = this.projectAssignmentForm.value.empIds.length;
     for (let i = 0; i < this.n; i++) {
       this.s = this.projectAssignmentForm.value.empIds[i];
       for (let j = 0; j < this.getEmpName.length; j++) {
-        console.log(this.s +  "" + this.getEmpName[i].empId);
+        // console.log(this.s +  "" + this.getEmpName[i].empId);
         if (this.s == this.getEmpName[j].empId) {
           this.empVal = this.empVal+ " " +this.getEmpName[j].employeeName;
         }
@@ -87,8 +87,8 @@ export class AddComponent {
     }
       this.projectAssignmentForm.value.allotedEmp = this.empVal;
       this.empVal = "";
-      console.log( this.projectAssignmentForm.value.empName)
-      console.log(this.projectAssignmentForm.value);
+      // console.log( this.projectAssignmentForm.value.empName)
+      // console.log(this.projectAssignmentForm.value);
       this.projectAssignmentService.postProjectAssignment(this.projectAssignmentForm.value)
         .subscribe(
       );

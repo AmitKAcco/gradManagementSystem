@@ -7,8 +7,10 @@ export class employeeData{
 
     empId : number;
     employeeName : string;
+    batchName : string;
 }
 export class buddyData{
     buddyId : number;
     buddyName : string;
+    batchName : string;
 }

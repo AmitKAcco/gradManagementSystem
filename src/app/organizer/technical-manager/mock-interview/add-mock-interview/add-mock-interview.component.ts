@@ -49,7 +49,7 @@ export class AddMockInterviewComponent {
     return this.mockInterview.get('interviewDate');
   }
   onSubmit(){
-    console.log(this.mockInterview.value);
+    // console.log(this.mockInterview.value);
     this.interviewService.postMockInterview(this.mockInterview.value)
     .subscribe(
       // response => console.log('Success!', response),

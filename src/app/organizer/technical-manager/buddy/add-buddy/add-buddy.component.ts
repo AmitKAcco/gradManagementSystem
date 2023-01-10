@@ -8,71 +8,77 @@ import { AbstractControlOptions } from '@angular/forms';
 import { GlobalService } from 'src/app/global.service';
 import { buddyData, employeeData } from 'src/app/employeeData';
 import { BuddyService } from '../buddy.service';
+import { batchesGet } from 'src/backend.Data';
 @Component({
   selector: 'app-add-buddy',
   templateUrl: './add-buddy.component.html',
   styleUrls: ['./add-buddy.component.scss']
 })
-export class AddBuddyComponent implements OnInit{
- 
+export class AddBuddyComponent implements OnInit {
+
   buddyForm: FormGroup;
 
-  constructor(private fb: FormBuilder,private buddyService:BuddyService,private globalService:GlobalService) { }
-  
-  getEmpId : employeeData[];
-  getBuddyEmpId : buddyData[];
+  constructor(private fb: FormBuilder, private buddyService: BuddyService, private globalService: GlobalService) { }
+
+  getEmpId: employeeData[];
+  getBuddyEmpId: employeeData[];
+  batches: batchesGet[];
+  getUpdatedGrads: employeeData[];
+  getUpdatadBuddy: employeeData[];
   ngOnInit() {
     this.buddyForm = this.fb.group({
-          gradId : ['',[Validators.required]],
-          buddyId : ['',[Validators.required]]         
-      })
-      this.globalService.getAllEmployees().subscribe(data => {
-        this.getEmpId = data;
-      })
-      this.globalService.getBuddy().subscribe(data => {
-        this.getBuddyEmpId = data;
-      })
+      gradId: [{ value: '', disabled: true }, [Validators.required]],
+      buddyId: [{ value: '', disabled: true }, [Validators.required]]
+    })
+    this.globalService.getAllEmployees().subscribe(data => {
+      this.getEmpId = data;
+    })
+    this.globalService.getAllEmployees().subscribe(data => {
+      this.getBuddyEmpId = data;
+    })
+    this.globalService.getAllBatches().subscribe(data => {
+      this.batches = data;
+    })
   }
-  get gradId(){
+  get gradId() {
     return this.buddyForm.get('gradId');
   }
 
-  get buddyId(){
+  get buddyId() {
     return this.buddyForm.get('buddyId');
   }
-  onSubmit(){
-    console.log(this.buddyForm.value);
-    this.buddyService.postBuddy(this.buddyForm.value)
-    .subscribe(
-       // response => console.log('Success!', response),
-      // error => console.error('Error!', error)
 
-    );
+  onChangeValue(value: any) {
+    this.getUpdatedGrads = [];
+    if(value != 'Select Grad Batch'){
+      this.buddyForm.get('gradId')?.enable();
+    }
+    for (let i of this.getEmpId) {
+      if (i.batchName == value) {
+        this.getUpdatedGrads.push(i);
+      }
+    }
   }
-  // onSubmit() {
-  //   console.log(this.registrationForm.value);
-  //   this._registrationService.register(this.registrationForm.value)
-  //     .subscribe(
-  //       response => console.log('Success!', response),
-  //       error => console.error('Error!', error)
-  //     );
-  // }
+  onChange(value: any) {
+    // console.log(value);
+    this.getUpdatadBuddy = [];
+    if(value != 'Select Buddy Batch'){
+      this.buddyForm.get('buddyId')?.enable();
+    }
+    for (let i of this.getBuddyEmpId) {
+      if (i.batchName == value) {
+        this.getUpdatadBuddy.push(i);
+      }
+    }
+  }
+
+  onSubmit() {
+    // console.log(this.buddyForm.value);
+    this.buddyService.postBuddy(this.buddyForm.value)
+      .subscribe();
+  }
+
 }
 
 
-// @Column(name = "batchName")
-// private String batchName;
-
-// //FK
-// @Column(name="grad_id")
-// private int gradId;
-
-// @Column(name="buddy_id")
-// private int buddyId;
-
-// @Column(name="grad_name")
-// private String gradName;
-
-// @Column(name="buddy_name")
-// private String buddyName;
 

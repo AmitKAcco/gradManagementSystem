@@ -18,7 +18,7 @@ const routes: Routes = [
     ]
   }
 ];
-console.warn("inside here");
+// console.warn("inside here");
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]

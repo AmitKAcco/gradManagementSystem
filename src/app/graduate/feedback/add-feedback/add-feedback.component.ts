@@ -30,7 +30,7 @@ export class AddFeedbackComponent {
   }
   // batchIdList = [];
   createTask(){
-    console.log('i have been clicked');
+    // console.log('i have been clicked');
   }
   name : string ;
   note : string ;

@@ -97,18 +97,13 @@ export class AddblockedComponent {
 
   onSubmit() {
     for (let i = 0; i < this.getBatchName.length; i++) {
-      console.log(this.blocked.value.batchName);
       if (this.blocked.value.batchName == this.getBatchName[i].batchId) {
         this.blocked.value.batchName = this.getBatchName[i].batchName;
         this.blocked.value.batchId = this.getBatchName[i].batchId;
-        console.log(this.blocked.value.batchName);
-        console.log(this.blocked.value)
       }
     }
-    console.log(this.blocked.value);
     this.blockedService.postBlocked(this.blocked.value)
       .subscribe(
-
     );
   }
 

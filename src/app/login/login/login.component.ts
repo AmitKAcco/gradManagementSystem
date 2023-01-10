@@ -46,7 +46,7 @@ export class LoginComponent {
     setTimeout(() => {
 
       if(this.userData.password ==  this.myForm.value.password){
-        console.log(" iam inside password");
+        // console.log(" iam inside password");
         setTimeout(() => {
           this.path = this.userData.role;
           this.path = '/'+this.userData.role;
@@ -54,7 +54,7 @@ export class LoginComponent {
           localStorage.setItem(this.userData.role, 'true');
           localStorage.setItem('batchID', this.userData.batchId);
           localStorage.setItem('empId', this.userData.empId);
-          console.log(this.userData);
+          // console.log(this.userData);
           this.loginService.sendData(this.userData);
         }, 500);
       }
