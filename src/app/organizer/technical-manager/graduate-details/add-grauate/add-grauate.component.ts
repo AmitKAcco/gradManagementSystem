@@ -64,8 +64,31 @@ export class AddGrauateComponent {
   
     this.graduateDetailsService.postGrad(this.graduateForm.value)
     .subscribe(
-      // response => console.log('Success!', response),
-      // error => console.error('Error!', error)
+      response => {
+        console.log("heyy")
+        console.log("resp" + response);
+        if(response.includes("exists")){
+          this._snackBar.open(response, '', {
+            // duration: 9000,
+            // verticalPosition: 'top',
+            // horizontalPosition: 'start',
+            panelClass: 'aa'
+          });
+          
+        }
+        else{        
+          this._snackBar.open(response, '', {
+            duration: 9000,
+            // verticalPosition: 'top',
+            // horizontalPosition: 'start',
+            panelClass: 'my-custom-snackbar'
+          });
+          this.graduateForm.reset();
+        }
+
+      },
+      error => console.log(error)
+      
     );
   }
 

@@ -8,6 +8,9 @@ import { AbstractControlOptions } from '@angular/forms';
 import { GlobalService } from 'src/app/global.service';
 import { buddyData, employeeData } from 'src/app/employeeData';
 import { BuddyService } from '../buddy.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
+
+import { batchesGet } from 'src/backend.Data';
 @Component({
   selector: 'app-add-buddy',
   templateUrl: './add-buddy.component.html',
@@ -17,10 +20,16 @@ export class AddBuddyComponent implements OnInit {
 
   buddyForm: FormGroup;
 
-  constructor(private fb: FormBuilder,private buddyService:BuddyService,private globalService:GlobalService) { }
+
+  constructor(private fb: FormBuilder,private buddyService:BuddyService,private globalService:GlobalService,private _snackBar: MatSnackBar) { }
   
-  getEmpId : employeeData[];
-  getBuddyEmpId : buddyData[];
+
+  getEmpId: employeeData[];
+  getBuddyEmpId: employeeData[];
+  batches: batchesGet[];
+  getUpdatedGrads: employeeData[];
+  getUpdatadBuddy: employeeData[];
+
   ngOnInit() {
     this.buddyForm = this.fb.group({
       gradId: [{ value: '', disabled: true }, [Validators.required]],
@@ -44,6 +53,21 @@ export class AddBuddyComponent implements OnInit {
     return this.buddyForm.get('buddyId');
   }
 
+  onSubmit(){
+    console.log(this.buddyForm.value);
+    this.buddyService.postBuddy(this.buddyForm.value)
+    .subscribe(
+      response => {
+        console.log("heyy")
+        console.log("resp" + response);
+        this._snackBar.open(response);
+        this.buddyForm.reset();
+
+      },
+      error => console.log(error)
+    )
+  }
+ 
   onChangeValue(value: any) {
     this.getUpdatedGrads = [];
     if(value != 'Select Grad Batch'){
@@ -68,15 +92,6 @@ export class AddBuddyComponent implements OnInit {
     }
   }
 
-  onSubmit() {
-    // console.log(this.buddyForm.value);
-    this.buddyService.postBuddy(this.buddyForm.value)
-    .subscribe(
-       // response => console.log('Success!', response),
-      // error => console.error('Error!', error)
-
-    );
-  }
 
 }
 

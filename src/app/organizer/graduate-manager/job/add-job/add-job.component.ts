@@ -15,9 +15,10 @@ export class AddJobComponent {
 
   JobForm: FormGroup;
 
-  constructor(private fb:FormBuilder,private jobService:JobService,private globalService:GlobalService){}
 
-  //batchIdList = [];
+  constructor(private fb:FormBuilder,private jobService:JobService,private globalService:GlobalService,private _snackBar: MatSnackBar){}
+
+
 
   getBatchName : batchesGet[];
   submitted : boolean = false;
@@ -48,8 +49,14 @@ export class AddJobComponent {
     console.log(this.JobForm.value);
     this.jobService.postJob(this.JobForm.value)
     .subscribe(
-      // response => console.log('Success!', response),
-      // error => console.error('Error!', error)
+
+      response => {
+        console.log('Success!', response);
+        this._snackBar.open(response);
+        this.JobForm.reset();
+      },
+      error => console.error('Error!', error)
+
     );
   }
 
