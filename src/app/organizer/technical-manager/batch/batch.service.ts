@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -19,4 +20,8 @@ export class BatchService {
     console.log(userData);
     return this._http.post<any>(this._url, userData);
   }
+  // postBatch(userData: any) {
+  //   console.log(userData);
+  //   return this._http.post<Batch>(this._url, userData);
+  // }
 }

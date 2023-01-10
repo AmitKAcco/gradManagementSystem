@@ -25,14 +25,13 @@ export class AddBatchComponent {
       batchName : ['']
     })
   }
+ 
   onSubmit(){
     console.log(this.batchForm.value);
     this.batchService.postBatch(this.batchForm.value)
-    .subscribe(
-      // response => console.log('Success!', response),
-     // error => console.error('Error!', error)
-
-   );
+    .subscribe((d)=>{
+     
+    });
   }
 
 

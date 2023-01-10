@@ -14,9 +14,9 @@ export class ViewBatchComponent {
   batchDetails : batchesGet[];
   ngOnInit(): void {
   this.batchService.getBatch()
-    .subscribe(data => {
-      this.dataSource = data;
-    });
+    .subscribe(
+      
+    );
 
     
   }
