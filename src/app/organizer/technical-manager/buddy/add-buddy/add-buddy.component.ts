@@ -41,38 +41,14 @@ export class AddBuddyComponent implements OnInit{
     return this.buddyForm.get('buddyId');
   }
   onSubmit(){
-    console.log(this.buddyForm.value);
     this.buddyService.postBuddy(this.buddyForm.value)
     .subscribe(
-       // response => console.log('Success!', response),
-      // error => console.error('Error!', error)
+ 
 
     );
   }
-  // onSubmit() {
-  //   console.log(this.registrationForm.value);
-  //   this._registrationService.register(this.registrationForm.value)
-  //     .subscribe(
-  //       response => console.log('Success!', response),
-  //       error => console.error('Error!', error)
-  //     );
-  // }
+
 }
 
 
-// @Column(name = "batchName")
-// private String batchName;
-
-// //FK
-// @Column(name="grad_id")
-// private int gradId;
-
-// @Column(name="buddy_id")
-// private int buddyId;
-
-// @Column(name="grad_name")
-// private String gradName;
-
-// @Column(name="buddy_name")
-// private String buddyName;
 

@@ -17,7 +17,6 @@ export class AddBatchComponent {
 
   constructor(private fb:FormBuilder,private globalService:GlobalService,private batchService:BatchService) {}
 
-  //getBatchName : batchesGet[];
   submitted : boolean = false;
 
   ngOnInit(){
@@ -29,9 +28,6 @@ export class AddBatchComponent {
     console.log(this.batchForm.value);
     this.batchService.postBatch(this.batchForm.value)
     .subscribe(
-      // response => console.log('Success!', response),
-     // error => console.error('Error!', error)
-
    );
   }
 

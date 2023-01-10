@@ -35,16 +35,6 @@ export class AddProjectDetailsComponent {
       alternateEmails: this.fb.array([])
     });
 
-  //   this.registrationForm.get('subscribe')!.valueChanges
-  //     .subscribe(checkedValue => {
-  //       const email = this.registrationForm.get('email');
-  //       if (checkedValue) {
-  //         email!.setValidators(Validators.required);
-  //       } else {
-  //         email!.clearValidators();
-  //       }
-  //       email!.updateValueAndValidity();
-  //     });
   }
 
   get userName() {
@@ -64,16 +54,6 @@ export class AddProjectDetailsComponent {
   }
 
   loadAPIData() {
-    // this.registrationForm.setValue({
-    //   userName: 'Bruce',
-    //   password: 'test',
-    //   confirmPassword: 'test',
-    //   address: {
-    //     city: 'City',
-    //     state: 'State',
-    //     postalCode: '123456'
-    //   }
-    // });
 
     this.registrationForm.patchValue({
       userName: 'Bruce',

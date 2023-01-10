@@ -26,18 +26,6 @@ export class BlockedService {
     return this._http.post(this._urlcheck, data);
   }
   updateBlockedscheduleInterview(empData: any): Observable<any>{
-    // console.log(empData);
-    // // console.log(this._urlScheduleInterview);
-    // setTimeout(()=>{
-    //   this._http.put(this._url,this.x).pipe(tap(()=>{
-    //     console.log("yo yo");
-    //   }));
-    // },1000)
-    // console.log("works");
-        return this._http.post(this._urlScheduleInterview,empData)
-          // console.log(this._http.post<any>(this._url, userData));
-          // return this._http.post<any>(this._url, userData);;
-
-
+      return this._http.post(this._urlScheduleInterview,empData)
   }
 }

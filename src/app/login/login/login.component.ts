@@ -46,7 +46,7 @@ export class LoginComponent {
     setTimeout(() => {
 
       if(this.userData.password ==  this.myForm.value.password){
-        console.log(" iam inside password");
+        // console.log(" iam inside password");
         setTimeout(() => {
           this.path = this.userData.role;
           this.path = '/'+this.userData.role;
