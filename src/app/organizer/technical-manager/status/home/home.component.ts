@@ -35,8 +35,6 @@ export class HomeComponent {
   getStatus() {
     this.statusService.getStatusbyBatch(this.value).subscribe(data => {
       this.status = data;
-      console.log("hello");
-      console.log( data);
       setTimeout(() => {
         this.display();
         this.showStausDiv = true;

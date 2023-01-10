@@ -104,7 +104,6 @@ export class AddblockedComponent {
     }
     this.blockedService.postBlocked(this.blocked.value)
       .subscribe(
-
     );
   }
 
