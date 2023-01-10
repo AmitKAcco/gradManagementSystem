@@ -63,7 +63,7 @@ export class AddGrauateComponent {
     console.log(this.graduateForm.value);
     this.graduateDetailsService.postGrad(this.graduateForm.value)
     .subscribe(
-      // response => console.log('Success!', response),
+       // response => console.log('Success!', response),
       // error => console.error('Error!', error)
     );
   }
