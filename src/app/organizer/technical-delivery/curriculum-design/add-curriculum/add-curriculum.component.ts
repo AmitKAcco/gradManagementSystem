@@ -40,7 +40,9 @@ export class AddCurriculumComponent {
       
       response => {
         console.log('Success!', response);
-        this._snackBar.open(response);
+        this._snackBar.open("Session added in Curriculum Design", '', {
+          duration: 3000,
+        });
         this.curriculumDesign.reset();
       },
       error => console.error('Error!', error)

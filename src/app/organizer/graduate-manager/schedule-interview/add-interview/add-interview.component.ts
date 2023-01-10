@@ -96,7 +96,9 @@ export class AddInterviewComponent {
     .subscribe(
       response => {
         console.log('Success!', response);
-        this._snackBar.open(response);
+        this._snackBar.open("Interview Scheduled !", '', {
+          duration: 3000,
+        });        
         this.scheduleInterview.reset();
       },
       error => console.error('Error!', error)

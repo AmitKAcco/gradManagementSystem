@@ -55,7 +55,9 @@ export class AddMockInterviewComponent {
     .subscribe(
       response => {
         console.log('Success!', response);
-        this._snackBar.open(response);
+        this._snackBar.open("Mock Interview Scheduled !", '', {
+          duration: 3000,
+        });        
         this.mockInterview.reset();
       },
       error => console.error('Error!', error)

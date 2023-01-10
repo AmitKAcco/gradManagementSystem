@@ -79,7 +79,9 @@ export class AddEvaluationComponent {
     .subscribe(
       response => {
         console.log('Success!', response);
-        this._snackBar.open(response);
+        this._snackBar.open("Grad Evaluated!", '', {
+          duration: 3000,
+        });
         this.evaluationDesgin.reset();
       },
       error => console.error('Error!', error)
