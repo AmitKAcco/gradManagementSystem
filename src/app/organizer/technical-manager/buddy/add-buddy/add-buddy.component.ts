@@ -60,7 +60,9 @@ export class AddBuddyComponent implements OnInit {
       response => {
         console.log("heyy")
         console.log("resp" + response);
-        this._snackBar.open(response);
+        this._snackBar.open("Buddy Created", '', {
+          duration: 9000,
+        });
         this.buddyForm.reset();
 
       },
