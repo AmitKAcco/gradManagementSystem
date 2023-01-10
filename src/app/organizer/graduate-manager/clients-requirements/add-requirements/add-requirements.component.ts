@@ -71,7 +71,7 @@ export class AddRequirementsComponent {
 
   }
   onSubmit(){
-    console.log(this.clientRequirements.value);
+    // console.log(this.clientRequirements.value);
     this.clientRequirementService.postClientRequirements(this.clientRequirements.value)
     .subscribe(
       response => {

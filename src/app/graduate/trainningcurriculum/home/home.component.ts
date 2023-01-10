@@ -19,15 +19,15 @@ export class HomeComponent {
   
       this.login.transferData.subscribe(data =>{
         this.userEmpdata = data;
-        console.log(this.userEmpdata);
+        // console.log(this.userEmpdata);
         if(this.userEmpdata.batchId == null || this.userEmpdata.batchId == undefined){
           this.userEmpdata.batchId = localStorage.getItem('batchID');
-          console.log(this.userEmpdata.batchId);
+          // console.log(this.userEmpdata.batchId);
         }
       
         this.tranningService.gettranningCirriculum(this.userEmpdata.batchId).subscribe(data =>{
           this.dataSource = data;
-          console.log(this.dataSource);
+          // console.log(this.dataSource);
         })
       })
       

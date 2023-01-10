@@ -43,10 +43,10 @@ export class ViewblockedComponent {
     this.selection.toggle(row);
     this.blockedService.updateBlockedscheduleInterview({empId:row.empId,jobId:row.jobId}).subscribe(
       data => {
-        console.log("Interview Scheduled! ", data);
+        // console.log("Interview Scheduled! ", data);
       },
       err => {
-        console.log("Interview not Scheduled! ", err);
+        // console.log("Interview not Scheduled! ", err);
 
       });
   }
