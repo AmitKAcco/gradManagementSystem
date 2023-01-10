@@ -60,18 +60,14 @@ export class AddBatchComponent {
         console.log("resp" + response);
         if(response.includes("exists")){
           this._snackBar.open(response, '', {
-            // duration: 9000,
-            // verticalPosition: 'top',
-            // horizontalPosition: 'start',
+            duration: 3000,
             panelClass: 'aa'
           });
           
         }
         else{        
           this._snackBar.open(response, '', {
-            duration: 9000,
-            // verticalPosition: 'top',
-            // horizontalPosition: 'start',
+            duration: 3000,
             panelClass: 'my-custom-snackbar'
           });
           this.batchForm.reset();

@@ -69,19 +69,13 @@ export class AddGrauateComponent {
         console.log("resp" + response);
         if(response.includes("exists")){
           this._snackBar.open(response, '', {
-            // duration: 9000,
-            // verticalPosition: 'top',
-            // horizontalPosition: 'start',
-            panelClass: 'aa'
+            duration: 3000
           });
           
         }
         else{        
           this._snackBar.open(response, '', {
-            duration: 9000,
-            // verticalPosition: 'top',
-            // horizontalPosition: 'start',
-            panelClass: 'my-custom-snackbar'
+            duration: 3000
           });
           this.graduateForm.reset();
         }

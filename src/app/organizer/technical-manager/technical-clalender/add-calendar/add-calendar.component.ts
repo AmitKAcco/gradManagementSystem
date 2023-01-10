@@ -60,7 +60,9 @@ export class AddCalendarComponent {
       response => {
         console.log("heyy")
         console.log("resp" + response);
-        this._snackBar.open(response);
+        this._snackBar.open("Session added in Technical Calendar", '', {
+          duration: 3000,
+        });
         this.TechnicalCalendarForm.reset();
 
 
