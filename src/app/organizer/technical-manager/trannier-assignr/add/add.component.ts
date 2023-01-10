@@ -78,7 +78,9 @@ export class AddComponent {
       response => {
         console.log("heyy")
         console.log("resp" + response);
-        this._snackBar.open(response);
+        this._snackBar.open("Trainer Assigned", '', {
+          duration: 3000,
+        });        
         this.trannierAssignment.reset();
 
 

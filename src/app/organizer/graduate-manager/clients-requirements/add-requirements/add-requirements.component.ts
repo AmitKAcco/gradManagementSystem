@@ -76,7 +76,9 @@ export class AddRequirementsComponent {
     .subscribe(
       response => {
         console.log('Success!', response);
-        this._snackBar.open(response);
+        this._snackBar.open("Requirement Added !", '', {
+          duration: 3000,
+        });        
         this.clientRequirements.reset();
       },
       error => console.error('Error!', error)

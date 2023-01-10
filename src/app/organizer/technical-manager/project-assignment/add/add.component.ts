@@ -95,8 +95,10 @@ export class AddComponent {
         .subscribe(
           response => {
             console.log(response);
-            this._snackBar.open(response);
-          this.projectAssignmentForm.reset();
+            this._snackBar.open("Projet Assigned !", '', {
+              duration: 3000,
+            });          
+            this.projectAssignmentForm.reset();
           },
           error => console.log(error)
           

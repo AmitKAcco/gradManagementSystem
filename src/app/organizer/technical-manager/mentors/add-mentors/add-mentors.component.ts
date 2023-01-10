@@ -65,7 +65,9 @@ export class AddMentorsComponent {
       response => {
         console.log("heyy")
         console.log("resp" + response);
-        this._snackBar.open(response);
+        this._snackBar.open("Mentor Assigned !", '', {
+          duration: 3000,
+        });
         this.MentorForm.reset();
 
 

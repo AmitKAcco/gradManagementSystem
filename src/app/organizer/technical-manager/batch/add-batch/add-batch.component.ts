@@ -65,7 +65,6 @@ export class AddBatchComponent {
             // horizontalPosition: 'start',
             panelClass: 'aa'
           });
-          
         }
         else{        
           this._snackBar.open(response, '', {

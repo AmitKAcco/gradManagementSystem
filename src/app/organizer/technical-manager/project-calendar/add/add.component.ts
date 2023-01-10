@@ -63,8 +63,10 @@ export class AddComponent {
     .subscribe(
       response => {
         console.log(response);
-        this._snackBar.open(response);
-      this.projectCalendar.reset();
+        this._snackBar.open("Project details added in Project Calendar", '', {
+          duration: 3000,
+        });      
+        this.projectCalendar.reset();
       },
       error => console.log(error)
     );
