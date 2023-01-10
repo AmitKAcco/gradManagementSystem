@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -25,4 +26,8 @@ export class GraduateDetailsService {
     };
     return this._http.post<string>(this._url, userData, httpOptions);
   }
+  // postGrad(userData: any) {
+  //   console.log(userData);
+  //   return this._http.post<GradDetails>(this._url, userData);
+  // }
 }
