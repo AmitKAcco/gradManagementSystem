@@ -4,6 +4,7 @@ import { FormBuilder } from '@angular/forms';
 import { GraduateDetailsService } from '../graduate-details.service';
 import { batchesGet } from 'src/backend.Data';
 import { GlobalService } from 'src/app/global.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-add-grauate',
@@ -14,7 +15,7 @@ export class AddGrauateComponent {
 
   graduateForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private graduateDetailsService: GraduateDetailsService,private globalService:GlobalService){ }
+  constructor(private fb: FormBuilder, private graduateDetailsService: GraduateDetailsService,private globalService:GlobalService,private _snackBar: MatSnackBar){ }
 
   batchNameList = [];
   getBatchName : batchesGet[];
@@ -63,6 +64,30 @@ export class AddGrauateComponent {
   
     this.graduateDetailsService.postGrad(this.graduateForm.value)
     .subscribe(
+      response => {
+        console.log("heyy")
+        console.log("resp" + response);
+        if(response.includes("exists")){
+          this._snackBar.open(response, '', {
+            // duration: 9000,
+            // verticalPosition: 'top',
+            // horizontalPosition: 'start',
+            panelClass: 'aa'
+          });
+          
+        }
+        else{        
+          this._snackBar.open(response, '', {
+            duration: 9000,
+            // verticalPosition: 'top',
+            // horizontalPosition: 'start',
+            panelClass: 'my-custom-snackbar'
+          });
+          this.graduateForm.reset();
+        }
+
+      },
+      error => console.log(error)
       
     );
   }

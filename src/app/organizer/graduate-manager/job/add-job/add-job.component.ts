@@ -4,7 +4,7 @@ import { FormBuilder } from '@angular/forms';
 import { JobService } from '../job.service';
 import { GlobalService } from 'src/app/global.service';
 import { batchesGet } from 'src/backend.Data';
-
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-add-job',
@@ -15,7 +15,11 @@ export class AddJobComponent {
 
   JobForm: FormGroup;
 
-  constructor(private fb:FormBuilder,private jobService:JobService,private globalService:GlobalService){}
+
+  constructor(private fb:FormBuilder,private jobService:JobService,private globalService:GlobalService,private _snackBar: MatSnackBar){}
+
+
+
   getBatchName : batchesGet[];
   submitted : boolean = false;
   
@@ -45,6 +49,14 @@ export class AddJobComponent {
     console.log(this.JobForm.value);
     this.jobService.postJob(this.JobForm.value)
     .subscribe(
+
+      response => {
+        console.log('Success!', response);
+        this._snackBar.open(response);
+        this.JobForm.reset();
+      },
+      error => console.error('Error!', error)
+
     );
   }
 

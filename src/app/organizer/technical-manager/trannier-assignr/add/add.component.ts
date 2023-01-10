@@ -4,6 +4,7 @@ import { NgbDate } from '@ng-bootstrap/ng-bootstrap';
 import { AbstractControlOptions } from '@angular/forms';
 import { TrainerAssignService } from '../trainer-assign.service';
 import { batchesGet } from '../../add-project/batchData';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 
 import { topicNameGet } from '../../trannier-assignr/topicName';
@@ -18,7 +19,7 @@ import { GlobalService } from 'src/app/global.service';
 export class AddComponent {
   trannierAssignment: FormGroup;
 
-  constructor(private fb: FormBuilder,private trainerAssignService: TrainerAssignService, private globalService : GlobalService) { }
+  constructor(private fb: FormBuilder,private trainerAssignService: TrainerAssignService, private globalService : GlobalService, private _snackBar: MatSnackBar) { }
   // batchIdList = [];
   batchNameList = [];
   topicNameList:[];
@@ -74,8 +75,15 @@ export class AddComponent {
     console.log(this.trannierAssignment.value);
     this.trainerAssignService.postTrainerAssign(this.trannierAssignment.value)
     .subscribe(
-      // response => console.log('Success!', response),
-      // error => console.error('Error!', error)
+      response => {
+        console.log("heyy")
+        console.log("resp" + response);
+        this._snackBar.open(response);
+        this.trannierAssignment.reset();
+
+
+      },
+      error => console.log(error)
     );
 
   }

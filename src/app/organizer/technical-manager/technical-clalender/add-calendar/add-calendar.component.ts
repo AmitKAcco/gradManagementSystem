@@ -5,6 +5,8 @@ import { TechnicalcalendarService } from '../technicalcalendar.service';
 import { GlobalService } from 'src/app/global.service';
 import { batchesGet } from 'src/backend.Data';
 import { topicNameGet } from '../../trannier-assignr/topicName';
+import {MatSnackBar} from '@angular/material/snack-bar';
+
 @Component({
   selector: 'app-add-calendar',
   templateUrl: './add-calendar.component.html',
@@ -14,7 +16,7 @@ export class AddCalendarComponent {
 
   TechnicalCalendarForm: FormGroup;
 
-  constructor(private fb :FormBuilder,private technicalCalendarService:TechnicalcalendarService,private globalService:GlobalService) {}
+  constructor(private fb :FormBuilder,private technicalCalendarService:TechnicalcalendarService,private globalService:GlobalService,private _snackBar: MatSnackBar) {}
 
  // batchIdList = [];
   //topicIdList = [];
@@ -55,8 +57,15 @@ export class AddCalendarComponent {
     console.log(this.TechnicalCalendarForm.value);
     this.technicalCalendarService.postCalendar(this.TechnicalCalendarForm.value)
     .subscribe(
-      // response => console.log('Success!', response),
-      // error => console.error('Error!', error)
+      response => {
+        console.log("heyy")
+        console.log("resp" + response);
+        this._snackBar.open(response);
+        this.TechnicalCalendarForm.reset();
+
+
+      },
+      error => console.log(error)
     );
   }
 }

@@ -9,6 +9,8 @@ import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { MatTabsModule } from '@angular/material/tabs';
 import { WidgetsModule } from 'src/app/shared/widgets/widgets.module';
 import { MatTableModule } from '@angular/material/table';
+import {MatCardModule} from '@angular/material/card';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { MatTableModule } from '@angular/material/table';
     FormsModule,
     MatTabsModule,  
     WidgetsModule,
-    MatTableModule
+    MatTableModule,
+    MatCardModule,
+    MatSnackBarModule
   ]
 })
 export class BatchModule { }

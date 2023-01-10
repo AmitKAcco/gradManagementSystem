@@ -41,7 +41,10 @@ export class AddFeedbackComponent {
     this.graduateFeedBack.value.empId = this.userData.empId;
     this.feedback.register(this.graduateFeedBack.value)
     .subscribe(
-      response => console.log('Success!', response),
+      response => {
+        console.log('Success!', response);
+        this.graduateFeedBack.reset();
+      },
       error => console.error('Error!', error)
     );
   }
