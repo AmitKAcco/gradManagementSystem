@@ -6,6 +6,7 @@ import { GlobalService } from 'src/app/global.service';
 import { Task } from '../shared/models/task.model';
 import { LoginService } from 'src/app/login/login.service';
 import { userLoginData } from 'src/app/login/login/loginData';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-add-feedback',
@@ -21,7 +22,7 @@ export class AddFeedbackComponent {
     batchId : new FormControl(''),
     empId : new FormControl('')
   });
-  constructor(private feedback : FeedbackService, private global : GlobalService, private login : LoginService){ 
+  constructor(private feedback : FeedbackService, private global : GlobalService, private login : LoginService, private _snackBar: MatSnackBar){ 
   }
   ngOnInit(){
     this.login.transferData.subscribe(data =>{
@@ -43,6 +44,9 @@ export class AddFeedbackComponent {
     .subscribe(
       response => {
         console.log('Success!', response);
+        this._snackBar.open("Feedback Added !", '', {
+          duration: 3000,
+        });
         this.graduateFeedBack.reset();
       },
       error => console.error('Error!', error)

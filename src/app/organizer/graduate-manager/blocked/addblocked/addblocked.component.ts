@@ -108,7 +108,9 @@ export class AddblockedComponent {
       .subscribe(
         response => {
           console.log('Success!', response);
-          this._snackBar.open(response);
+          this._snackBar.open("Grad Blocked !", '', {
+            duration: 3000,
+          });          
           this.blocked.reset();
         },
         error => console.error('Error!', error)
