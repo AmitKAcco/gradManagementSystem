@@ -5,6 +5,8 @@ import { ClientrequirementsService } from '../clientrequirements.service';
 import { GlobalService } from 'src/app/global.service';
 import { batchesGet } from 'src/backend.Data';
 import { jobData } from 'src/app/jobData';
+import {MatSnackBar} from '@angular/material/snack-bar';
+
 @Component({
   selector: 'app-add-requirements',
   templateUrl: './add-requirements.component.html',
@@ -13,7 +15,7 @@ import { jobData } from 'src/app/jobData';
 export class AddRequirementsComponent {
 
   clientRequirements : FormGroup;
-  constructor(private fb: FormBuilder ,private clientRequirementService : ClientrequirementsService ,private globalService:GlobalService) { }
+  constructor(private fb: FormBuilder ,private clientRequirementService : ClientrequirementsService ,private globalService:GlobalService, private _snackBar: MatSnackBar) { }
   jobIdList = [];
   batchNameList = [];
   getBatchName : batchesGet[];
@@ -72,8 +74,12 @@ export class AddRequirementsComponent {
     // console.log(this.clientRequirements.value);
     this.clientRequirementService.postClientRequirements(this.clientRequirements.value)
     .subscribe(
-      // response => console.log('Success!', response),
-      // error => console.error('Error!', error)
+      response => {
+        console.log('Success!', response);
+        this._snackBar.open(response);
+        this.clientRequirements.reset();
+      },
+      error => console.error('Error!', error)
     );
   }
 
