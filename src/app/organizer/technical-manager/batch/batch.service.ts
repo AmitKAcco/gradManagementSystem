@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -35,4 +36,8 @@ export class BatchService {
     let urlx = `http://localhost:8900/checkIfBatchAlreadyExists/${batchName}`;
     return this._http.get<any>(urlx);
   }
+  // postBatch(userData: any) {
+  //   console.log(userData);
+  //   return this._http.post<Batch>(this._url, userData);
+  // }
 }

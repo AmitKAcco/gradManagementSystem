@@ -30,6 +30,7 @@ export class AddBatchComponent {
       batchName : ['']
     })
   }
+ 
   onSubmit(){
     console.log(this.batchForm.value);
     // this.batchService.checkIfBatchExists(this.batchForm.value.batchName).subscribe(
