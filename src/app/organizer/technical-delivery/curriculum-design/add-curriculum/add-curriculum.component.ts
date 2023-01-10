@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup ,Validators} from '@angular/forms';
 import { CurriculumDesignService } from '../curriculum-design.service';
 import { batchesGet } from 'src/backend.Data';
 import { GlobalService } from 'src/app/global.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
+
 @Component({
   selector: 'app-add-curriculum',
   templateUrl: './add-curriculum.component.html',
@@ -13,7 +15,7 @@ export class AddCurriculumComponent {
   getBatchName : batchesGet[];
   submitted : boolean = false;
   curriculumDesign : FormGroup;
-  constructor(private fb: FormBuilder, private curriculumService:CurriculumDesignService , private globalService: GlobalService) { }
+  constructor(private fb: FormBuilder, private curriculumService:CurriculumDesignService , private globalService: GlobalService,private _snackBar: MatSnackBar) { }
   ngOnInit() {
     this.curriculumDesign = this.fb.group({
          batchName : ['',[Validators.required]],
@@ -35,8 +37,13 @@ export class AddCurriculumComponent {
     console.log(this.curriculumDesign.value);
     this.curriculumService.postTopic(this.curriculumDesign.value)
     .subscribe(
-      // response => console.log('Success!', response),
-      // error => console.error('Error!', error)
+      
+      response => {
+        console.log('Success!', response);
+        this._snackBar.open(response);
+        this.curriculumDesign.reset();
+      },
+      error => console.error('Error!', error)
     );
   }
 }

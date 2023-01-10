@@ -8,9 +8,13 @@ import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { SnackBarComponent } from './snack-bar/snack-bar.component';
+
 @NgModule({
   declarations: [
-    ReuseableTableComponent
+    ReuseableTableComponent,
+    SnackBarComponent
   ],
   imports: [
     CommonModule,
@@ -19,7 +23,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatFormFieldModule,
     MatInputModule,
     MatOptionModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSnackBarModule
   ],
   exports: [
    ReuseableTableComponent

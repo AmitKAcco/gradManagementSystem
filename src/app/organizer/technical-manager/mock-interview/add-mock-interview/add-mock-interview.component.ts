@@ -6,6 +6,7 @@ import { InterviewService } from '../interview.service';
 import { batchesGet } from 'src/backend.Data';
 import { GlobalService } from 'src/app/global.service';
 import { employeeData } from 'src/app/employeeData';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-add-mock-interview',
@@ -15,7 +16,7 @@ import { employeeData } from 'src/app/employeeData';
 export class AddMockInterviewComponent {
 
   mockInterview : FormGroup;
-  constructor(private fb: FormBuilder ,private interviewService : InterviewService,private globalService:GlobalService) { }
+  constructor(private fb: FormBuilder ,private interviewService : InterviewService,private globalService:GlobalService,private _snackBar: MatSnackBar) { }
   empIdList = [];
 //  batchNameList = [];
 
@@ -52,8 +53,12 @@ export class AddMockInterviewComponent {
     // console.log(this.mockInterview.value);
     this.interviewService.postMockInterview(this.mockInterview.value)
     .subscribe(
-      // response => console.log('Success!', response),
-      // error => console.error('Error!', error)
+      response => {
+        console.log('Success!', response);
+        this._snackBar.open(response);
+        this.mockInterview.reset();
+      },
+      error => console.error('Error!', error)
     );
   }
 

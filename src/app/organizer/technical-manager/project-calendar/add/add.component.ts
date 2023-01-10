@@ -5,6 +5,8 @@ import { CalendarService } from '../calendar.service';
 import { batchesGet } from 'src/backend.Data';
 import { GlobalService } from 'src/app/global.service';
 import { projectNameGet } from 'src/app/projectName';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 @Component({
   selector: 'app-add',
   templateUrl: './add.component.html',
@@ -13,7 +15,7 @@ import { projectNameGet } from 'src/app/projectName';
 export class AddComponent {
 
   projectCalendar : FormGroup;
-  constructor(private fb: FormBuilder , private calenderService : CalendarService,private globalService:GlobalService) { }
+  constructor(private fb: FormBuilder , private calenderService : CalendarService,private globalService:GlobalService, private _snackBar: MatSnackBar) { }
   //batchIdList = [];
 
   getBatchName : batchesGet[];
@@ -59,8 +61,12 @@ export class AddComponent {
    
     this.calenderService.postCalender(this.projectCalendar.value)
     .subscribe(
-      // response => console.log('Success!', response),
-      // error => console.error('Error!', error)
+      response => {
+        console.log(response);
+        this._snackBar.open(response);
+      this.projectCalendar.reset();
+      },
+      error => console.log(error)
     );
   }
 

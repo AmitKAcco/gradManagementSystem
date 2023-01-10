@@ -7,7 +7,7 @@ import { employeeData } from 'src/app/employeeData';
 import { ScheduleInterviewService } from '../schedule-interview.service';
 import { jobData } from 'src/app/jobData';
 import { elegibity } from '../elegibity';
-
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-add-interview',
@@ -17,7 +17,7 @@ import { elegibity } from '../elegibity';
 export class AddInterviewComponent {
 
   scheduleInterview : FormGroup;
-  constructor(private fb: FormBuilder ,private scheduleInterviewService : ScheduleInterviewService ,private globalService:GlobalService) { }
+  constructor(private fb: FormBuilder ,private scheduleInterviewService : ScheduleInterviewService ,private globalService:GlobalService,private _snackBar: MatSnackBar) { }
  
   batchNameList = [];
   empIdList = [];
@@ -94,6 +94,12 @@ export class AddInterviewComponent {
     console.log(this.scheduleInterview.value);
     this.scheduleInterviewService.postInterview(this.scheduleInterview.value)
     .subscribe(
+      response => {
+        console.log('Success!', response);
+        this._snackBar.open(response);
+        this.scheduleInterview.reset();
+      },
+      error => console.error('Error!', error)
     );
 
   }
