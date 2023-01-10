@@ -22,7 +22,7 @@ export class AddFeedbackComponent {
     batchId : new FormControl(''),
     empId : new FormControl('')
   });
-  constructor(private feedback : FeedbackService, private global : GlobalService, private login : LoginService, private _snackBar: MatSnackBar){ 
+  constructor(private feedback : FeedbackService, private global : GlobalService, private login : LoginService){ 
   }
   ngOnInit(){
     this.login.transferData.subscribe(data =>{
@@ -41,16 +41,16 @@ export class AddFeedbackComponent {
     this.graduateFeedBack.value.batchId = this.userData.batchId;
     this.graduateFeedBack.value.empId = this.userData.empId;
     this.feedback.register(this.graduateFeedBack.value)
-    .subscribe(
-      response => {
-        console.log('Success!', response);
-        this._snackBar.open("Feedback Added !", '', {
-          duration: 3000,
-        });
-        this.graduateFeedBack.reset();
-      },
-      error => console.error('Error!', error)
-    );
+    .subscribe();
+    //   response => {
+    //     console.log('Success!', response);
+    //     // this._snackBar.open("Feedback Added !", '', {
+    //     //   duration: 3000,
+    //     // });
+    //     // this.graduateFeedBack.reset();
+    //   // },
+    //   // error => console.error('Error!', error)
+    // );
   }
   
 }
