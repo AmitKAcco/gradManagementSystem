@@ -71,7 +71,7 @@
     <div class="form-group givespace">
       <label>Date of Birth</label>
       <input type="date" formControlName="dateOfBirth" id="dateOfBirth"
-        class="formbold-form-input" required>
+        class="formbold-form-input" [max]="date" required>
     </div>
 
     <div class="form-group givespace">

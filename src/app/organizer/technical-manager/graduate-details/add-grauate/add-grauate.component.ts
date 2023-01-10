@@ -20,6 +20,7 @@ export class AddGrauateComponent {
   batchNameList = [];
   getBatchName : batchesGet[];
   submitted : boolean =false;
+  date : any;
 
   ngOnInit(){
     this.graduateForm = this.fb.group({
@@ -27,8 +28,8 @@ export class AddGrauateComponent {
       employeeName:['',[Validators.required]],
       designation:['',[Validators.required]],
       dateOfJoining:Date,
-      mobileNumber:['',[Validators.required]],
-      email:['',[Validators.required]],
+      mobileNumber:['',[Validators.required,Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
+      email:['',[Validators.required,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
       dateOfBirth:Date,
       gender:['',[Validators.required]],
       deliveryDirector:['',[Validators.required]]
@@ -36,6 +37,8 @@ export class AddGrauateComponent {
     this.globalService.getAllBatches().subscribe(data=> {
       this.getBatchName = data;
     })
+    this.date = new Date().toISOString().slice(0, 10);
+    console.log("dateeeeeeee",this.date);
   }
 
   get batchName(){
